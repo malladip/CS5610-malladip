@@ -1,0 +1,86 @@
+﻿@media screen and (min-width: 328px) and (max-width: 835px){
+    body{
+        background-color:black;
+        padding-top:60px;
+    }
+
+    .button,#output_display {
+        margin:auto;
+        font-family:'Comic Sans MS';
+        font-size:25px;
+    }
+
+    #output_display {
+        width:99%;
+        text-align:center;
+        height:70px;
+    }
+
+    .button{
+        width:99%;
+        height:70px;
+    }
+
+    .container{
+        margin:auto;
+        width:310px;
+    }
+
+    .row{
+        margin:auto;
+        width:300px;
+        height:70px;
+    }
+
+    .col-1,.col-2,.col-3,.col-4,.col-5,.col-6,.col-7,.col-8,.col-9,.col-10,.col-11,.col-12{
+        float:left;
+    }
+
+    .col-1{
+        width:300px;
+    }
+
+    .col-2{
+        width:150px;
+    }
+
+    .col-3{
+        width:100px;
+    }
+
+    .col-4{
+        width:75px;
+    }
+
+    .col-5{
+        width:60px;
+    }
+
+    .col-6{
+        width:50px;
+    }
+
+    .col-7 {
+        width: 42.85px;
+    }    
+
+    .col-8{
+        width:37.5px;
+    }
+
+    .col-9{
+        width:33.33px;
+    }
+
+    .col-10{
+        width:30px;
+    }
+
+    .col-11{
+        width:27.27px;
+    }
+
+    .col-12{
+        width:12px;
+    }
+}

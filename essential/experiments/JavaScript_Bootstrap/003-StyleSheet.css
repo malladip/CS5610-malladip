@@ -1,0 +1,25 @@
+﻿
+#image{
+    width:"20%";
+}
+ 
+#paragraph{
+    background-color:yellow;
+    font-family:'Comic Sans MS';
+    font-size:larger;
+}
+
+#text,#move{
+    font-family:'Comic Sans MS';
+    font-size:xx-large;
+}
+
+.border{
+    margin-top:20px;
+    border:solid;
+}
+
+code{
+    color:'black';
+    background-color:'';
+}

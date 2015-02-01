@@ -1,0 +1,80 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Caliculator</title>
+    <link rel="stylesheet" href="StyleSheet - Desktop.css" />
+    <link rel="stylesheet" href="StyleSheet - Tab.css" />
+    <link rel="stylesheet" href="StyleSheet - Mobile.css" />
+    <script type ="text/javascript" src="CalciJS.js"></script>
+</head>
+<body>
+    <form action="" method="post" class="container">
+        <div class="row">
+            <div class="col-1">
+                <input name="output-display" id="output_display" disabled />
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-4">
+                <input type="button" class="button" value="7" onclick="add_symbol(this.value)"/>
+            </div>
+            <div class="col-4">
+                <input type="button" class="button" value="8" onclick="add_symbol(this.value)" />
+            </div>
+            <div class="col-4">
+                <input type="button" class="button" value="9" onclick="add_symbol(this.value)" />
+            </div>
+            <div class="col-4">
+                <input type="button" class="button" value="/" onclick="do_operation(this.value)" />
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-4">
+                <input type="button" class="button" value="4" onclick="add_symbol(this.value)"   />
+            </div>
+            <div class="col-4">
+                <input type="button" class="button" value="5" onclick="add_symbol(this.value)" />
+            </div>
+            <div class="col-4">
+                <input type="button" class="button" value="6" onclick="add_symbol(this.value)" />
+            </div>
+            <div class="col-4">
+                <input type="button" class="button" value="*" onclick="do_operation(this.value)" />
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-4">
+                <input type="button" class="button" value="1" onclick="add_symbol(this.value)" />
+            </div>
+            <div class="col-4">
+                <input type="button" class="button" value="2" onclick="add_symbol(this.value)" />
+            </div>
+            <div class="col-4">
+                <input type="button" class="button" value="3" onclick="add_symbol(this.value)" />
+            </div>
+            <div class="col-4">
+                <input type="button" class="button" value="-" onclick="do_operation(this.value)" />
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-4">
+                <input type="button" class="button" value="C" onclick="do_operation(this.value)" />
+            </div>
+            <div class="col-4">
+                <input type="button" class="button" value="0" onclick="add_symbol(this.value)" />
+            </div>
+            <div class="col-4">
+                <input type="button" class="button" value="=" onclick="do_operation(this.value)"/>
+            </div>
+            <div class="col-4">
+                <input type="button" class="button" value="+" onclick="do_operation(this.value)" />
+            </div>
+        </div>
+
+    </form>
+</body>
+</html>

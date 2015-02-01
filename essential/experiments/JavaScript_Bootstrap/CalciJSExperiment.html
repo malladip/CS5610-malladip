@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Java Script</title>
+    <link rel="stylesheet" href="../HTML/StyleSheet.css" />
+</head>
+<body>
+    <header>
+        <center><h2>Java Script</h2></center>
+    </header>
+
+
+    <nav>
+        <ul>
+            <li>
+                <p class="exp_case_desc">Linking a External JavaScript file into the HTML File</p>
+                <p class="exp_code">
+                    <code>
+                        &lt;script type =&quot;text/javascript&quot; src=&quot;CalciJS.js&quot;&gt;&lt;/script&gt;
+                    </code>
+                </p>
+            </li>
+
+            <li>
+                <p class="exp_case_desc">Accessing a HTML form element in the JavaScript file using ID. </p>
+                <p class="exp_code">
+                    <code>
+                        document.getElementById(&apos;output_display&apos;).value;
+                    </code>
+                </p>
+                <p class="exp_case_desc">Similarly we can access using class name, and form name.</p>
+            </li>
+
+            <li>
+                <p class="exp_case_desc">Evaluating a string expression.</p>
+                <p class="exp_case_desc">A mathematical expression in string format can easily be evaluated by simply passing the string as an argument to the function eval() </p>
+                <p class="exp_code">
+                    <code>
+                        eval(equation);
+                    </code>
+                </p>
+            </li>
+
+            <li>
+                <p class="exp_case_desc">Try Catch Statements in JavaScript</p>
+                <p class="exp_case_desc">As in Java, we can have exception in java script. The syntax is simillar to Java.</p>
+                <p class="exp_code">
+                    <code>
+                        try {<br />
+                        document.getElementById('output_display').value = eval(equation);<br />
+                        } catch (e) {<br />
+                        alert("Message");<br />
+                        }<br />
+                    </code>
+                </p>
+            </li>
+            
+        </ul>
+    </nav>
+
+    <a href="Calci.html" target="_blank" class="output">Click here to see output</a>
+
+    <footer>
+        <div class="source_code">
+            <h3>Source Code</h3>
+            <p><a href="../../fileview/Default.aspx?~/experiments/JavaScript_Bootstrap/CalciJSExperiment.html" target="_blank">Current page</a></p>
+            <p><a href="../../fileview/Default.aspx?~/experiments/JavaScript_Bootstrap/Calci.html" target="_blank">Experiment</a></p>
+            <p><a href="../../fileview/Default.aspx?~/experiments/JavaScript_Bootstrap/CalciJS.js" target="_blank">JavaScript</a></p>
+            <p><a href="../../fileview/Default.aspx?~/experiments/JavaScript_Bootstrap/StyleSheet - Desktop.css" target="_blank">Desktop CSS</a></p>
+            <p><a href="../../fileview/Default.aspx?~/experiments/JavaScript_Bootstrap/StyleSheet - Tab.css" target="_blank">Tablet CSS</a></p>
+            <p><a href="../../fileview/Default.aspx?~/experiments/JavaScript_Bootstrap/StyleSheet - Mobile.css" target="_blank">Mobile CSS</a></p>
+        </div>
+
+        <div class="references">
+            <h3>Reference</h3>
+            <p><a href="http://www.w3schools.com/js/" target="_blank">www.w3schools.com</a></p>
+        </div>
+    </footer>
+
+</body>
+</html>

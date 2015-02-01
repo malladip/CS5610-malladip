@@ -1,0 +1,245 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Basic HTML Tags</title>
+    <link rel="stylesheet" href="StyleSheet.css" />
+</head>
+<body>
+    <header>
+        <center><h2>Basic HTML Tags</h2></center>
+    </header>
+
+    <nav name="top">
+        <ul>
+            <li>
+                <p class="exp_case_desc">The text in &lt;b&gt; tag is printed in bold</p>
+                <p class="exp_code">
+                    <code>
+                        &lt;b&gt;This text is written in bold&lt;/b&gt;
+                    </code>
+                </p>
+                <p class="output">
+                    <b>This text is written in bold</b>
+                </p>
+            </li>
+
+            <li>
+                <p class="exp_case_desc">The text in &lt;i&gt; tag is printed in italics</p>
+                <p class="exp_code">
+                    <code>
+                        &lt;i&gt;This text is written in italics&lt;/i&gt;
+                    </code>
+                </p>
+                <p class="output">
+                    <i>This text is written in italics</i>
+                </p>
+            </li>
+
+            <li>
+                <p class="exp_case_desc">The text in &lt;u&gt; tag is underlined</p>
+                <p class="exp_code">
+                    <code>
+                        &lt;u&gt;This text is underlined&lt;/u&gt;
+                    </code>
+                </p>
+                <p class="output">
+                    <u>This text is underlined</u>
+                </p>
+            </li>
+
+            <li>
+                <p class="exp_case_desc">HTML provides with a block tags for headings. There are 6 headings tags. &lt;h1&gt; to  &lt;h6&gt; They take up the entire width of the page.</p>
+                <p class="exp_code">
+                    <code>
+                        &lt;h1&gt;This is h1 tag&lt;/h1&gt; <br />
+                        &lt;h2&gt;This is h2 tag&lt;/h2&gt; <br />
+                        &lt;h3&gt;This is h3 tag&lt;/h3&gt; <br />
+                        &lt;h4&gt;This is h4 tag&lt;/h4&gt; <br />
+                        &lt;h5&gt;This is h5 tag&lt;/h5&gt; <br />   
+                        &lt;h6&gt;This is h6 tag&lt;/h6&gt;
+                    </code>
+                </p>
+                <div class="output">
+                    <h1>This is h1</h1>
+                    <h2>This is h2</h2>
+                    <h3>This is h3</h3>
+                    <h4>This is h4</h4>
+                    <h5>This is h5</h5>
+                    <h6>This is h6</h6>
+                </div>
+            </li>
+
+            <li>
+                <p class="exp_case_desc">Unordered lists</p>
+                <p class="exp_code">
+                    <code>
+                        &lt;ul&gt;<br />
+                        &lt;li&gt;Item 1&lt;/li&gt;<br />
+                        &lt;li&gt;Item 2&lt;/li&gt;<br />
+                        &lt;li&gt;Item 3&lt;/li&gt;<br />
+                        &lt;li&gt;Item 4&lt;/li&gt;<br />
+                        &lt;/ul&gt;
+                    </code>
+                </p>
+                <div class="output">
+                    <div>
+                        <h3>Default Style</h3>
+                        <ul>
+                            <li>Item 1</li>
+                            <li>Item 2</li>
+                            <li>Item 3</li>
+                            <li>Item 4</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3>Disc Style</h3>
+                        <ul id="disc">
+                            <li>Item 1</li>
+                            <li>Item 2</li>
+                            <li>Item 3</li>
+                            <li>Item 4</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3>Circle Style</h3>
+                        <ul id="circle">
+                            <li>Item 1</li>
+                            <li>Item 2</li>
+                            <li>Item 3</li>
+                            <li>Item 4</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3>Square Style</h3>
+                        <ul id="square">
+                            <li>Item 1</li>
+                            <li>Item 2</li>
+                            <li>Item 3</li>
+                            <li>Item 4</li>
+                        </ul>
+                    </div>
+                </div>
+            </li>
+
+
+            <li>
+                <p class="exp_case_desc">Ordered List</p>
+                <p class="exp_code">
+                    <code>
+                        &lt;ol type="1" &gt;<br />
+                        &lt;li&gt;Item 1&lt;/li&gt;<br />
+                        &lt;li&gt;Item 2&lt;/li&gt;<br />
+                        &lt;li&gt;Item 3&lt;/li&gt;<br />
+                        &lt;li&gt;Item 4&lt;/li&gt;<br />
+                        &lt;/ol&gt;
+                    </code>
+                </p>
+                <div class="output">
+                    <div>
+                        <h3>Default Type</h3>
+                        <ol>
+                            <li>Item 1</li>
+                            <li>Item 2</li>
+                            <li>Item 3</li>
+                            <li>Item 4</li>
+                        </ol>
+                    </div>
+
+                    <div>
+                        <h3>Numerics Type</h3>
+                        <ol type="1">
+                            <li>Item 1</li>
+                            <li>Item 2</li>
+                            <li>Item 3</li>
+                            <li>Item 4</li>
+                        </ol>
+                    </div>
+
+                    <div>
+                        <h3>Uppercase Letters Type</h3>
+                        <ol type="A">
+                            <li>Item 1</li>
+                            <li>Item 2</li>
+                            <li>Item 3</li>
+                            <li>Item 4</li>
+                        </ol>
+                    </div>
+
+                    <div>
+                        <h3>Lowercase Letters Type</h3>
+                        <ol type="a">
+                            <li>Item 1</li>
+                            <li>Item 2</li>
+                            <li>Item 3</li>
+                            <li>Item 4</li>
+                        </ol>
+                    </div>
+
+                    <div>
+                        <h3>Uppercase Roman Numbers Type</h3>
+                        <ol type="I">
+                            <li>Item 1</li>
+                            <li>Item 2</li>
+                            <li>Item 3</li>
+                            <li>Item 4</li>
+                        </ol>
+                    </div>
+
+                    <div>
+                        <h3>Lowercase Roman Numbers Type</h3>
+                        <ol type="i">
+                            <li>Item 1</li>
+                            <li>Item 2</li>
+                            <li>Item 3</li>
+                            <li>Item 4</li>
+                        </ol>
+                    </div>
+                </div>
+            </li>
+            
+            <li>
+                <p class="exp_case_desc">IFrame</p>
+                <p class="exp_code">
+                    <code>
+                        &lt;iframe name=&quot;display_here&quot; src=&quot;http://www.w3schools.com&quot; width=&quot;100%&quot; height=&quot;500px&quot;&gt;&lt;/iframe&gt;
+                    </code>
+                </p>
+                <p class="output">
+
+                    <a href="http://www.w3schools.com" target="display_here">W3Schools</a>
+                    <a href="http://www.bing.com/" target="display_here">Bing</a>
+                    <a href="http://en.wikipedia.org/wiki/Main_Page" target="display_here">Wikipedia</a>
+                
+                    <iframe name="display_here" src="http://www.w3schools.com" width="100%" height="500px"></iframe>
+                    
+                </p>
+            </li>
+
+            <li>
+                <p class="exp_case_desc">Image tag</p>
+                <p class="exp_code">
+                    <code>
+                        &lt;img src=&quot;http://trickgs.com/blog/wp-content/uploads/2014/07/html_css.png&quot; alt=&quot;This text is displayed when the image cant be loaded &quot; /&gt;
+                    </code>
+                </p>
+                <p class="output">
+                    <img src="http://trickgs.com/blog/wp-content/uploads/2014/07/html_css.png" alt="This text is displayed when the image cant be loaded " />
+                </p>
+            </li>
+
+        </ul>
+    </nav>
+
+    <footer>
+        <div>
+            <h3>Source Code</h3>
+            <p><a href="../../fileview/Default.aspx?~/Experiments/HTML/BasicTags.html" target="_blank">View source</a></p>
+        </div>
+
+        <div>
+            <h3>Reference</h3>
+            <p><a href="http://www.w3schools.com/html/default.asp" target="_blank">www.w3schools.com</a></p>
+        </div>
+    </footer>
+</body>
+</html>

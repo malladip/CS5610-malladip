@@ -1,0 +1,30 @@
+﻿.exp_case_desc{
+
+}
+
+.exp_code{
+   background-color:Highlight;
+   word-wrap: break-word;
+}
+
+.output{
+    background-color:lightgray ;
+}
+
+.source_code{
+    background-color:lightsalmon;
+}
+
+.references{
+    background-color:ThreeDLightShadow;
+}
+
+#disc{
+    list-style-type:disc;
+    }
+#circle{
+    list-style-type:circle;
+    }
+#square{
+    list-style-type:square;
+    }

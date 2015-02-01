@@ -1,0 +1,6 @@
+﻿../../story/whatisnext.htm?../experiments/JavaScript_Bootstrap/jsStory.txt  Bootstrap & JavaScript Experiments
+CalsiResponsiveExperiment.html				CSS Responsive Design
+CalciJSExperiment.html						JavaScript - Calculator
+001-ChromeHomePageExperiment.html			Google Chrome New Tab Page
+002-DraggableTextExperiment.html			Draggable Content
+003-HoverMouse.html							Mouse Hover With Java Script

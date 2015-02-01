@@ -1,0 +1,24 @@
+﻿#west, #center, #east{
+    float:left;
+}
+#west{
+    background-color:lightpink;
+    width: 400px;
+}
+#center{
+    background-color:lightcyan;
+    width: 550px;
+}
+#east{
+    background-color:lightgreen;
+    width: 400px;
+}
+
+#north,#south{
+    background-color:skyblue;
+}
+
+.container{
+    width:1350px;
+    margin:auto;    
+}

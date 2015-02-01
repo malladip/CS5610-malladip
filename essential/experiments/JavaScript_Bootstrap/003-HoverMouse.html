@@ -1,0 +1,133 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Hover Mouse</title>
+    
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="003-StyleSheet.css" />
+ 
+    <link rel="stylesheet" href="../HTML/StyleSheet.css" />
+
+    <script type="text/javascript" src="003-JavaScript.js"></script>
+</head>
+<body>
+    <header>
+        <center><h2>Mouse Hover</h2></center>
+    </header>
+    
+    <ul>
+        <li>
+            <p class="exp_case_desc">Changing the width of an image dynamiccaly using Java script</p>
+            <p class="exp_code">
+                    function mouseOver(ev) {<br />
+                    ev.target.style.width = &quot;30%&quot;;<br />
+                    }<br />
+                    <br />
+                    function mouseOut(ev) {<br />
+                    ev.target.style.width = &quot;20%&quot;;<br />
+                    }
+            </p>
+            <p class="output">
+                <div class="text-center border">
+                    <img id="image" onmouseover="mouseOver(event)" onmouseout="mouseOut(event)" src="data:image/png;base64,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" alt="HTML Image">
+                </div>
+            </p>
+        </li>
+
+        <li>
+            <p class="exp_case_desc">Changing the background color and size of the text using Java script</p>
+            <p class="exp_code">
+                    function mouseOver(ev) {<br />
+                    ev.target.style.fontSize = &apos;xx-large&apos;;<br />
+                    ev.target.style.backgroundColor = &apos;red&apos;;<br />
+                    }<br />
+                    <br />
+                    function mouseOut(ev) {<br />
+                    ev.target.style.fontSize = &apos;larger&apos;;<br />
+                    ev.target.style.backgroundColor = &apos;yellow&apos;;<br />
+                    }
+            </p>
+            <p class="output">
+                <div class="text-center border">
+                    <p id="paragraph" onmouseover="mouseOver(event)" onmouseout="mouseOut(event)">Paragraph</p>
+                </div>
+            </p>
+        </li>
+       
+        <li>
+            <p class="exp_case_desc">Changing the innter text of a paragraph using Java script</p>
+            <p class="exp_code">
+                    function mouseOver(ev) {<br />
+                    ev.target.innerHTML = &apos;Mouse over me!! :)&apos;;<br />
+                    }<br />
+                    <br />
+                    function mouseOut(ev) {<br />
+                    ev.target.innerHTML = &apos;Please mouse over!!&apos;;<br />
+                    }
+            </p>
+            <p class="output">
+                <div class="text-center border">
+                    <p id="text" onmouseover="mouseOver(event)" onmouseout="mouseOut(event)">Please mouse over!!</p>
+                </div>
+            </p>
+        </li>
+
+
+        <li>
+            <p class="exp_case_desc">Changing the class name dynamically using Java script</p>
+            <p class="exp_code">
+                    function mouseOver(ev) {<br />
+                    ev.target.innerHTML = &apos;I moved left&apos;;<br />
+                    ev.target.parentNode.className = &apos;border&apos;;<br />
+                    }<br />
+                    <br />
+                    function mouseOut(ev) {<br />
+                    ev.target.innerHTML = &apos;Move me left&apos;;<br />
+                    ev.target.parentNode.className = &apos;border text-center&apos;;<br />
+                    }
+            </p>
+            <p class="output">
+                <div class="text-center border">
+                    <p id="move" onmouseover="mouseOver(event)" onmouseout="mouseOut(event)">Move me left</p>
+                </div>
+            </p>
+        </li>
+
+        <li>
+            <p class="exp_case_desc">Using Switch case in java script</p>
+            <p class="exp_code">
+                    function mouseOver(ev) {<br />
+                    switch (ev.target.id) {<br />
+                    case &apos;image&apos;:<br />
+                    ...<br />
+                    case &apos;paragraph&apos;:<br />
+                    ...<br />
+                    }<br />
+                    }
+            </p>
+        </li>
+
+    </ul>
+
+    <footer>
+        <div class="source_code">
+            <h3>Source Code</h3>
+            <p><a href="../../fileview/Default.aspx?~/experiments/JavaScript_Bootstrap/003-HoverMouse.html" target="_blank">HTML</a></p>
+            <p><a href="../../fileview/Default.aspx?~/experiments/JavaScript_Bootstrap/003-StyleSheet.css" target="_blank">CSS</a></p>
+            <p><a href="../../fileview/Default.aspx?~/experiments/JavaScript_Bootstrap/003-JavaScript.js" target="_blank">Java Script</a></p>
+        </div>
+
+        <div class="references">
+            <h3>Reference</h3>
+            <p><a href="http://www.w3schools.com/js/" target="_blank">www.w3schools.com</a></p>
+        </div>
+    </footer>
+
+</body>
+</html>

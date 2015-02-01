@@ -1,0 +1,5 @@
+﻿../../story/whatisnext.htm?../experiments/HTML/htmlStory.txt  HTML Experiments
+BasicTags.html		Basic HTML Tags
+AnchorTag.html		Anchor Tag
+InputFields.html	Input Fields
+SemanticTags.html	HTML5 Semantic Tags

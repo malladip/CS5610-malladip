@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title> Anchor Tag</title>
+    <link rel="stylesheet" href="StyleSheet.css" />
+</head>
+<body>
+    <header>
+        <center><h2>Anchor Tag</h2></center>
+    </header>
+
+    <nav name="top">
+        <ul>
+            <li name="top">
+                <p class="exp_case_desc">The below code creates a link to www.wikipedia.org. When clicked, opens in current tab</p>
+                <p class="exp_code">
+                    <code>
+                        &lt;a href=&quot;http://en.wikipedia.org/wiki/Main_Page&quot;&gt;Open Wiki in same tab&lt;/a&gt;
+                    </code>
+                </p>
+                <p class="output">
+                    <a href="http://en.wikipedia.org/wiki/Main_Page">Open Wiki in same tab</a>
+                </p>
+            </li>
+
+            <li>
+                <p class="exp_case_desc">Opens in new tab</p>
+                <p class="exp_code">
+                    <code>
+                        &lt;a href=&quot;http://en.wikipedia.org/wiki/Main_Page&quot; target=&quot;_blank&quot;&gt;Open Wiki in new tab&lt;/a&gt;
+                    </code>
+                </p>
+                <p class="output">
+                    <a href="http://en.wikipedia.org/wiki/Main_Page" target="_blank">Open Wiki in new tab</a>
+                </p>
+            </li>
+
+            <li>
+                <p class="exp_case_desc">Opens in iframe</p>
+                <p class="exp_code">
+                    <code>
+                        &lt;a href=&quot;http://en.wikipedia.org/wiki/Main_Page&quot; target=&quot;inline&quot;&gt;Open Wiki below &lt;/a&gt;
+                    </code>
+                </p>
+                <p class="output">
+                    <a href="http://en.wikipedia.org/wiki/Main_Page" target="inline">Open Wiki below </a>
+                    <iframe name="inline" width="100%" height="650px" frameborder="0"></iframe>
+                </p>
+            </li>
+
+            <li>
+                <p class="exp_case_desc">Go to a part in the same page</p>
+                <p class="exp_code">
+                    <code>
+                        &lt;a href=&quot;#top&quot;&gt;Top&lt;/a&gt;
+                    </code>
+                </p>
+                <p class="output">
+                    <a href="#top">Top</a>
+                </p>
+            </li>
+        </ul>
+    </nav>
+
+    <footer>
+        <div class="source_code">
+            <h3>Source Code</h3>
+            <p><a href="../../fileview/Default.aspx?~/experiments/HTML/AnchorTag.html" target="_blank">View source</a></p>
+        </div>
+
+        <div class="references">
+            <h3>Reference</h3>
+            <p><a href="http://www.w3schools.com/tags/tag_a.asp" target="_blank">www.w3schools.com</a></p>
+        </div>
+    </footer>
+</body>
+</html>

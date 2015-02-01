@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Draggable Text</title>
+    <link rel="stylesheet" href="../HTML/StyleSheet.css" />
+
+</head>
+<body>
+    <header>
+        <center><h2>Draggable Text</h2></center>
+    </header>
+    <nav>
+        <ul>
+            <li>
+                <p class="exp_case_desc">For making a text draggable, the following steps must be followed</p>
+                <p class="exp_case_desc" >
+                    <ul>
+                        <li>Give Ids tothe draggable and dragging into elements.</li>
+                        <li>For elements which are for dropping on, call java script functions for events "ondrop" and "ondragover"</li>
+                        <li>For elements which are dragged, call java script functions for events "draggable" and "ondragstart"</li>
+                    </ul>
+                </p>
+                <p class="exp_case_desc">In the javascript, write the below code:</p>
+                <p class="exp_code">
+                    <code>
+                        function allowDrop(ev) {<br />
+                        ev.preventDefault();<br />
+                        }<br />
+
+                        function drag(ev) {<br />
+                        ev.dataTransfer.setData(&quot;object&quot;, ev.target.id);<br />
+                        }<br />
+
+                        function drop(ev) {<br />
+                        ev.preventDefault();<br />
+                        var data = ev.dataTransfer.getData(&quot;object&quot;);<br />
+                        ev.target.appendChild(document.getElementById(data));<br />
+                        }
+                    </code>
+                </p>
+                <p class="output">
+                    <iframe src="002-DraggableText.html" width="100%"></iframe>
+                </p>
+            </li>
+        </ul>
+    </nav>
+
+    <footer>
+        <div class="source_code">
+            <h3>Source Code</h3>
+            <p><a href="../../fileview/Default.aspx?~/experiments/JavaScript_Bootstrap/002-DraggableTextExperiment.html" target="_blank">Current page</a></p>
+            <p><a href="../../fileview/Default.aspx?~/experiments/JavaScript_Bootstrap/002-DraggableText.html" target="_blank">Experiment</a></p>
+            <p><a href="../../fileview/Default.aspx?~/experiments/JavaScript_Bootstrap/002-StyleSheet.css" target="_blank">CSS</a></p>
+            <p><a href="../../fileview/Default.aspx?~/experiments/JavaScript_Bootstrap/002-JavaScript.js" target="_blank">JavaScript</a></p>
+        </div>
+
+        <div class="references">
+            <h3>Reference</h3>
+            <p><a href="http://www.w3schools.com/html/html5_draganddrop.asp" target="_blank">www.w3schools.com</a></p>        
+        </div>
+    </footer>
+
+</body>
+</html>
