@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Geoloations</title>
+ 
+    <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+    <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+       
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
+    <script src="https://maps.googleapis.com/maps/api/js"></script>
+    <script src="002-JavaScript.js"></script>
+
+    <link rel="stylesheet" href="002-StyleSheet.css" />
+
+</head>
+<body> 
+    <div id="map" ></div>
+     <div id="inputs">
+         <input type="text" id="add" placeholder="Enter Address and Hit Enter" />
+         <input type="button" id="my_place" onclick="getCurrentLocation()" value="Go to my current location" />
+     </div>
+</body>
+</html>

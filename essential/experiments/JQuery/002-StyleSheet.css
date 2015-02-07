@@ -1,0 +1,16 @@
+﻿body {
+    background-color: skyblue;
+}
+
+#map{
+    width: 350px;
+    height: 335px;
+}
+
+#inputs{
+    position:absolute;
+}
+
+#add,#my_place{
+   width:100%;
+}
