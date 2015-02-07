@@ -1,0 +1,29 @@
+﻿body{
+    background-image:url("http://fc02.deviantart.net/fs70/i/2012/089/5/9/windows_8_start_screen_background_by_bsodman-d4ue58e.png");
+}
+
+.center{
+    top: 50%; left: 50%;
+    margin-left: auto ;
+    margin-right: auto ;
+}
+
+
+#login_content{
+    width: 20%;
+    margin: 0 auto;
+    margin-top:20%;
+}
+
+.user-icon{
+   height:85%;
+   width:100%;
+}
+
+.user-icon-button{
+    margin:15px;
+    float:left;
+    padding:0px;
+    height:100px;
+    width:100px;
+}
