@@ -2,10 +2,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title>Youtube video</title>
-
-    <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
-    <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-    
+ 
+    <link rel="stylesheet" href="css/jquery-ui.css" />
     <script src="js/jquery.js"></script>
     <script src="js/jquery-ui.js"></script>
 
@@ -25,5 +23,51 @@
         <input type="text" id="video-link" name="video-link" placeholder="https://www.youtube.com/watch?v=abcdefghi" />
         <input type="button" id="go" value="Embed my video" />
     </div>
+
+
+    <div class="documentation">
+        <p class="about-exp">
+            In this experiment, I extended the <a href="004-EmbedYoutubeVideo.html">previous experiment</a> by making the vides as draggable and resizable.
+        </p>
+
+        <ul>
+            <li>
+                <p class="about-exp">This experiment needs JQuery UI. This can be linked by below code.</p>
+                <code>
+                    &lt;link rel=&quot;stylesheet&quot; href=&quot;css/jquery-ui.css&quot; /&gt;<br />
+                    &lt;script src=&quot;js/jquery.js&quot;&gt;&lt;/script&gt;<br />
+                    &lt;script src=&quot;js/jquery-ui.js&quot;&gt;&lt;/script&gt;<br />
+                </code>
+            </li>
+
+            <li>
+                <p class="about-exp">After adding the JQuery UI plugin, many useful functions such as draggable, resizable and sortable etc can be used.</p>
+                <code>
+                    var draggable_div = $(&quot;&lt;div&gt;&quot;)<br />
+                    .attr(&apos;class&apos;, &apos;video thumbnail&apos;)<br />
+                    .resizable()<br />
+                    .draggable()<br />
+                    .attr(&apos;draggable&apos;,&apos;true&apos;)<br />
+                    .appendTo(&apos;#exp_container&apos;);<br />
+                </code>
+            </li>
+
+        </ul>
+        <footer>
+            <div class="source">
+                <h2>Source Code</h2>
+                <p><a href="../../fileview/Default.aspx?~/experiments/JQuery/005-YoutubeVideoDragResize.html" target="_blank">HTML</a></p>
+                <p><a href="../../fileview/Default.aspx?~/experiments/JQuery/005-JavaScript.js" target="_blank">JavaScript</a></p>
+                <p><a href="../../fileview/Default.aspx?~/experiments/JQuery/005-StyleSheet.css" target="_blank">CSS</a></p>
+            </div>
+
+            <div class="references">
+                <h2>References</h2>
+                <p><a href="http://jqueryui.com/draggable/" target="_blank">http://jqueryui.com/ - Draggable</a></p>
+                <p><a href="http://jqueryui.com/resizable/" target="_blank">http://jqueryui.com/ - Resizable</a></p>
+            </div>
+        </footer>
+    </div>
+
 </body>
 </html>

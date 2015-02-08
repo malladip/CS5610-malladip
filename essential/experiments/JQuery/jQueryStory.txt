@@ -3,4 +3,5 @@
 002-GeoLocation.html					Geo Locations - Google Maps
 003-LoginPage.html						Login Page - JQuery Annimations
 004-EmbedYoutubeVideo.html				Embedding Youtube Video
+005-YoutubeVideoDragResize.html			Making the youtube videos draggable and resizable
 			
