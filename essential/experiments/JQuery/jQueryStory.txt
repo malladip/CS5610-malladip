@@ -1,0 +1,6 @@
+﻿../../story/whatisnext.htm?../experiments/JQuery/jQueryStory.txt  JQuery Experiments
+001-CurrentTimeDynamic.html				Local Time Of User
+002-GeoLocation.html					Geo Locations - Google Maps
+003-LoginPage.html						Login Page - JQuery Annimations
+004-EmbedYoutubeVideo.html				Embedding Youtube Video
+			

@@ -25,5 +25,91 @@
          <input type="text" id="add" placeholder="Enter Address and Hit Enter" />
          <input type="button" id="my_place" onclick="getCurrentLocation()" value="Go to my current location" />
      </div>
+
+    <div class="documentation">
+        <p class="about-exp">
+            Here I tried to embed the google maps on to my page.
+        </p>
+
+        <ul>
+            <li>
+                <p class="about-exp"> Enter key event can be recognized as below</p>
+                <code>
+                    if (e.keyCode == 13) {   //Enter key <br />
+                    getAddress();<br />
+                    }<br />
+                </code>
+            </li>
+
+            <li>
+                <p class="about-exp">
+                    The google maps can be embeded using the below code
+                </p>
+                <code>
+                    <textarea id="textarea" disabled>
+                        var map;
+
+                        google.maps.event.addDomListener(window, 'load', initialize);
+
+                        $('#add').live("keypress", function (e) {
+                        if (e.keyCode == 13) {   //Enter key
+                        getAddress();
+                        }
+                        });
+
+                        function initialize() {
+
+                        var mapCanvas = document.getElementById('map');
+
+                        map = new google.maps.Map(mapCanvas);
+
+                        getCurrentLocation();
+                        }
+
+
+                        function getCurrentLocation() {
+                        if (navigator.geolocation) {
+                        navigator.geolocation.getCurrentPosition(changeLocation);
+                        }
+                        }
+
+                        function changeLocation(position) {
+                        map.setCenter(new google.maps.LatLng(position.coords.latitude, position.coords.longitude));
+                        map.setZoom(14);
+                        }
+
+                        function getAddress() {
+
+                        var geocoder = new google.maps.Geocoder();
+                        var address = document.getElementById("add").value;
+                        geocoder.geocode({ 'address': address }, function (results, status) {
+                        if (status == google.maps.GeocoderStatus.OK) {
+                        var lat = results[0].geometry.location.lat();
+                        var long = results[0].geometry.location.lng();
+                        map.setCenter(new google.maps.LatLng(lat, long));
+                        map.setZoom(14);
+                        }
+                        });
+                        };
+
+                    </textarea>
+                </code>
+            </li>
+        </ul>
+        <footer>
+            <div class="source">
+                <h2>Source Code</h2>
+                <p><a href="../../fileview/Default.aspx?~/experiments/JQuery/002-GeoLocation.html" target="_blank">HTML</a></p>
+                <p><a href="../../fileview/Default.aspx?~/experiments/JQuery/002-JavaScript.js" target="_blank">JavaScript</a></p>
+                <p><a href="../../fileview/Default.aspx?~/experiments/JQuery/003-StyleSheet.css" target="_blank">CSS</a></p>
+            </div>
+
+            <div class="references">
+                <h2>References</h2>
+                <p><a href="https://developers.google.com/maps/tutorials/fundamentals/adding-a-google-map" target="_blank">Google Tutorial</a></p>
+                <p><a href="http://www.w3schools.com/html/html5_geolocation.asp" target="_blank">www.w3schools.com</a></p>
+            </div>
+        </footer>
+    </div>
 </body>
 </html>

@@ -1,0 +1,78 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Youtube video</title>
+
+    <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+    <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script src="js/jquery.js"></script>
+    <script src="js/jquery-ui.js"></script>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="004-StyleSheet.css" />
+    <script src="004-JavaScript.js"></script>
+
+</head>
+<body>
+    <div id="exp_container" class="container">
+        <input type="text" id="video-link" name="video-link" placeholder="https://www.youtube.com/watch?v=abcdefghi" />
+        <input type="button" id="go" value="Embed my video" />
+    </div>
+
+
+    <div class="documentation">
+        <p class="about-exp">
+            In this experiment, I tried to embed a youtube video into the current page.
+        </p>
+
+        <ul>
+            <li>
+                <p class="about-exp"> All youtube videos have a URL of perticualr format.</p>
+                <code>
+                    https://www.youtube.com/watch?v=eTUstNknCrw
+                </code>
+                <p class="about-exp"> To embed, all we need is the code after the "=" sign in the URL</p>
+                <p class="about-exp"> A youtube video is embeded as an IFrame</p>
+                <code>
+                   <pre>&lt;iframe width=&quot;1280&quot; height=&quot;720&quot; src=&quot;https://www.youtube.com/embed/eTUstNknCrw&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;</pre>
+                </code>
+                <p class="about-exp">So we can edit our required attributes of the iframe and customize the embedding video</p>
+            </li>
+
+            <li>
+                <p class="about-exp">Creating a new element using JQuery</p>
+                <code>
+                    var new_iframe = $(&quot;&lt;iframe /&gt;&quot;)<br />
+                    .attr(&apos;class&apos;, &apos;video thumbnail&apos;)<br />
+                    .attr(&apos;src&apos;, new_link)<br />
+                    .attr(&apos;frameborder&apos;, &apos;0&apos;)<br />
+                    .css(&apos;float&apos;, &apos;left&apos;)<br />
+                    .appendTo(&apos;#exp_container&apos;);<br />
+                </code>
+            </li>
+
+        </ul>
+        <footer>
+            <div class="source">
+                <h2>Source Code</h2>
+                <p><a href="../../fileview/Default.aspx?~/experiments/JQuery/004-EmbedYoutubeVideo.html" target="_blank">HTML</a></p>
+                <p><a href="../../fileview/Default.aspx?~/experiments/JQuery/004-JavaScript.js" target="_blank">JavaScript</a></p>
+                <p><a href="../../fileview/Default.aspx?~/experiments/JQuery/004-StyleSheet.css" target="_blank">CSS</a></p>
+            </div>
+
+            <div class="references">
+                <h2>References</h2>
+                <p><a href="http://www.w3schools.com/jquery/jquery_dom_add.asp" target="_blank">www.w3schools.com</a></p>
+                <p><a href="https://www.youtube.com/watch?v=ZnuwB35GYMY" target="_blank">Youtube - How To Embed A YouTube Video </a></p>
+            </div>
+        </footer>
+    </div>
+
+</body>
+</html>

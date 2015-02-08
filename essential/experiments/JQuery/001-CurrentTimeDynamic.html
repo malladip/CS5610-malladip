@@ -41,7 +41,75 @@
             <div id="year" class="col-xs-4 text-center">
 
             </div>
-        </div>   
+        </div>
+           
+        <div class="documentation">
+            <p class="about-exp">
+                This experiment is my Hello World in JQuery. 
+            </p>
+            <p class="about-exp">
+                Here I tried to display the current time(local time of the user).
+            </p>
+
+            <ul>
+                <li>
+                    <p class="about-exp">
+                        For linking the jQuery framework,the below code must be in the head tag.
+                    </p>
+                    <code>
+                        &lt;script src=&quot;//code.jquery.com/jquery-1.11.2.min.js&quot;&gt;&lt;/script&gt;<br />
+                        &lt;script src=&quot;//code.jquery.com/jquery-migrate-1.2.1.min.js&quot;&gt;&lt;/script&gt;
+                    </code>
+                </li>
+
+                <li>
+                    <p class="about-exp">
+                        For letting the DOM load before the JQuery function starts, we first call a function in which we again call actual functions.
+                    </p>
+                    <code>
+                        $(function () {<br />
+                        ...our code goes here...<br />
+                        })<br />
+                    </code>
+                </li>
+
+                <li>
+                    <p class="about-exp">
+                        JQuery has a powerful way of selecting elements. <br />
+                        # for  ID <br />
+                        . for Class <br />
+                        Similarly, many follows.
+                    </p>
+                    <code>
+                        $("#date").find("#month").html(month + 1);
+                    </code>
+                </li>
+                <li>
+                    <p class="about-exp">
+                        We can make a part of code execute after a specfied interval of time as below.
+                    </p>
+                    <code>
+                        setInterval(function () { }, 1000);
+                    </code>
+                </li>
+                
+            </ul>
+            <footer>
+                <div class="source">
+                    <h2>Source Code</h2>
+                    <p><a href="../../fileview/Default.aspx?~/experiments/JQuery/001-CurrentTimeDynamic.html" target="_blank">HTML</a></p>
+                    <p><a href="../../fileview/Default.aspx?~/experiments/JQuery/001-JavaScript.js" target="_blank">JavaScript</a></p>
+                    <p><a href="../../fileview/Default.aspx?~/experiments/JQuery/001-StyleSheet.css" target="_blank">CSS</a></p>
+                </div>
+
+                <div class="references">
+                    <h2>References</h2>
+                    <p><a href="http://www.w3schools.com/jquery/default.asp" target="_blank">www.w3schools.com/</a></p>
+                    <p><a href="https://www.youtube.com/watch?v=ZMQD_X0uaE0" target="_blank">Prof. Jose Class - jQuery Introduction (Grad)</a></p>
+                    <p><a href="https://www.youtube.com/watch?v=aNpqDq6lwTg" target="_blank">Prof. Jose Class - jQuery Introduction (Undergrad)</a></p>
+                </div>
+            </footer>
+        </div>
     </div>
 
 </body>

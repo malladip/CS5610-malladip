@@ -27,3 +27,9 @@
     height:100px;
     width:100px;
 }
+
+.documentation{
+    clear:both;
+    font-family:'Comic Sans MS';
+    color:white;
+}

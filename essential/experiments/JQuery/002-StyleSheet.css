@@ -14,3 +14,12 @@
 #add,#my_place{
    width:100%;
 }
+
+.documentation{
+    margin-top:55px;
+}
+
+textarea{
+    height:500px;
+    width: 310px;
+}
