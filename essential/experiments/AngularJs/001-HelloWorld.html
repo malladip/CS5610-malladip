@@ -1,0 +1,134 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Hello World Angular JS</title>
+
+    <!--Angular JS -->
+    <script src="js/angular.min.js"></script>
+
+    <!--JQuery -->
+    <link rel="stylesheet" href="css/jquery-ui.css" />
+    <script src="js/jquery.js"></script>
+    <script src="js/jquery-ui.js"></script>
+
+    <!--BootStrap -->
+    <!-- Latest compiled aznd minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="css/001-HelloWorld.css">
+    <script src="js/001-HelloWorld.js"></script>
+</head>
+<body>
+
+    <div class="container" ng-app="HelloWorld" >
+
+        <h1 class="text-center">Hello World AngularJS</h1>
+
+        <div>
+            <h2>Basic AngularJS</h2>
+            <div>
+                <ul>
+                    <li>The <b>ng-app</b>   directive initializes an AngularJS application</li>
+
+                    <li>The <b>ng-init</b> directive initialize application data</li>
+
+                    <li>The <b>ng-model</b> directive binds the value of HTML controls (input, select, textarea) to application data.</li>
+                </ul>
+            </div>
+
+            <div>
+                <h3>Code:</h3>
+                <pre>ng-app="HelloWorld"</pre>
+                <pre>ng-init="initialValue='Web Developement'"</pre>
+                <pre>ng-model="initialValue"</pre>
+            </div>
+
+            <div>
+                <h3>Output:</h3>
+                <div ng-init="initialValue='Web Developement'">
+                    <p><label for="textarea">What ever you write here:</label><textarea id="textarea" ng-model="initialValue" class="form-control"></textarea></p>
+                    <p><label>You See here:</label><p>{{ initialValue }}</p></p>
+                </div>
+            </div>
+        </div>
+
+
+        <div>
+            <h2>Repeating HTML Elements</h2>
+            <div>The <b>ng-repeat</b> directive repeats an HTML element</div>
+
+            <div>
+                <h3>Code:</h3>
+                <pre>ng-repeat="s in schedule"</pre>
+            </div>
+
+            <div ng-init="schedule=[{day:'Monday',work:'Algorithms Class'},
+                                    {day:'Tuesday',work:''},
+                                    {day:'Wednesday',work:'Web Development Class'},
+                                    {day:'Thursday',work:'Algorithms Assignment'},
+                                    {day:'Friday',work:'Web Development Class'},
+                                    {day:'Saturday',work:''},
+                                    {day:'Sunday',work:''}]">
+                <h3>Output:</h3>
+                <table class="table table-bordered table-hover">
+                    <tr>
+                        <th>Day</th>
+                        <th>Work</th>
+                    </tr>
+                    <tr ng-repeat="s in schedule">
+                        <td>{{ s.day }}</td>
+                        <td>{{ s.work }}</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+
+        <div>
+            <h2>Controller In an External File</h2>
+            <div>
+                <ul>
+                    <li><b>AngularJS controllers</b> control the data of AngularJS applications.</li>
+                    <li>AngularJS controllers are regular JavaScript Objects.</li>
+                    <li>The <b>ng-controller</b> directive defines the application controller.</li>
+                </ul>
+
+            </div>
+
+            <div>
+                <h3>Code:</h3>
+                <pre>ng-controller="ControllerName"</pre>
+            </div>
+
+            <div ng-controller="Controller">
+                <h3>Output:</h3>
+
+                <input type="text" id="fullName" name="fullName" class="form-control" ng-model="fullName" />
+
+                <p>
+                    <input type="text" class="form-control" ng-model="Name" />
+                </p>
+
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div>
+            <h2>Source Code</h2>
+            <p><a href="../../fileview/Default.aspx?~/experiments/AngularJs/001-HelloWorld.html" target="_blank">HTML</a></p>
+            <p><a href="../../fileview/Default.aspx?~/experiments/AngularJs/css/001-HelloWorld.css" target="_blank">CSS</a></p>
+            <p><a href="../../fileview/Default.aspx?~/experiments/AngularJs/js/001-HelloWorld.js" target="_blank">JavaScript</a></p>
+        </div>
+        <div>
+            <h2>References</h2>
+            <a href="http://www.w3schools.com/angular/angular_intro.asp" target="_blank">www.w3schools.com</a>
+        </div>
+    </footer>
+
+</body>
+</html>

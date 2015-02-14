@@ -1,0 +1,50 @@
+﻿  ul.master_navigation
+    {
+        font-size: 100%;
+        font-weight: bold;
+        text-align: center;
+        list-style: none;
+        margin: 0.5em 0;
+        padding: 0;
+    }
+
+    ul.master_navigation li
+    {
+        display: inline-block;
+        padding: 0 0.5%;
+    }
+
+    a
+    {
+        color: #08f;
+        font-weight: bold;
+        text-decoration: none;
+    }
+
+    a:visited
+    {
+        color: #88f;
+    }
+
+    a:hover
+    {
+        color: #f00;
+    }
+
+    p
+    {
+        text-align: justify;
+    }
+    
+    
+    body {
+        max-width: 100%;
+        margin: 0;
+        padding: 0;
+        background-image: url(../images/backgrounds/grey.jpg);
+
+    }
+
+    .pad {
+        padding: 10px;
+    }
