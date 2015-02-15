@@ -2,5 +2,6 @@
 
 app.controller("Controller", function ($scope) {
 
-    $scope.Name = "Welcome " + $scope.fullName;
+    $scope.x = "Welcome from Controller";
+
 });

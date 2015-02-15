@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Android Playstore</title>
+
+    <!--JQuery -->
+    <link rel="stylesheet" href="css/jquery-ui.css" />
+    <script src="js/jquery.js"></script>
+    <script src="js/jquery-ui.js"></script>
+
+    <!--BootStrap -->
+    <!-- Latest compiled aznd minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="css/002-AJAX.css">
+    <script src="js/002-AJAX.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div>
+            <div>
+                <p>
+                    <input id="movieName" class="form-control" />
+                </p>
+                <p>
+                    <input type="button" id="go" class="form-control" value="Get my Moovie" />
+                </p>
+            </div>
+
+            <div>
+                <ul id="moviesList"></ul>
+            </div>
+        
+        </div>
+
+        <div>Find a API which provides with the data from required database</div>
+
+        <div>
+            <h3>Code:</h3>
+            <pre>
+            $.ajax({
+            url: "http://www.myapifilms.com/imdb?title=" + title + "&format=JSONP&aka=0&business=0&seasons=0&seasonYear=0&technical=0&filter=N&exactFilter=0&limit=1&lang=en-us&actors=N&biography=0&trailer=0&uniqueName=0&filmography=0&bornDied=0&starSign=0&actorActress=0&actorTrivia=0&movieTrivia=0&awards=0&moviePhotos=N&movieVideos=N",
+            dataType: "jsonp",
+            success: functionName
+            });</pre>
+        </div>
+
+    </div>
+
+    <footer>
+        <div>
+            <h2>Source Code</h2>
+            <p><a href="../../fileview/Default.aspx?~/experiments/AngularJs/002-AJAX.html" target="_blank">HTML</a></p>
+            <p><a href="../../fileview/Default.aspx?~/experiments/AngularJs/css/002-AJAX.css" target="_blank">CSS</a></p>
+            <p><a href="../../fileview/Default.aspx?~/experiments/AngularJs/js/002-AJAX.js" target="_blank">JavaScript</a></p>
+        </div>
+        <div>
+            <h2>References</h2>
+            <a href="https://www.youtube.com/watch?v=mErJ3HFWZHs" target="_blank">Prof. Jose Class</a>
+        </div>
+    </footer>
+</body>
+</html>
+

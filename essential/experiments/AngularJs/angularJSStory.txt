@@ -1,3 +1,4 @@
-﻿../../story/whatisnext.htm?../experiments/AngularJs/angularJSStory.txt  AngularJS Experiments
+﻿../../story/whatisnext.htm?../experiments/AngularJs/angularJSStory.txt  AJAX & AngularJS Experiments
 001-HelloWorld.html				Hello World Angular JS
+002-AJAX.html					AJAX Call
 			
