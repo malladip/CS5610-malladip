@@ -1,50 +1,111 @@
-﻿  ul.master_navigation
-    {
-        font-size: 100%;
-        font-weight: bold;
-        text-align: center;
-        list-style: none;
-        margin: 0.5em 0;
-        padding: 0;
-    }
+﻿ul.master_navigation {
+    font-size: 100%;
+    font-weight: bold;
+    text-align: center;
+    list-style: none;
+    margin: 0.5em 0;
+    padding: 0;
+}
 
-    ul.master_navigation li
-    {
+    ul.master_navigation li {
         display: inline-block;
         padding: 0 0.5%;
     }
 
-    a
-    {
-        color: #08f;
-        font-weight: bold;
-        text-decoration: none;
-    }
+a {
+    color: #08f;
+    font-weight: bold;
+    text-decoration: none;
+}
 
-    a:visited
-    {
+    a:visited {
         color: #88f;
     }
 
-    a:hover
-    {
-        color: #f00;
+    a:hover {
+        color: white;
     }
 
-    p
-    {
-        text-align: justify;
-    }
-    
-    
-    body {
-        max-width: 100%;
-        margin: 0;
-        padding: 0;
-        background-image: url(../images/backgrounds/grey.jpg);
+p {
+    text-align: justify;
+}
 
+
+body {
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+    background-image: url(../images/backgrounds/wooden_blue.jpg);
+}
+
+.pad {
+    padding: 10px;
+}
+
+.box {
+    margin-top: 25px;
+    background-color: skyblue;
+    border-radius: 10px;
+    opacity: 0.8;
+}
+
+.button {
+    width: 130px;
+    margin: 17px;
+    font-family: 'Comic Sans MS';
+    font-size: large;
+    color: white;
+    -webkit-transition: 0.3s;
+}
+
+    .button:hover {
+        width: 130px;
+        margin: 17px;
+        font-family: 'Comic Sans MS';
+        font-size: large;
+        color: white;
+        -webkit-transform: scale(1.5);
     }
 
-    .pad {
-        padding: 10px;
+#navigation {
+    margin-top: 20px;
+}
+
+#my_pic {
+    float: left;
+    width: 250px;
+    margin: 16px;
+    -webkit-transition: 0.3s;
+}
+
+    #my_pic:hover {
+        float: left;
+        width: 250px;
+        margin: 16px;
+        -webkit-transform: scale(1.8);
     }
+
+#content {
+    font-family: 'Comic Sans MS';
+    font-size: large;
+
+}
+
+.exp,.project,.blog,.git{
+    margin-left:20px;
+    margin-right:20px;
+    float: left;
+    width: 170px;
+    height: 130px;
+}
+
+.gif{
+    width: 170px;
+    height: 130px;
+}
+
+#footer {
+    font-family: 'Comic Sans MS';
+    font-size: large;
+    color: skyblue;
+}

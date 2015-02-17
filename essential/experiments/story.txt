@@ -3,4 +3,4 @@
 ../story/index.htm?../experiments/CSS/cssStory.txt  Week 2 - CSS Experiments
 ../story/index.htm?../experiments/JavaScript_Bootstrap/jsStory.txt  Week 3 - Bootstrap & JavaScript Experiments
 ../story/index.htm?../experiments/JQuery/jQueryStory.txt  Week 4 - JQuery Experiments
-../story/index.htm?../experiments/AngularJs/angularJSStory.txt  Week 5 - AngularJS Experiments
+../story/index.htm?../experiments/AngularJs/angularJSStory.txt  Week 5 - AJAX & AngularJS Experiments
