@@ -1,0 +1,62 @@
+﻿<h1>Login functionality using AngularJS</h1>
+<br />
+
+<p>I extended my <a href="../AngularRouting/002-ContainerScreen.html" target="_blank">second angularJs experiment</a> to add a register functionality.</p>
+
+<p>The register option allows a user to create his own username and password.</p>
+
+<p> For practice purpose,I hardcoded an initial user with the username and password as below:</p>
+
+<pre>
+Username : admin
+Password : admin
+</pre>
+
+<p>In this experiment, I had to change the data format of the users.</p>
+<pre>var users = [{ username: 'admin', password: 'admin' }];</pre>
+
+<p>
+For pushing the newly added users into the users variable, push() function is used.
+</p>
+<pre>
+var new_user = { username: username, password: password };
+users.push(new_user);
+</pre>
+
+
+<p>
+    As the the users data format changed, the way of cheking the username and password at login time also changes as below:
+</p>
+<pre>
+    for (var i = 0; i < users.length; i++) {
+            if (username == users[i].username && password == users[i].password) {
+                currentUser = username;
+                return currentUser;
+            }
+        }
+</pre>
+
+
+<footer>
+    <div>
+        <h2>Source Code</h2>
+        <p><a href="../../fileview/Default.aspx?~/experiments/AngularRouting/003-ContainerScreen.html" target="_blank">Container Screen</a></p>
+        <p><a href="../../fileview/Default.aspx?~/experiments/AngularRouting/js/003-Navigation.js" target="_blank">Navigation.js</a></p>
+        <p><a href="../../fileview/Default.aspx?~/experiments/AngularRouting/js/003-container.js" target="_blank">Container Controller</a></p>
+        <p><a href="../../fileview/Default.aspx?~/experiments/AngularRouting/partials/003-home.html" target="_blank">Home Screen</a></p>
+        <p><a href="../../fileview/Default.aspx?~/experiments/AngularRouting/partials/003-register.html" target="_blank">Register Screen</a></p>
+        <p><a href="../../fileview/Default.aspx?~/experiments/AngularRouting/js/003-register.js" target="_blank">Register Controller</a></p>
+        <p><a href="../../fileview/Default.aspx?~/experiments/AngularRouting/partials/003-login.html" target="_blank">Login Screen</a></p>
+        <p><a href="../../fileview/Default.aspx?~/experiments/AngularRouting/js/003-login.js" target="_blank">Login Controller</a></p>
+        <p><a href="../../fileview/Default.aspx?~/experiments/AngularRouting/partials/003-profile.html" target="_blank">Profile Screen</a></p>
+        <p><a href="../../fileview/Default.aspx?~/experiments/AngularRouting/js/003-profile.js" target="_blank">Profile Controller</a></p>
+        <p><a href="../../fileview/Default.aspx?~/experiments/AngularRouting/partials/003-contact.html" target="_blank">Contact Screen</a></p>
+        <p><a href="../../fileview/Default.aspx?~/experiments/AngularRouting/js/003-service.js" target="_blank">Service</a></p>
+    </div>
+    <div>
+        <h2>References</h2>
+        <p><a href="https://www.youtube.com/watch?v=jelXe-t2MPQ" target="_blank">Prof. Jose AngularJS Routing Class 1 (18th Feb)</a></p>
+        <p><a href="https://www.youtube.com/watch?v=PlAxG8R_zXI" target="_blank">Prof. Jose AngularJS Routing Class 2 (20th Feb)</a></p>
+        <p><a href="http://stackoverflow.com/questions/11873570/angularjs-for-loop-with-numbers-ranges" target="_blank">StackOverflow</a></p>
+    </div>
+</footer>

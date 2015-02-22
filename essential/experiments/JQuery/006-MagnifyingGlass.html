@@ -1,0 +1,69 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Magnifying Glass</title>
+
+    <script src="../../javascript/jquery.js"></script>
+
+    <!-- Latest compiled aznd minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
+    <script src="006-MagnifyingGlass.js"></script>
+    <link rel="stylesheet" href="006-MagnifyingGlass.css"/>
+
+</head>
+<body>
+
+    <div class="container">
+        <h1> Magnifying Glass</h1>
+
+        <div>
+            <input id="url" type="text" class="form-control" placeholder="Paste image URL here (To see best effect,use images of size 579 × 1107)" />
+            <button id="go" class="btn btn-default form-control btn-success">Go</button>
+        </div>
+
+        <div class="magnify">
+            <div class="large"></div>
+            <img id="image" class="small" src="http://thecodeplayer.com/uploads/media/iphone.jpg" width="200" />
+        </div>
+
+        <hr />
+        
+        <p>This experiment is about magniying glass which is used in many shopping websites.</p>
+        <p>This experiment uses CSS3 and jQuery.</p>
+
+
+<pre>
+$("#go").click(function () {
+    var url = $("#url").val();
+    var image_background = "url('"+ url + "') no-repeat";
+            
+    $("#image").attr('src', url);
+    $(".large").css('background', image_background);
+    
+});
+</pre>
+   
+        <footer>
+            <div>
+                <h2>Source Code</h2>
+                <p><a href="../../fileview/Default.aspx?~/experiments/JQuery/006-MagnifyingGlass.html" target="_blank">HTML</a></p>
+                <p><a href="../../fileview/Default.aspx?~/experiments/JQuery/006-MagnifyingGlass.js" target="_blank">Java script</a></p>
+                <p><a href="../../fileview/Default.aspx?~/experiments/JQuery/006-MagnifyingGlass.css" target="_blank">CSS</a></p>
+            </div>
+
+            <div>
+                <h2>References</h2>
+                <p><a href="http://codepen.io/" target="_blank"> Codepen </a></p>
+                <p><a href="http://mlens.musings.it/" target="_blank">musings</a></p>
+            </div>
+        </footer>
+
+    </div>
+    
+</body>
+</html>

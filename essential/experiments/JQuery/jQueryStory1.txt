@@ -1,0 +1,3 @@
+﻿../../story/whatisnext.htm?../experiments/JQuery/jQueryStory1.txt  JQuery Experiments
+006-MagnifyingGlass.html				Magnifying Glass
+			

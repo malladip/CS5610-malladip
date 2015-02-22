@@ -1,0 +1,67 @@
+﻿<h1>Login functionality using AngularJS</h1>
+<br />
+
+<p>I extended my <a href="../AngularRouting/001-ContainerScreen.html" target="_blank">first angularJs experiment</a> to add a login functionality.</p>
+
+<p>Here, user can login to see a new tab called profile and a logout option is available.</p>
+
+<p> For practice purpose,I hardcoded the username and password.</p>
+
+<pre>
+Username : admin
+Password : admin
+</pre>
+
+<p>In this experiment, I had to create a sevice to store the current logged in user's username.</p>
+<pre>
+app.factory("LoginService", function () {
+var currentUser = null;
+var login = function (username, password) {
+    if (username == "admin" && password == "admin") {
+        currentUser = username;
+        return currentUser;
+    }
+    return null;
+};
+    
+return {
+    login: login,
+    getCurrentUser: getCurrentUser
+}
+});
+</pre>
+
+<p>
+The main difficulity of this experiment was to notify the container's controller about the change in value of services's currentUser variable at the time of login. For getting the updated value, on change of the value, the below code is used:
+</p>
+<pre>
+    $scope.$watch(
+        function () {
+            return LoginService.getCurrentUser();
+        },
+       function (currentUser) {
+           $scope.currentUser = currentUser;
+       }, true);
+</pre>
+
+<footer>
+    <div>
+        <h2>Source Code</h2>
+        <p><a href="../../fileview/Default.aspx?~/experiments/AngularRouting/002-ContainerScreen.html" target="_blank">Container Screen</a></p>
+        <p><a href="../../fileview/Default.aspx?~/experiments/AngularRouting/js/002-Navigation.js" target="_blank">Navigation.js</a></p>
+        <p><a href="../../fileview/Default.aspx?~/experiments/AngularRouting/js/002-container.js" target="_blank">Container Controller</a></p>
+        <p><a href="../../fileview/Default.aspx?~/experiments/AngularRouting/partials/002-home.html" target="_blank">Home Screen</a></p>
+        <p><a href="../../fileview/Default.aspx?~/experiments/AngularRouting/partials/002-login.html" target="_blank">Login Screen</a></p>
+        <p><a href="../../fileview/Default.aspx?~/experiments/AngularRouting/js/002-login.js" target="_blank">Login Controller</a></p>
+        <p><a href="../../fileview/Default.aspx?~/experiments/AngularRouting/partials/002-profile.html" target="_blank">Profile Screen</a></p>
+        <p><a href="../../fileview/Default.aspx?~/experiments/AngularRouting/js/002-profile.js" target="_blank">Profile Controller</a></p>
+        <p><a href="../../fileview/Default.aspx?~/experiments/AngularRouting/partials/002-contact.html" target="_blank">Contact Screen</a></p>
+        <p><a href="../../fileview/Default.aspx?~/experiments/AngularRouting/js/002-service.js" target="_blank">Service</a></p>
+    </div>
+    <div>
+        <h2>References</h2>
+        <p><a href="https://www.youtube.com/watch?v=jelXe-t2MPQ" target="_blank">Prof. Jose AngularJS Routing Class 1 (18th Feb)</a></p>
+        <p><a href="https://www.youtube.com/watch?v=PlAxG8R_zXI" target="_blank">Prof. Jose AngularJS Routing Class 2 (20th Feb)</a></p>
+        <p><a href="http://stackoverflow.com/questions/20667474/angularjs-trigger-and-watch-object-value-change-in-service-from-controller" target="_blank">StackOverflow</a></p>
+    </div>
+</footer>

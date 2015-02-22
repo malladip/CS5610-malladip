@@ -1,0 +1,170 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>On Screen Key board</title>
+
+    <link rel="stylesheet" href="css/jquery-ui.css" />
+    <script src="js/jquery.js"></script>
+    <script src="js/jquery-ui.js"></script>
+    <script src="js/angular.min.js"></script>
+
+    <!-- Latest compiled aznd minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="css/006-AddingNotes.css">
+    <script src="js/006-AddingNotes.js"></script>
+
+</head>
+<body ng-app="OnScreenKeyBoard">
+    <div class="container">
+        <div ng-controller="Controller">
+
+            <div id="editor">
+                <div class="row">
+                    <div class="col-sm-12"><textarea type="text" name="text" class="form-control" ng-model="text" placeholder="Click below to edit this" disabled></textarea></div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12"><button ng-click="save(text)" class="btn btn-default form-control btn-success"><span class="glyphicon glyphicon-ok"></span></button></div>
+                </div>
+            </div>
+
+            <div id="keyboard" draggable="">
+                <div class="row">
+                    <div class="col-sm-12"><input type="button" class="btn btn-default form-control" value="Clear" ng-click="click('clear')" /></div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-1"><input type="button" class="btn btn-default form-control" value="1" ng-click="click('1')" /></div>
+                    <div class="col-xs-1"><input type="button" class="btn btn-default form-control" value="2" ng-click="click('2')" /></div>
+                    <div class="col-xs-1"><input type="button" class="btn btn-default form-control" value="3" ng-click="click('3')" /></div>
+                    <div class="col-xs-1"><input type="button" class="btn btn-default form-control" value="4" ng-click="click('4')" /></div>
+                    <div class="col-xs-1"><input type="button" class="btn btn-default form-control" value="5" ng-click="click('5')" /></div>
+                    <div class="col-xs-1"><input type="button" class="btn btn-default form-control" value="6" ng-click="click('6')" /></div>
+                    <div class="col-xs-1"><input type="button" class="btn btn-default form-control" value="7" ng-click="click('7')" /></div>
+                    <div class="col-xs-1"><input type="button" class="btn btn-default form-control" value="8" ng-click="click('8')" /></div>
+                    <div class="col-xs-1"><input type="button" class="btn btn-default form-control" value="9" ng-click="click('9')" /></div>
+                    <div class="col-xs-1"><input type="button" class="btn btn-default form-control" value="0" ng-click="click('0')" /></div>
+                    <div class="col-xs-1"><input type="button" class="btn btn-default form-control" value="!" ng-click="click('!')" /></div>
+                    <div class="col-xs-1"><input type="button" class="btn btn-default form-control" value="$" ng-click="click('$')" /></div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-1"><input type="button" class="btn btn-default form-control" value="Q" ng-click="click('Q')" /></div>
+                    <div class="col-xs-1"><input type="button" class="btn btn-default form-control" value="W" ng-click="click('W')" /></div>
+                    <div class="col-xs-1"><input type="button" class="btn btn-default form-control" value="E" ng-click="click('E')" /></div>
+                    <div class="col-xs-1"><input type="button" class="btn btn-default form-control" value="R" ng-click="click('R')" /></div>
+                    <div class="col-xs-1"><input type="button" class="btn btn-default form-control" value="T" ng-click="click('T')" /></div>
+                    <div class="col-xs-1"><input type="button" class="btn btn-default form-control" value="Y" ng-click="click('Y')" /></div>
+                    <div class="col-xs-1"><input type="button" class="btn btn-default form-control" value="U" ng-click="click('U')" /></div>
+                    <div class="col-xs-1"><input type="button" class="btn btn-default form-control" value="I" ng-click="click('I')" /></div>
+                    <div class="col-xs-1"><input type="button" class="btn btn-default form-control" value="O" ng-click="click('O')" /></div>
+                    <div class="col-xs-1"><input type="button" class="btn btn-default form-control" value="P" ng-click="click('P')" /></div>
+                    <div class="col-xs-1"><input type="button" class="btn btn-default form-control" value="(" ng-click="click('(')" /></div>
+                    <div class="col-xs-1"><input type="button" class="btn btn-default form-control" value=")" ng-click="click(')')" /></div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-1"><input type="button" class="btn btn-default form-control" value="A" ng-click="click('A')" /></div>
+                    <div class="col-xs-1"><input type="button" class="btn btn-default form-control" value="S" ng-click="click('S')" /></div>
+                    <div class="col-xs-1"><input type="button" class="btn btn-default form-control" value="D" ng-click="click('D')" /></div>
+                    <div class="col-xs-1"><input type="button" class="btn btn-default form-control" value="F" ng-click="click('F')" /></div>
+                    <div class="col-xs-1"><input type="button" class="btn btn-default form-control" value="G" ng-click="click('G')" /></div>
+                    <div class="col-xs-1"><input type="button" class="btn btn-default form-control" value="H" ng-click="click('H')" /></div>
+                    <div class="col-xs-1"><input type="button" class="btn btn-default form-control" value="J" ng-click="click('J')" /></div>
+                    <div class="col-xs-1"><input type="button" class="btn btn-default form-control" value="K" ng-click="click('K')" /></div>
+                    <div class="col-xs-1"><input type="button" class="btn btn-default form-control" value="L" ng-click="click('L')" /></div>
+                    <div class="col-xs-1"><input type="button" class="btn btn-default form-control" value=";" ng-click="click(';')" /></div>
+                    <div class="col-xs-1"><input type="button" class="btn btn-default form-control" value="'" ng-click="click('\'')" /></div>
+                    <div class="col-xs-1"><button class="btn btn-default form-control" ng-click="click('enter')"> <span class="glyphicon glyphicon-arrow-down"></span></button></div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-1">
+                        <button class="btn btn-default form-control" ng-click="click('shift')">
+                            <span class=" glyphicon glyphicon-triangle-top"></span>
+                        </button>
+                    </div>
+                    <div class="col-xs-1"><input type="button" class="btn btn-default form-control" value="Z" ng-click="click('Z')" /></div>
+                    <div class="col-xs-1"><input type="button" class="btn btn-default form-control" value="X" ng-click="click('X')" /></div>
+                    <div class="col-xs-1"><input type="button" class="btn btn-default form-control" value="C" ng-click="click('C')" /></div>
+                    <div class="col-xs-1"><input type="button" class="btn btn-default form-control" value="V" ng-click="click('V')" /></div>
+                    <div class="col-xs-1"><input type="button" class="btn btn-default form-control" value="B" ng-click="click('B')" /></div>
+                    <div class="col-xs-1"><input type="button" class="btn btn-default form-control" value="N" ng-click="click('N')" /></div>
+                    <div class="col-xs-1"><input type="button" class="btn btn-default form-control" value="M" ng-click="click('M')" /></div>
+                    <div class="col-xs-1"><input type="button" class="btn btn-default form-control" value="," ng-click="click(',')" /></div>
+                    <div class="col-xs-1"><input type="button" class="btn btn-default form-control" value="." ng-click="click('.')" /></div>
+                    <div class="col-xs-1"><input type="button" class="btn btn-default form-control" value="?" ng-click="click('?')" /></div>
+                    <div class="col-xs-1"><button class="btn btn-default form-control" ng-click="click('shift')"> <span class=" glyphicon glyphicon-triangle-top"></span></button></div>
+                </div>
+
+            </div>
+
+            <div ng-show="notes">
+                <table class="table table-striped border">
+                    <tr>
+                        <th>#</th>
+                        <th>Note</th>
+                        <th>&nbsp</th>
+                    </tr>
+                    <tr ng-repeat="note in notes track by $index">
+                        <td>{{ $index+1 }}</td>
+                        <td>{{ note }}</td>
+                        <td>
+                            <button class="btn btn-default btn-danger" ng-click="remove($index)">
+                                <span class="glyphicon glyphicon-remove"></span>
+                            </button>
+
+                            <button class="btn btn-default btn-warning" ng-click="copy(note)" title="Copy">
+                                <span class="glyphicon glyphicon-copy"></span>
+                            </button>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <div class="documentation">
+            <p>
+                In this experient, I played with angularJS and ng-model. 
+                I tried adding new notes, deleting them and copying them.
+            </p>
+            <p>Repeat by default does not allow duplicate value. In order to overcome this, we can track by index as below:</p>
+            <pre>ng-repeat="note in notes track by $index"</pre>
+
+            <p>Adding new note:</p>
+            <pre>
+if (!$scope.notes) {
+$scope.notes = [];
+}
+$scope.notes.push(text);
+console.log($scope.notes);
+</pre>
+
+            <p>Deleting note:</p>
+            <pre>
+$scope.notes.splice(index, 1);
+        
+if ($scope.notes.length == 0) {
+$scope.notes = undefined;
+}
+</pre>
+
+            <p>Copying note:</p>
+            <pre>$scope.text = note;</pre>
+        </div>
+        <footer>
+            <div>
+                <h2>Source Code</h2>
+                <p><a href="../../fileview/Default.aspx?~/experiments/AngularJs/006-AddingNotes.html" target="_blank">HTML</a></p>
+                <p><a href="../../fileview/Default.aspx?~/experiments/AngularJs/css/006-AddingNotes.css" target="_blank">CSS</a></p>
+                <p><a href="../../fileview/Default.aspx?~/experiments/AngularJs/js/006-AddingNotes.js" target="_blank">JavaScript</a></p>
+            </div>
+            <div>
+                <h2>References</h2>
+                <p><a href="https://docs.angularjs.org/api/ng" target="_blank">angularjs.org</a></p>
+                <p><a href="https://www.youtube.com/watch?v=Kan1sMNOlIc" target="_blank">Prof. Jose Class</a></p>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

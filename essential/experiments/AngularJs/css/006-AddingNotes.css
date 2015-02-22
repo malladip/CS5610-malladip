@@ -1,0 +1,24 @@
+﻿#text{
+    width:100%;
+    height:400px;
+}
+
+input,button,textarea{
+    margin-top:10px;
+}
+
+.documentation{
+    margin-top:20px;
+}
+
+#editor{
+    font-family:'Comic Sans MS';
+    font-size:large;
+}
+
+#keyboard{
+    background-color:grey;
+    padding:20px;
+    border-radius:10px;
+    margin: 20px;
+}

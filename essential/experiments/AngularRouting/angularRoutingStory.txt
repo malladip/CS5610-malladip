@@ -1,0 +1,4 @@
+﻿../../story/whatisnext.htm?../experiments/AngularRouting/angularRoutingStory.txt  AngularJS Routing Experiments
+001-ContainerScreen.html				Hello World AngularJS Routing 
+002-ContainerScreen.html				Creating a Service - Login Functionality
+003-ContainerScreen.html				Adding Register Functionality

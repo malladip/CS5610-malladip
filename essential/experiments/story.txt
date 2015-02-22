@@ -5,3 +5,6 @@
 ../story/index.htm?../experiments/JQuery/jQueryStory.txt  Week 4 - JQuery Experiments
 ../story/index.htm?../experiments/AngularJs/JQueryStory.txt  Week 5 - JQuery Experiments
 ../story/index.htm?../experiments/AngularJs/angularJSStory.txt  Week 5 - AJAX & AngularJS Experiments
+../story/index.htm?../experiments/JQuery/jQueryStory1.txt  Week 6 - JQuery Experiments
+../story/index.htm?../experiments/AngularJs/angularJSStory1.txt  Week 6 - AngularJS Experiments
+../story/index.htm?../experiments/AngularRouting/angularRoutingStory.txt  Week 6 - AngularJS Routing Experiments
