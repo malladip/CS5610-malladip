@@ -8,3 +8,4 @@
 ../story/index.htm?../experiments/JQuery/jQueryStory1.txt  Week 6 - JQuery Experiments
 ../story/index.htm?../experiments/AngularJs/angularJSStory1.txt  Week 6 - AngularJS Experiments
 ../story/index.htm?../experiments/AngularRouting/angularRoutingStory.txt  Week 6 - AngularJS Routing Experiments
+../story/index.htm?../experiments/AngularJs-CSS/angularJsCSSStory.txt  Week 7 - AngularJS CSS Experiments

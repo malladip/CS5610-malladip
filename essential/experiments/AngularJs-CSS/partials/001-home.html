@@ -1,0 +1,76 @@
+﻿<h1>Changing CSS Dynamically in AngularJS</h1>
+<br />
+
+<p>The main aim of this experiment is to change the CSS of the page dynamically while using AngularJS</p>
+
+<p> For practice purpose,I hardcoded an initial user with the username and password as below:</p>
+
+<pre>
+Username : admin
+Password : admin
+</pre>
+
+<p>Here I learnt how to change the CSS of the following:</p>
+<ul>
+    <li>
+        <p>the navigation bar - container page CSS</p>
+        <pre>.activeStyle {  //done by simply linking CSS page to the container page
+    font-size: 25px;
+}</pre>
+    </li>
+    <li>
+        <p>the background image on change of tabs - change the CSS of container page on change in container page</p>
+        <pre>if ($location.path() === '/register') {   // done by adding this code in the controller of container page
+    $scope.background = { 'background-image': 'url(required url)' };
+}</pre>
+    </li>
+    <li>
+        <p>the background image of a user - change the CSS of container page on change in partial pages</p>
+        <pre>$scope.changeBg = function () {    // done by adding this code in the partial page controller
+    var url = $scope.backgroundURL;
+    LoginService.changeUserBG(url);
+    $scope.backgroundURL = null;
+};</pre>
+
+        <pre>var changeUserBG = function (url) {   // Adding the value into a service and using the service variable in container page
+    for (user in users) {
+       if (users[user].username == currentUser) {
+          users[user].background = url;
+          currentBackground = users[user].background;
+      }
+    }
+};</pre>
+    </li>
+    <li>
+        <p>adding CSS in the partial page</p>
+        <pre>.contact{   //Simply by adding the link into the container page and using the class in the partial page
+    font-size: 50px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}</pre>
+    </li>
+</ul>
+
+<footer>
+    <div>
+        <h2>Source Code</h2>
+        <p><a href="../../fileview/Default.aspx?~/experiments/AngularJs-CSS/001-ContainerScreen.html" target="_blank">Container Screen</a></p>
+        <p><a href="../../fileview/Default.aspx?~/experiments/AngularJs-CSS/CSS/001-StyleSheet.css" target="_blank">CSS</a></p>
+        <p><a href="../../fileview/Default.aspx?~/experiments/AngularJs-CSS/js/001-Navigation.js" target="_blank">Navigation.js</a></p>
+        <p><a href="../../fileview/Default.aspx?~/experiments/AngularJs-CSS/js/001-container.js" target="_blank">Container Controller</a></p>
+        <p><a href="../../fileview/Default.aspx?~/experiments/AngularJs-CSS/partials/001-home.html" target="_blank">Home Screen</a></p>
+        <p><a href="../../fileview/Default.aspx?~/experiments/AngularJs-CSS/partials/001-register.html" target="_blank">Register Screen</a></p>
+        <p><a href="../../fileview/Default.aspx?~/experiments/AngularJs-CSS/js/001-register.js" target="_blank">Register Controller</a></p>
+        <p><a href="../../fileview/Default.aspx?~/experiments/AngularJs-CSS/partials/001-login.html" target="_blank">Login Screen</a></p>
+        <p><a href="../../fileview/Default.aspx?~/experiments/AngularJs-CSS/js/001-login.js" target="_blank">Login Controller</a></p>
+        <p><a href="../../fileview/Default.aspx?~/experiments/AngularJs-CSS/partials/001-profile.html" target="_blank">Profile Screen</a></p>
+        <p><a href="../../fileview/Default.aspx?~/experiments/AngularJs-CSS/js/001-profile.js" target="_blank">Profile Controller</a></p>
+        <p><a href="../../fileview/Default.aspx?~/experiments/AngularJs-CSS/partials/001-contact.html" target="_blank">Contact Screen</a></p>
+        <p><a href="../../fileview/Default.aspx?~/experiments/AngularJs-CSS/js/001-service.js" target="_blank">Service</a></p>
+    </div>
+    <div>
+        <h2>References</h2>
+        <p><a href="https://docs.angularjs.org/api/ng/directive/ngClass" target="_blank">AngularJS - ngClass</a></p>
+        <p><a href="https://docs.angularjs.org/api/ng/directive/ngStyle" target="_blank">AngularJS - ngStyle</a></p>
+        <p><a href="http://jsfiddle.net/mrajcok/eTTZj/" target="_blank">jsFiddle</a></p>
+    </div>
+</footer>
