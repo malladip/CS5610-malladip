@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Hello Node JS</title>
+
+    <link rel="stylesheet" href="css/jquery-ui.css" />
+    <script src="js/jquery.js"></script>
+    <script src="js/jquery-ui.js"></script>
+
+    <!-- Latest compiled aznd minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
+    <script src="js/angular.min.js"></script>
+    <script src="js/angular-route.js"></script>
+
+    <script src="js/002-container.js"></script>
+
+</head>
+<body>
+    <div class="container">
+
+        <h2>Hello NodeJS</h2>
+
+        <a href="http://nodejs-malladip.rhcloud.com/experiment2" target="_blank">View experiment in Openshift</a>
+
+        <br />
+
+        <p>This is my first NodeJS experiment.</p>
+        <p>Here I tries to get a responce from the server on a button click.</p>
+
+        <p>The Http Call</p>
+<pre>app.controller("ContainerController", function ($scope,$http) {
+    $scope.getResponce = function () {
+        $http.get('/experiment2/getresponce')
+        .success(function (responce) {
+            $scope.responce = responce;
+        });
+    }
+});</pre>
+
+        <p>The Server side code</p>
+<pre>app.get("/experiment2/getresponce", function (req, res) {
+    res.send('Hi! this is the responce from the server!! success!!');
+});</pre>
+
+        <footer>
+            <div>
+                <h2>Source Code</h2>
+                <p><a href="../../../../fileview/Default.aspx?~/experiments/nodeJS/public/002-HelloNodeJS.html" target="_blank">Home Screen</a></p>
+                <p><a href="../../../../fileview/Default.aspx?~/experiments/nodeJS/public/js/002-container.js" target="_blank">Controller</a></p>
+                <p><a href="../../../../fileview/Default.aspx?~/experiments/nodeJS/server.js" target="_blank">Server</a></p>
+            </div>
+            <div>
+                <h2>References</h2>
+                <p><a href="https://www.youtube.com/watch?v=Lnd_uSEpCdo" target="_blank">NodeJS Introduction Class</a></p>
+            </div>
+        </footer>
+    </div> 
+</body>
+</html>

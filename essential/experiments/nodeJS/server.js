@@ -1,4 +1,4 @@
-﻿var express = require('express')
+var express = require('express')
 var app = express()
 
 app.use(express.static(__dirname + '/public'));
@@ -10,6 +10,18 @@ var user = [
 
 app.get("/", function (req, res) {
     res.sendfile(__dirname + '/public/001-Notes.html');
+});
+
+app.get("/experiment1", function (req, res) {
+    res.sendfile(__dirname + '/public/001-Notes.html');
+});
+
+app.get("/experiment2", function (req, res) {
+    res.sendfile(__dirname + '/public/002-HelloNodeJS.html');
+});
+
+app.get("/experiment2/getresponce", function (req, res) {
+    res.send('Hi! this is the responce from the server!! success!!');
 });
 
 app.get("/user", function (req, res) {
@@ -39,7 +51,7 @@ app.post("/register/user/:username/:password", function (req, res) {
             res.status(500).send('Username already taken');
         }
     }
-    
+
     var new_user = { username: username, password: password, notes: [] };
     user.push(new_user);
     res.json(new_user);
@@ -67,11 +79,14 @@ app.post("/deleteNote/:username/:index", function (req, res) {
 
     for (u in user) {
         if (user[u].username == username) {
-            user[u].notes.splice(index,1);
+            user[u].notes.splice(index, 1);
             res.json(user[u]);
         }
     }
     res.status(500).send('Error in deleting note');
 });
 
-app.listen(3000);
+
+var ip = process.env.OPENSHIFT_NODEJS_IP || '127.0.0.1';
+var port = process.env.OPENSHIFT_NODEJS_PORT || 3000;
+app.listen(port,ip);

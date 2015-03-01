@@ -1,3 +1,3 @@
 ﻿../../story/whatisnext.htm?../experiments/nodeJS/nodeJSStory.txt  NodeJS & Explore Experiments
-/public/001-Notes.html				Hello World NodeJs & Explore (Local Server)
-/public/002-Notes-Hosted.html		NodeJs & Explore (Openshift Server)
+/public/002-HelloNodeJS-Experiment.html		Hello World NodeJs & Explore
+/public/001-Notes.html						Login Register and Add notes useing NodeJs & Explore
