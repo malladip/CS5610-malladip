@@ -1,0 +1,13 @@
+﻿
+body{
+    background-color:lightgray;
+}
+
+.content{
+    margin-top:10px;
+    border:double;
+}
+
+iframe{
+    margin-top:8px;
+}

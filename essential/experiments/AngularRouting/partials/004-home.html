@@ -1,0 +1,50 @@
+﻿<h1>AngularJS And AJAX</h1>
+<br />
+
+<p>In this experiment I used an API to make an AJAX call for youtube data.</p>
+
+<p>A user can search for youtube videos.</p>
+
+<p> For practice purpose,I hardcoded an initial user with the username and password as below:</p>
+
+<pre>
+Username : admin
+Password : admin
+</pre>
+
+<p>Here I learnt how to embed a youtube video in angularJS.</p>
+<p>We can not give the video link directly in the ng-src directive of an iframe.</p>
+<p>We need to use the following code</p>
+        <pre>$scope.trustSrc = function (src) {
+  return $sce.trustAsResourceUrl(src);
+}</pre>
+
+<p>And ng-src should be as below</p>
+<pre>ng-src=&quot;{ {trustSrc(video)} }&quot;</pre>
+
+<footer>
+    <div>
+        <h2>Source Code</h2>
+        <p><a href="../../fileview/Default.aspx?~/experiments/AngularRouting/004-ContainerScreen.html" target="_blank">Container Screen</a></p>
+        <p><a href="../../fileview/Default.aspx?~/experiments/AngularRouting/CSS/004-StyleSheet.css" target="_blank">CSS</a></p>
+        <p><a href="../../fileview/Default.aspx?~/experiments/AngularRouting/js/004-Navigation.js" target="_blank">Navigation.js</a></p>
+        <p><a href="../../fileview/Default.aspx?~/experiments/AngularRouting/js/004-container.js" target="_blank">Container Controller</a></p>
+        <p><a href="../../fileview/Default.aspx?~/experiments/AngularRouting/partials/004-home.html" target="_blank">Home Screen</a></p>
+        <p><a href="../../fileview/Default.aspx?~/experiments/AngularRouting/partials/004-register.html" target="_blank">Register Screen</a></p>
+        <p><a href="../../fileview/Default.aspx?~/experiments/AngularRouting/js/004-register.js" target="_blank">Register Controller</a></p>
+        <p><a href="../../fileview/Default.aspx?~/experiments/AngularRouting/partials/004-login.html" target="_blank">Login Screen</a></p>
+        <p><a href="../../fileview/Default.aspx?~/experiments/AngularRouting/js/004-login.js" target="_blank">Login Controller</a></p>
+        <p><a href="../../fileview/Default.aspx?~/experiments/AngularRouting/partials/004-profile.html" target="_blank">Profile Screen</a></p>
+        <p><a href="../../fileview/Default.aspx?~/experiments/AngularRouting/js/004-profile.js" target="_blank">Profile Controller</a></p>
+        <p><a href="../../fileview/Default.aspx?~/experiments/AngularRouting/partials/004-search.html" target="_blank">Search Youtube Screen</a></p>
+        <p><a href="../../fileview/Default.aspx?~/experiments/AngularRouting/js/004-search.js" target="_blank">Search Youtube Controller</a></p>
+        <p><a href="../../fileview/Default.aspx?~/experiments/AngularRouting/partials/004-contact.html" target="_blank">Contact Screen</a></p>
+        <p><a href="../../fileview/Default.aspx?~/experiments/AngularRouting/js/004-service.js" target="_blank">Service</a></p>
+    </div>
+    <div>
+        <h2>References</h2>
+        <p><a href="http://net4.ccs.neu.edu/home/nimble33/experiments/005-AJAXJSON/003.html" target="_blank">API Source</a></p>
+        <p><a href="http://plnkr.co/edit/tYq22VjwB10WmytQO9Pb?p=preview" target="_blank">Embedding Youtube Video</a></p>
+        <p><a href="http://jsfiddle.net/mrajcok/eTTZj/" target="_blank">jsFiddle</a></p>
+    </div>
+</footer>

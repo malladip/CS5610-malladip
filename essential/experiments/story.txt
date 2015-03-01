@@ -9,3 +9,5 @@
 ../story/index.htm?../experiments/AngularJs/angularJSStory1.txt  Week 6 - AngularJS Experiments
 ../story/index.htm?../experiments/AngularRouting/angularRoutingStory.txt  Week 6 - AngularJS Routing Experiments
 ../story/index.htm?../experiments/AngularJs-CSS/angularJsCSSStory.txt  Week 7 - AngularJS CSS Experiments
+../story/index.htm?../experiments/AngularRouting/angularRoutingStory1.txt  Week 7 - AngularJS & AJAX Experiments
+../story/index.htm?../experiments/nodeJS/nodeJSStory.txt  Week 7 - NodeJS & Explore Experiments

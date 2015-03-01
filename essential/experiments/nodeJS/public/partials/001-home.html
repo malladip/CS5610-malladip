@@ -1,0 +1,74 @@
+﻿<h1>Hello NodeJS</h1>
+<br />
+
+<p>This experiment is my first experiment using NodeJS and Explore.</p>   
+<p>I implemented Insert, Delete, and Get operations in this expermint.</p>
+<p> For practice purpose,I hardcoded an initial user with the username and password as below:</p>
+
+<pre>
+Username : admin
+Password : admin
+</pre>
+
+<p>The Get operation is as below</p>
+    <pre>app.get("/login/user/:username/:password", function (req, res) {
+    var username = req.params.username;
+    var password = req.params.password;
+    for (u in user) {
+        if (user[u].username == username && user[u].password == password) {
+            res.json(user[u]);
+        }
+    }
+    res.status(500).send('Incorrect details');
+});</pre>
+
+<p>The Insert operation is as below</p>
+<pre>app.post("/register/user/:username/:password", function (req, res) {
+    var username = req.params.username;
+    var password = req.params.password;
+    for (u in user) {
+        if (user[u].username == username) {
+            res.status(500).send('Username already taken');
+        }
+    }
+    
+    var new_user = { username: username, password: password, notes: [] };
+    user.push(new_user);
+    res.json(new_user);
+});</pre>
+
+
+<p>The Delete operation is as below</p>
+<pre>app.post("/deleteNote/:username/:index", function (req, res) {
+    var username = req.params.username;
+    var index = req.params.index;
+    for (u in user) {
+        if (user[u].username == username) {
+            user[u].notes.splice(index,1);
+            res.json(user[u]);
+        }
+    }
+    res.status(500).send('Error in deleting note');
+});</pre>
+
+<footer>
+    <div>
+        <h2>Source Code</h2>
+        <p><a href="../../../fileview/Default.aspx?~/experiments/nodeJS/public/001-Notes.html" target="_blank">Container Screen</a></p>
+        <p><a href="../../../fileview/Default.aspx?~/experiments/nodeJS/public/css/001-StyleSheet.css" target="_blank">CSS</a></p>
+        <p><a href="../../../fileview/Default.aspx?~/experiments/nodeJS/public/js/001-Navigation.js" target="_blank">Navigation.js</a></p>
+        <p><a href="../../../fileview/Default.aspx?~/experiments/nodeJS/public/js/001-container.js" target="_blank">Container Controller</a></p>
+        <p><a href="../../../fileview/Default.aspx?~/experiments/nodeJS/public/partials/001-home.html" target="_blank">Home Screen</a></p>
+        <p><a href="../../../fileview/Default.aspx?~/experiments/nodeJS/public/partials/001-register.html" target="_blank">Register Screen</a></p>
+        <p><a href="../../../fileview/Default.aspx?~/experiments/nodeJS/public/js/001-register.js" target="_blank">Register Controller</a></p>
+        <p><a href="../../../fileview/Default.aspx?~/experiments/nodeJS/public/partials/001-login.html" target="_blank">Login Screen</a></p>
+        <p><a href="../../../fileview/Default.aspx?~/experiments/nodeJS/public/js/001-login.js" target="_blank">Login Controller</a></p>
+        <p><a href="../../../fileview/Default.aspx?~/experiments/nodeJS/public/partials/001-profile.html" target="_blank">Profile Screen</a></p>
+        <p><a href="../../../fileview/Default.aspx?~/experiments/nodeJS/public/js/001-profile.js" target="_blank">Profile Controller</a></p>
+        <p><a href="../../../fileview/Default.aspx?~/experiments/nodeJS/public/js/001-service.js" target="_blank">Service</a></p>
+    </div>
+    <div>
+        <h2>References</h2>
+        <p><a href="https://www.youtube.com/watch?v=Lnd_uSEpCdo" target="_blank">NodeJS Introduction Class</a></p>
+    </div>
+</footer>
