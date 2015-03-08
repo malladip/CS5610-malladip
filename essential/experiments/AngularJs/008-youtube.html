@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Weather Data</title>
+
+    <link rel="stylesheet" href="../../css/jquery-ui.css" />
+    <script src="../../javascript/jquery.js"></script>
+    <script src="../../javascript/jquery-ui.js"></script>
+
+    <!-- Latest compiled aznd minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
+    <script src="../../javascript/angular.min.js"></script>
+    <script src="../../javascript/angular-route.js"></script>
+    <script src="js/008-youtube.js"></script>
+    <link href="css/008-StyleSheet.css" rel="stylesheet" />
+
+</head>
+<body ng-app="WeatherData">
+    <div class="container" ng-controller="WeatherController">
+        <input type="text" ng-model="search" ng-keydown="getVideos()" class="form-control" placeholder="Type here to get youtube videos"/>
+        <div class="videos" ng-repeat="v in vidoes">
+            <iframe ng-src="{{trustSrc(v)}}" height="300" width="250"></iframe>
+        </div>
+        <div class="documentation">
+            <p>In this experiment, I tried to make an asyncronus call for every key stroke in the text bok.</p>
+            <pre>ng-keydown="getVideos()"</pre>
+            <pre> $scope.getVideos = function () {
+        $scope.vidoes = [];
+        var search = $scope.search;
+        var url = 'http://gdata.youtube.com/feeds/api/videos?q=' + search + '&format=5&max-results=6&v=2&alt=jsonc';
+        $http.get(url)
+            .success(function (response) {
+                
+                var videos = response.data.items;
+                for (video in videos) {
+                    $scope.vidoes.push(videos[video].id);
+                    console.log(videos[video].id);
+                };
+            });
+    };
+
+</pre>
+        </div>
+
+        <footer>
+            <div>
+                <h2>Source Code</h2>
+                <p><a href="../../fileview/Default.aspx?~/experiments/AngularJs/008-youtube.html" target="_blank">HTML</a></p>
+                <p><a href="../../fileview/Default.aspx?~/experiments/AngularJs/css/008-StyleSheet.css" target="_blank">CSS</a></p>
+                <p><a href="../../fileview/Default.aspx?~/experiments/AngularJs/js/008-youtube.js" target="_blank">JavaScript</a></p>
+            </div>
+            <div>
+                <h2>References</h2>
+                <p><a href="https://docs.angularjs.org/api/ng/directive/ngKeydown" target="_blank">Angular Js Documentation</a></p>
+            </div>
+        </footer>
+
+    </div>
+</body>
+</html>

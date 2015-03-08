@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Page Sliding</title>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+    <!-- Latest compiled aznd minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
+    <link href="css/007-StyleSheet.css" rel="stylesheet" />
+    <script src="js/007-JavaScript.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div id="page1">
+            <h1>Home</h1>
+            <div>
+                <a href="#page2">About</a>
+                <a href="#page3">Code</a>
+                <a href="#page4">References</a>
+                <a href="#page2" class="nav-icon pull-right"><span class="glyphicon glyphicon-chevron-down"></span></a>
+            </div>
+        </div>
+
+        <div id="page2">
+            <a href="#page1" class="pull-right"><span class="glyphicon glyphicon-chevron-up"></span></a>
+            <h1>About</h1>
+            <p>In this experiment, I tried to make a navigation effect in a page.</p>
+            <p>I used JQuery in this experiment.</p>
+            <a href="#page3" class="pull-right"><span class="glyphicon glyphicon-chevron-down"></span></a>
+        </div>
+
+        <div id="page3">
+            <a href="#page2" class="pull-right"><span class="glyphicon glyphicon-chevron-up"></span></a>
+            <h1>Code</h1>
+            $(&apos;a[href*=#]:not([href=#])&apos;).click(function () {<br />
+            if (location.pathname.replace(/^\//, &apos;&apos;) == this.pathname.replace(/^\//, &apos;&apos;) &amp;&amp; location.hostname == this.hostname) {<br />
+            <br />
+            var target = $(this.hash);<br />
+            target = target.length ? target : $(&apos;[name=&apos; + this.hash.slice(1) + &apos;]&apos;);<br />
+            if (target.length) {<br />
+            $(&apos;html,body&apos;).animate({<br />
+            scrollTop: target.offset().top<br />
+            }, 800);<br />
+            return false;<br />
+            }<br />
+            }<br />
+            });<br />
+            <a href="#page4" class="pull-right"><span class="glyphicon glyphicon-chevron-down"></span></a>
+        </div>
+
+        <div id="page4">
+            <a href="#page3" class="pull-right"><span class="glyphicon glyphicon-chevron-up"></span></a>
+            <h1>References</h1>
+            <a href="http://net4.ccs.neu.edu/home/sand89/#top" target="_blank">Home Page of Sandeep</a>
+            <a href="#page1" class="pull-right"><span class="glyphicon glyphicon-triangle-top"></span></a>
+            <h1>Source Code</h1>
+            <p><a href="../../fileview/Default.aspx?~/experiments/JQuery/007-PageSliding.html" target="_blank">HTML</a></p>
+            <p><a href="../../fileview/Default.aspx?~/experiments/JQuery/js/007-JavaScript.js" target="_blank">JavaScript</a></p>
+            <p><a href="../../fileview/Default.aspx?~/experiments/JQuery/css/007-StyleSheet.css" target="_blank">CSS</a></p>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Email</title>
+    <link rel="stylesheet" href="css/jquery-ui.css" />
+    <script src="js/jquery.js"></script>
+    <script src="js/jquery-ui.js"></script>
+    <script src="js/angular.min.js"></script>
+
+    <!-- Latest compiled aznd minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
+    <script src="js/010-Email.js"></script>
+    <link href="css/010-StyleSheet.css" rel="stylesheet"/>
+</head>
+<body ng-app="Email">
+    <div class="container" ng-controller="EmailController">
+        <input type="text" ng-model="image" class="form-control" placeholder="Enter your email address" />
+        <button ng-click="sendMail()" class="btn btn-success form-control">Send Me a test Mail</button>
+        
+        <div class="documentation">
+            <p>This experiment is about convering a given text into speach.</p>
+            <p>For this experiment, I used a text to speach API and appended our text into it.</p>
+            <pre>$scope.audio = "http://tts-api.com/tts.mp3?q=" + text;</pre>
+            <p>But this requires convering the spaces between the words into %20</p>
+            <pre>text = text.replace(new RegExp(" ", "g"), "%20");</pre>
+
+            <footer>
+                <div>
+                    <h2>Source Code</h2>
+                    <p><a href="../../fileview/Default.aspx?~/experiments/AngularJs/009-TextToSpeach.html" target="_blank">HTML</a></p>
+                    <p><a href="../../fileview/Default.aspx?~/experiments/AngularJs/css/009-StyleSheet.css" target="_blank">CSS</a></p>
+                    <p><a href="../../fileview/Default.aspx?~/experiments/AngularJs/js/009-TextToSpeach.js" target="_blank">JavaScript</a></p>
+                </div>
+                <div>
+                    <h2>References</h2>
+                    <p><a href="http://tts-api.com/" target="_blank">TTS-api</a></p>
+                    <p><a href="http://net4.ccs.neu.edu/home/rishi11/fileview/Default.aspx?~/Experiments/TextToSpeech/js/textToSpeech.js" target="_blank">API Source</a></p>
+                    <p><a href="http://www.w3schools.com/jsref/jsref_regexp_g.asp" target="_blank">W3 Schools</a></p>
+                </div>
+            </footer>
+        </div>
+    </div>
+</body>
+</html>

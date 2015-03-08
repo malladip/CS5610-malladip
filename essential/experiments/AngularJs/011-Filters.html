@@ -1,0 +1,103 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Filters</title>
+    <script src="js/jquery.js"></script>
+    <script src="js/jquery-ui.js"></script>
+    <script src="js/angular.min.js"></script>
+
+    <!-- Latest compiled aznd minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
+    <script src="js/011-Filters.js"></script>
+    <link href="css/011-StyleSheet.css" rel="stylesheet" />
+</head>
+<body ng-app="Filters">
+    <div id="experiment" class="container" ng-controller="FiltersController">
+        <h1>Angular JS Filters</h1>
+        <div id="data">
+            <h2>Original Date</h2>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <td>#</td>
+                        <td>Name</td>
+                        <td>Age</td>
+                        <td>Number of Notes</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="u in user">
+                        <td>{{u.id}}</td>
+                        <td>{{u.name}}</td>
+                        <td>{{u.age}}</td>
+                        <td>{{u.note.length}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div id="filters">
+            <h2>Filters</h2>
+            <p><input id="id" ng-model="id" type="number" ng-blur='id = undefined' placeholder="Filter by id"></p>
+            <p><input id="name" ng-model="name" type="text" ng-blur='name = undefined' placeholder="Filter by name"></p>
+            <p><label>Age:</label> <input id="age" ng-model="age" ng-blur='age = undefined' type="range" step=5 min="0" max="30">{{age}}</p>
+            <p><label>Number of Notes:</label> <input id="notes" ng-model="notes" ng-blur='notes = undefined' type="range" step=1 min="0" max="4">{{notes}}</p>
+        </div>
+        <div id="result">
+            <h2>Filtered Data</h2>
+
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <td>#</td>
+                        <td>Name</td>
+                        <td>Age</td>
+                        <td>Number of Notes</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="u in user | filter:id:name:age:notes | orderBy: 'id' ">
+                        <td>{{u.id}}</td>
+                        <td>{{u.name}}</td>
+                        <td>{{u.age}}</td>
+                        <td>{{u.note.length}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="documentation">
+            <p>This experiment is about using filters in angularjs</p>
+            <p>I filtered the original data, by creating a new filter called 'filter'</p>
+            <pre>app.filter('filter', function () {
+    return function (items,id,str,age,notes) {
+        var filtered = [];
+                return filtered;
+    };
+});
+
+</pre>
+            <p>The data can be passed to this filter as below</p>
+            <pre>&lt;tr ng-repeat=&quot;u in user | filter:id:name:age:notes | orderBy: &apos;id&apos; &quot;&gt;</pre>
+        </div>
+
+        <footer>
+            <div>
+                <h2>Source Code</h2>
+                <p><a href="../../fileview/Default.aspx?~/experiments/AngularJs/011-Filters.html" target="_blank">HTML</a></p>
+                <p><a href="../../fileview/Default.aspx?~/experiments/AngularJs/css/011-StyleSheet.css" target="_blank">CSS</a></p>
+                <p><a href="../../fileview/Default.aspx?~/experiments/AngularJs/js/011-Filters.js" target="_blank">JavaScript</a></p>
+            </div>
+            <div>
+                <h2>References</h2>
+                <p><a href="http://toddmotto.com/everything-about-custom-filters-in-angular-js/" target="_blank">Todd Motto - AngularJs</a></p>
+            </div>
+        </footer>
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,26 @@
+﻿body{
+    background-color: black;
+    color: red;
+    font-family:'Comic Sans MS';
+    font-size:25px;
+}
+
+#page1{
+    min-height: 650px;
+    background-color: white;
+}
+
+#page2{
+    min-height: 650px;
+    background-color: lightgreen;
+}
+
+#page3{
+    min-height: 650px;
+    background-color: lightblue;
+}
+
+#page4{
+    min-height: 650px;
+    background-color: yellow;
+}

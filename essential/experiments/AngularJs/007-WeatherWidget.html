@@ -1,0 +1,94 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Suggestions</title>
+
+    <link rel="stylesheet" href="../../css/jquery-ui.css" />
+    <script src="../../javascript/jquery.js"></script>
+    <script src="../../javascript/jquery-ui.js"></script>
+
+    <!-- Latest compiled aznd minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
+    <script src="../../javascript/angular.min.js"></script>
+    <script src="js/007-WeatherWidget.js"></script>
+
+    <link href="css/007-StyleSheet.css" rel="stylesheet" />
+
+</head>
+<body ng-app="WeatherApp">
+    <div class="container" ng-controller="WeatherController">
+        <div>
+            <h2>Weather in Boston, USA</h2>
+            <weather-icon cloudiness="{{ weather.clouds }}"></weather-icon>
+            <h3>Current: {{ weather.temp.current | temp:2 }}</h3>
+            min: {{ weather.temp.min | temp }}, max: {{ weather.temp.max | temp }}
+        </div>
+        <div class="documentation">
+            <p>In this experiment, I leart how to create a new directive.</p>
+
+            <ul>
+                <li>
+                    <p>API used:</p>
+                    <pre>http://api.openweathermap.org/data/2.5/weather?q=Boston,usa&units=metric&callback=JSON_CALLBACK</pre>
+                </li>
+                <li>
+                    <p>Create a new Directive in angularJs.</p>
+                    <pre>app.directive('weatherIcon', function () {
+    return {
+        restrict: 'E', replace: true,
+        scope: {
+            cloudiness: '@'
+        },
+        controller: function ($scope) {
+            $scope.imgurl = function () {
+                var baseUrl = 'https://ssl.gstatic.com/onebox/weather/128/';
+                if ($scope.cloudiness < 20) {
+                    return baseUrl + 'sunny.png';
+                } else if ($scope.cloudiness < 90) {
+                    return baseUrl + 'partly_cloudy.png';
+                } else {
+                    return baseUrl + 'cloudy.png';
+                }
+            };
+        },
+        template: &apos;&lt;div style=&quot;float:left&quot;&gt;&lt;img ng-src=&quot;{{ imgurl() }}&quot;&gt;&lt;/div&gt;&apos;
+    };
+});
+</pre>
+                </li>
+                <li>
+                    <p>I also learnt the use of filter and changing the precession of a number using filter.</p>
+                    <pre>app.filter('temp', function ($filter) {
+    return function (input, precision) {
+        if (!precision) {
+            precision = 1;
+        }
+        var numberFilter = $filter('number');
+        return numberFilter(input, precision) + '\u00B0C';
+    };
+});
+</pre>
+                </li>
+            </ul>
+            <footer>
+                <div>
+                    <h2>Source Code</h2>
+                    <p><a href="../../fileview/Default.aspx?~/experiments/AngularJs/007-WeatherWidget.html" target="_blank">HTML</a></p>
+                    <p><a href="../../fileview/Default.aspx?~/experiments/AngularJs/css/007-StyleSheet.css" target="_blank">CSS</a></p>
+                    <p><a href="../../fileview/Default.aspx?~/experiments/AngularJs/js/007-WeatherWidget.js" target="_blank">JavaScript</a></p>
+                </div>
+                <div>
+                    <h2>References</h2>
+                    <p><a href="http://stackoverflow.com/questions/6194950/what-does-the-single-pipe-do-in-javascript" target="_blank">Stackoverflow</a></p>
+                    <p><a href="http://jsfiddle.net/derkoe/yc4yG/presentation/" target="_blank">API Source</a></p>
+                </div>
+            </footer>
+        </div>
+    </div>
+</body>
+</html>

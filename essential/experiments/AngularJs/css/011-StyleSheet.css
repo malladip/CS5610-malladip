@@ -1,0 +1,17 @@
+﻿#experiment{
+margin-top:20px;
+}
+
+#filters,#data,#result{
+    border:solid;
+    padding:10px;
+    margin:10px;
+}
+
+#age{
+    width:200px;
+}
+
+#notes{
+    width:100px;
+}
