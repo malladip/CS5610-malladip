@@ -1,0 +1,43 @@
+﻿body{
+position: fixed; 
+}
+
+.window-panel{
+    height:30px;
+    background-color:lightgrey;
+}
+
+.browser{
+    width:500px;
+    height:333px;
+    border:solid;
+    border-radius:10px;
+    resize: both;
+    overflow: auto;
+    overflow-y:hidden;
+}
+
+.browser .tab{
+   
+    max-width:180px;
+}
+
+.tab-close{
+
+}
+
+.tab-close:hover{
+    color:red;
+}
+
+.url-content{
+    width:100%;
+}
+
+#tabs{
+    background-color:gray;
+}
+
+.documentation{
+    border:dashed;
+}

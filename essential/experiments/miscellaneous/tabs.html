@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Tabs</title>
+
+    <script src="../../javascript/jquery.js"></script>
+    <script src="../../javascript/jquery-ui.js"></script>
+    <script src="../../javascript/angular.min.js"></script>
+
+    <!-- Latest compiled aznd minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
+    <script src="js/tabs.js"></script>
+    <link href="css/tabs.css" rel="stylesheet" />
+
+</head>
+<body ng-app="myApp">
+    <div>
+        <div class="browser" id="browser" ng-controller="browser" draggable get-dimensions>
+            <div role="tabpanel">
+
+                <!-- Nav tabs -->
+                <ul class="nav nav-tabs tab-icons" id="tabs" role="tablist" ng-dblclick="addNewTab()">
+
+                    <li role="presentation" class="active tab" ng-style="{'width': tabWidth+'%'}" ng-repeat="b in browserTabs track by $index" ng-click="openTab($index)">
+                        <a role="tab" data-toggle="tab">
+                            Tab {{$index+1}}
+                            <span class="pull-right tab-close" ng-click="closeTab($index)">x</span>
+                        </a>
+                    </li>
+                    <li role="presentation" class="active tab pull-right">
+                        <button class="btn pull-right" ng-click="closeBrowser()">
+                            <span class="tab-close">x</span>
+                        </button>
+                    </li>
+                </ul>
+
+                <!-- Tab panes -->
+                <div class="tab-content">
+                    <div role="tabpanel" class="tab-pane active" id="home">
+                        <input class="form-control" ng-model="url" ng-enter="url_enter()" placeholder="Enter URL (including HTTP)" />
+                        <iframe class="url-content" src="{{loadURL}}" height="{{iframeHeight}}px"></iframe>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+        
+
+    </div>
+</body>
+</html>
