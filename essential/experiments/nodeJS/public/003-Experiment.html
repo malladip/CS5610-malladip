@@ -1,0 +1,69 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>MongoDB</title>
+    <!-- Latest compiled aznd minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+</head>
+<body class="container">
+    <h1>Hello MongoDB</h1>
+    <br />
+
+    <p>This experiment is my first experiment using MongoDB.</p>
+    <p>I implemented Insert, and Get operations in this expermint by implementing register and login operation.</p>
+
+    <p>Click <a href="http://nodejs-malladip.rhcloud.com/LoginRegisterMongodb" target="_blank">here</a> to see it on openshift.</p>
+
+    <p>The Login operation is as below</p>
+    <pre> app.get("/LoginRegisterMongodb/login/:username/:password", function (req, res) {
+    var username = req.params.username;
+    var password = req.params.password;
+    UserLogin.find({ username: username }, function (err, data) {
+        if (data.length > 0 && data[0].password == password) {
+            res.json(data[0].username);
+        }
+        else {
+            res.status(500).send('Incorrect details');
+        }
+    }
+   );
+});</pre>
+
+    <p>The Register operation is as below</p>
+<pre>app.post("/LoginRegisterMongodb/register/:username/:password", function (req, res) {
+    var username = req.params.username;
+    var password = req.params.password;
+    var userlogin = new UserLogin({ username: username, password: password });
+    userlogin.save();
+    res.json(username);
+});</pre>
+
+    <footer>
+        <div>
+            <h2>Source Code</h2>
+            <p><a href="../../../../fileview/Default.aspx?~/experiments/nodeJS/public/003-LoginRegisterMongodb.html" target="_blank">Container Screen</a></p>
+            <p><a href="../../../../fileview/Default.aspx?~/experiments/nodeJS/public/partials/003-home.html" target="_blank">Home Screen</a></p>
+            <p><a href="../../../../fileview/Default.aspx?~/experiments/nodeJS/public/partials/003-login.html" target="_blank">Login Screen</a></p>
+            <p><a href="../../../../fileview/Default.aspx?~/experiments/nodeJS/public/partials/003-register.html" target="_blank">Register Screen</a></p>
+            <p><a href="../../../../fileview/Default.aspx?~/experiments/nodeJS/public/partials/003-profile.html" target="_blank">Profile Screen</a></p>
+            <p><a href="../../../../fileview/Default.aspx?~/experiments/nodeJS/public/partials/001-register.html" target="_blank">Register Screen</a></p>
+            <p><a href="../../../../fileview/Default.aspx?~/experiments/nodeJS/public/js/003-container.js" target="_blank">Container Controller</a></p>
+            <p><a href="../../../../fileview/Default.aspx?~/experiments/nodeJS/public/js/003-login.js" target="_blank">Login Controller</a></p>
+            <p><a href="../../../../fileview/Default.aspx?~/experiments/nodeJS/public/js/003-Navigation.js" target="_blank">Navigation Controller</a></p>
+            <p><a href="../../../../fileview/Default.aspx?~/experiments/nodeJS/public/js/003-profile.js" target="_blank">Profile Controller</a></p>
+            <p><a href="../../../../fileview/Default.aspx?~/experiments/nodeJS/public/js/003-register.js" target="_blank">Register Controller</a></p>
+            <p><a href="../../../../fileview/Default.aspx?~/experiments/nodeJS/public/js/003-service.js" target="_blank">Service</a></p>
+            <p><a href="../../../../fileview/Default.aspx?~/experiments/nodeJS/server.js" target="_blank">Server</a></p>
+        </div>
+        <div>
+            <h2>References</h2>
+            <p><a href="https://www.youtube.com/watch?v=YH5sFprHgl0" target="_blank">MongoDB Class 1</a></p>
+            <p><a href="https://www.youtube.com/watch?v=c-etW7AX9cA" target="_blank">MongoDB Class 2</a></p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+
+    <script src="../../javascript/jquery.js"></script>
+    <script src="../../javascript/jquery-ui.js"></script>
+    <link href="../../css/jquery-ui.css" rel="stylesheet" />
+    <script src="../../javascript/angular.min.js"></script>
+
+    <!-- Latest compiled aznd minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
+    <link href="css/Toolbar.css" rel="stylesheet" />
+    <script src="js/Toolbar.js"></script>
+</head>
+<body ng-app="toolbar" class="disable-select" change-toolbar>
+    <!-- Toolbar -->
+    <div ng-controller="toolbarCtrl">
+        <div class="documentation">
+            <h3>Toolbar:</h3>
+            <p>In this exeriment, I made a toolbar.</p>
+            <p>This toolbar has buttons which are sortable. i.e change the order of buttons on the toolbar.</p>
+            <pre>$('#sortable').sortable({
+        handle: 'button',
+        cancel: ''
+    })</pre>
+            <p>And the toolbar position can be changed, by dragging it either to the top, right, left or bottom.</p>
+            <pre>if (currentY < 55) {  // Top
+toolbar
+.removeClass("toolbar-left")
+.removeClass("toolbar-right")
+.removeClass("toolbar-bottom")
+.addClass("toolbar-top");
+} </pre>
+            <div>
+                <h4>Source Code:</h4>
+                <p><a href="../../fileview/Default.aspx?~/experiments/Project/Toolbar.html" target="_blank">HTML</a> 
+                    <a href="../../fileview/Default.aspx?~/experiments/Project/css/Toolbar.css" target="_blank">CSS</a>
+                    <a href="../../fileview/Default.aspx?~/experiments/Project/js/Toolbar.js" target="_blank">JavaScript</a></p>
+                <h4>References:</h4>
+                <p><a href="http://stackoverflow.com/questions/2596594/jquery-window-width-and-window-height-return-different-values-when-vie" target="_blank">Stack Overflow</a></p>
+                <p><a href="http://stackoverflow.com/questions/6073505/what-is-the-difference-between-screenx-y-clientx-y-and-pagex-y" target="_blank">Difference between screenX/Y, clientX/Y and pageX/Y</a></p>
+                <p><a href="http://stackoverflow.com/questions/10809995/css-disable-text-selection" target="_blank">Disabling text selction</a></p>
+
+            </div>
+
+        </div>
+        <div id="toolbar" class="toolbar toolbar-bottom text-center">
+            <div id="sortable">
+                <div class="sortable-button">
+                    <button class="btn button form-control">Button1</button>
+                </div>
+                <div class="sortable-button">
+                    <button class="btn button form-control">Button2</button>
+                </div>
+                <div class="sortable-button">
+                    <button class="btn button form-control">Button3</button>
+                </div>
+                <div class="sortable-button">
+                    <button class="btn button form-control">Button4</button>
+                </div>
+                <div class="sortable-button">
+                    <button class="btn button form-control">Button5</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

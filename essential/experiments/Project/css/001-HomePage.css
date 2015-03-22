@@ -1,0 +1,25 @@
+﻿body {
+    background-image: url("../../../images/backgrounds/lamborghini-desktop-440x900.jpg");
+}
+
+ /* *********************************************** LOCK SCREEN ****************************************************** */
+
+#lock-screen #time,#lock-screen #date {
+    font-family: Arial;
+    color: white;
+}
+
+#lock-screen #time {
+    font-size: 80px;
+}
+
+#lock-screen #date {
+    font-size: 60px;
+}
+
+#lock-screen.left-bottom-corner {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 15px;
+}

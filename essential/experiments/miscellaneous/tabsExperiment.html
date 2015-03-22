@@ -1,0 +1,120 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+
+    <script src="../../javascript/jquery.js"></script>
+    <script src="../../javascript/jquery-ui.js"></script>
+    <script src="../../javascript/angular.min.js"></script>
+
+    <!-- Latest compiled aznd minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
+
+</head>
+<body class="container">
+    <h1>Browser</h1>
+
+    <iframe src="tabs.html" width="100%" height="400px"></iframe>
+
+    <div class="documentation">
+        <br />
+        <ul>
+            <li>
+                The browser is made draggable by below code:
+                <pre>&lt;div class=&quot;browser&quot; id=&quot;browser&quot; ng-controller=&quot;browser&quot; draggable get-dimensions&gt;</pre>
+                <pre>myApp.directive('draggable', function () {
+    return {
+        restrict: 'A',
+        link: function (scope, element, attrs) {
+            element.draggable({
+                cursor: "move",
+                stop: function (event, ui) {
+                    scope[attrs.xpos] = ui.position.left;
+                    scope[attrs.ypos] = ui.position.top;
+                    scope.$apply();
+                }
+            });
+        }
+    };
+});</pre>
+            </li>
+
+            <li>
+                The browser is made resizabble using CSS:
+                <pre>resize: both;</pre>
+            </li>
+
+            <li>
+                Double click on the tabs creates a new tab:
+                <pre>&lt;ul class=&quot;nav nav-tabs tab-icons&quot; id=&quot;tabs&quot; role=&quot;tablist&quot; ng-dblclick=&quot;addNewTab()&quot;&gt;</pre>
+                <pre>$scope.addNewTab = function () {
+        var newTab = { url: "" };
+        $scope.browserTabs.push(newTab);
+        $scope.tabWidth = 100 / ($scope.browserTabs.length + 2);
+        $scope.activeTabIndex = $scope.browserTabs.length - 1;
+        $scope.url = newTab.url;
+        $scope.loadURL = $sce.trustAsResourceUrl($scope.url);
+    };</pre>
+            </li>
+
+            <li>
+                Created a new directive for enter event:
+                <pre>myApp.directive('ngEnter', function () {
+    return function (scope, element, attrs) {
+        element.bind("keydown keypress", function (event) {
+            if (event.which === 13) {
+                scope.$apply(function () {
+                    scope.$eval(attrs.ngEnter);
+                });
+                event.preventDefault();
+            }
+        });
+    };
+});</pre>
+            </li>
+
+            <li>
+                <p>Dynamically changing the height of an iframe was the toughest task.</p>
+                <p>It is done by saving the current size of broswer,adding it to the scope and adjusting the height using the scope variable</p>
+                <pre>myApp.directive('getDimensions', function ($timeout, $window) {
+    return {
+        restrict: 'A',
+        link: function (scope, element) {
+            scope.iframeHeight = element.prop('offsetHeight') - 76;
+            angular.element($window).bind('mouseup', function () {
+                scope.iframeHeight = element.prop('offsetHeight') - 76;
+                scope.$apply&lt;ul class=&quot;nav nav-tabs tab-icons&quot; id=&quot;tabs&quot; role=&quot;tablist&quot; ng-dblclick=&quot;addNewTab()&quot;&gt;
+            });
+        }
+    };
+});
+</pre>
+                <pre>&lt;iframe class=&quot;url-content&quot; src=&quot;{{loadURL}}&quot; height=&quot;{{iframeHeight}}px&quot;&gt;&lt;/iframe&gt;</pre>
+            </li>
+        </ul>
+
+        <footer>
+            <div>
+                <h2>Source Code</h2>
+                <p><a href="../../fileview/Default.aspx?~/experiments/miscellaneous/tabs.html" target="_blank">HTML</a></p>
+                <p><a href="../../fileview/Default.aspx?~/experiments/miscellaneous/js/tabs.js" target="_blank">Java script</a></p>
+                <p><a href="../../fileview/Default.aspx?~/experiments/miscellaneous/css/tabs.css" target="_blank">CSS</a></p>
+            </div>
+
+            <div>
+                <h2>References</h2>
+                <p><a href="http://stackoverflow.com/" target="_blank">stackoverflow.com</a></p>
+                <h2>Inspiration</h2>
+                <p><a href="https://github.com/adamschwartz/chrome-tabs" target="_blank">adamschwartz - Experiment</a></p>
+            </div>
+        </footer>
+
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,181 @@
+﻿body {
+    position: fixed;
+}
+
+.window-panel {
+    height: 30px;
+    background-color: lightgrey;
+}
+
+.browser {
+    width: 500px;
+    height: 227px;
+    border: solid;
+    border-radius: 10px;
+    resize: both;
+    overflow: auto;
+    overflow-y: hidden;
+    background-color:white;position:absolute;
+    left:100px;
+    top:100px;
+}
+
+    .browser .tab {
+        max-width: 180px;
+    }
+
+.tab {
+    background-color: lightgray;
+}
+
+.tab-close {
+}
+
+    .tab-close:hover {
+        color: red;
+    }
+
+.url-content {
+    width: 100%;
+}
+
+#tabs {
+    background-color: gray;
+}
+
+.documentation {
+    border: dashed;
+}
+
+.desktop {
+    margin-bottom: 55px;
+}
+
+.ikons {
+    float: left;
+}
+
+
+.toolbar {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 55px;
+    background-color: black;
+}
+
+    .toolbar .button {
+        background-color: Transparent;
+        border: none;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+        .toolbar .button .icons {
+            width: 50px;
+            height: 50px;
+        }
+
+        .toolbar .button .icons {
+            width: 50px;
+            height: 50px;
+            -webkit-transition: 0.3s;
+        }
+
+            .toolbar .button .icons:hover {
+                -webkit-transform: scale(1.2);
+            }
+
+.date-time {
+    padding-top: 7px;
+    margin-right: 8px;
+    color: white;
+}
+
+.notepad {
+    width: 500px;
+    height: 500px;
+    border: solid;
+    border-radius: 10px;
+    resize: both;
+    overflow: auto;
+    overflow-y: hidden;
+    background-color:white;position:absolute;
+    left:100px;
+    top:100px;
+}
+
+#textarea {
+    border: none;
+    height: 466px;
+}
+
+.bg-change {
+    position: fixed;
+    bottom: 55px;
+    width: 100%;
+    height: 55px;
+    background-color: black;
+}
+
+.bg-url {
+    float: left;
+    width: 90%;
+}
+
+.bg-go {
+    width: 10%;
+}
+
+.youtube {
+    width: 500px;
+    height: 500px;
+    border: solid;
+    border-radius: 10px;
+    resize: both;
+    overflow: auto;
+    overflow-y: hidden;
+    background-color:white;
+    position:absolute;
+    left:100px;
+    top:100px;
+}
+
+    .youtube .videos {
+        overflow: auto;
+    }
+
+.textToSpeach {
+    width: 300px;
+    height: 200px;
+    border: solid;
+    border-radius: 10px;
+    background-color:white;position:absolute;
+    left:100px;
+    top:100px;
+}
+
+.textToSpeach .inputText{
+    height: 126px;
+    width:100%;
+    resize: none;
+}
+
+.google{
+    width: 300px;
+    border: solid;
+    border-radius: 10px;
+    background-color:white;
+    position:absolute;
+    left:100px;
+    top:100px;
+}
+
+.google-input{
+    width:90%;
+    float:left;
+}
+.google-go{
+    width:10%;
+    float:left;
+}

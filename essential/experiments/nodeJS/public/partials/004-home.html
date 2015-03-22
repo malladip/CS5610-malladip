@@ -1,0 +1,56 @@
+﻿<h1>Hello PassportJs</h1>
+<br />
+
+
+<p>This experiment is a combined file for two experiments. Here I extended my first experiment by using passport authentication.</p>
+<ul>
+    <li>
+        <p>The first experiment in this file is making the login secure by passportJs.</p>
+    </li>
+    <li>
+        <p>The second experiment is adding the register functionality using passportJs.</p>
+    </li>
+</ul>
+
+
+<p>The Login operation is as below</p>
+   <pre> PassportAuthenticationUserModel.findOne({ username: username, password: password }, function (err, user) {
+            if (user) {
+                return done(null, user);
+            } else {
+                return done(null, false, { message: 'Unable to login' });
+            }
+        });</pre>
+
+<pre>app.post("/PassportAuthentication/login", passport.authenticate('local'), function (req, res) {
+    var user = req.user;
+    res.json(user);
+});</pre>
+
+<p>The Logout operation is as below</p>
+<pre>app.post("/PassportAuthentication/logout", function (req, res) {
+    //req.logout();
+    req.session.destroy();
+    res.send(200);
+});
+</pre>
+
+<p>The register operation is as below:</p>
+<pre>
+    app.post("/PassportAuthentication/register", function (req, res) {
+    var new_user = new PassportAuthenticationUserModel(req.body);
+    new_user.save(function (err, user) {
+       
+       var registeredUser = { 'username': user.username, 'password': user.password };
+       // passport.login(registeredUser);
+        res.json(user);
+    });
+});
+</pre>
+<footer>
+    <div>
+        <h2>References</h2>
+        <p><a href="https://www.youtube.com/watch?v=dXkqNWLyJ7E" target="_blank">PassportJS Class 1</a></p>
+        <p><a href="https://www.youtube.com/watch?v=8GL5WpQ0vfo" target="_blank">PassportJS Class 2</a></p>
+    </div>
+</footer>

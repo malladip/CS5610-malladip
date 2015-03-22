@@ -1,0 +1,177 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Widgets</title>
+
+    <!-- JQuery -->
+    <script src="../../javascript/jquery.js"></script>
+    <script src="../../javascript/jquery-ui.js"></script>
+    <link rel="stylesheet" href="../../css/jquery-ui.css" />
+
+    <!-- AngularJS -->
+    <script src="../../javascript/angular.min.js"></script>
+    <script src="../../javascript/angular-route.js"></script>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
+    <!-- Javascript Files -->
+    <script src="js/002-toolbar.js"></script>
+    <script src="js/002-service.js"></script>
+    <script src="js/002-myDirectives.js"></script>
+    <script src="js/002-google.js"></script>
+    <script src="js/002-browser.js"></script>
+    <script src="js/002-notepad.js"></script>
+    <script src="js/002-youtube.js"></script>
+    <script src="js/002-textToSpeach.js"></script>
+
+    <!-- CSS File -->
+    <link href="css/002-widgets.css" rel="stylesheet" />
+
+</head>
+
+<body ng-app="myApp" ng-controller="taskbar" ng-style="background">
+    <div>
+        <div class="desktop">
+            <!-- Google Widget -->
+            <div class="google" ng-show="google" ng-controller="google" draggable>
+                <div role="tabpanel">
+                    <!-- Nav tabs -->
+                    <ul class="nav nav-tabs tab-icons" id="tabs" role="tablist">
+
+                        <li role="presentation" class=" tab pull-right">
+                            <button class="btn pull-right" ng-click="closeGoogle()">
+                                <span class="tab-close">x</span>
+                            </button>
+                        </li>
+                    </ul>
+
+                </div>
+                <div>
+                    <input class=" form-control" ng-model="googleSearch" placeholder="Enter some text" />
+                    <button class=" btn btn-success form-control" title="Search Google" ng-click="search()">Go</button>
+                </div>
+            </div>
+
+            <!-- Browser Widget -->
+            <div class="browser" ng-show="browser" id="browser" ng-controller="browser" draggable adjust-iframe>
+                <div role="tabpanel">
+
+                    <!-- Nav tabs -->
+                    <ul class="nav nav-tabs tab-icons" id="tabs" role="tablist" ng-dblclick="addNewTab()">
+
+                        <li role="presentation" class="active tab" ng-style="{'width': tabWidth+'%'}" ng-repeat="b in browserTabs track by $index" ng-click="openTab($index)">
+                            <a role="tab" data-toggle="tab">
+                                Tab {{$index+1}}
+                                <span class="pull-right tab-close" ng-click="closeTab($index)">x</span>
+                            </a>
+                        </li>
+                        <li role="presentation" class="active tab pull-right">
+                            <button class="btn pull-right" ng-click="closeBrowser()">
+                                <span class="tab-close">x</span>
+                            </button>
+                        </li>
+                    </ul>
+
+                    <!-- Tab panes -->
+                    <div class="tab-content">
+                        <div role="tabpanel" class="tab-pane active" id="home">
+                            <input class="form-control" ng-model="url" ng-enter="url_enter()" placeholder="Enter URL (including HTTP)" />
+                            <iframe class="url-content" src="{{loadURL}}" height="{{iframeHeight}} px"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Notepad Widget -->
+        <div class="notepad" ng-show="notepad" ng-controller="notepad" draggable adjust-text-area>
+
+            <div role="tabpanel">
+                <!-- Nav tabs -->
+                <ul class="nav nav-tabs tab-icons" id="tabs" role="tablist">
+
+                    <li role="presentation" class=" tab pull-right">
+                        <button class="btn pull-right" ng-click="closeNotepad()">
+                            <span class="tab-close">x</span>
+                        </button>
+                    </li>
+                </ul>
+                <textarea id="textarea" ng-style="{'width': 100+'%' , 'height': textAreaHeight<0 ? 466 : textAreaHeight+'px'}"> {{content}}</textarea>
+            </div>
+        </div>
+
+        <!-- Youtube Widget -->
+        <div class="youtube" ng-show="youtube" ng-controller="youtube" draggable adjustvheight>
+            <div role="tabpanel">
+                <!-- Nav tabs -->
+                <ul class="nav nav-tabs tab-icons" id="tabs" role="tablist">
+
+                    <li role="presentation" class=" tab pull-right">
+                        <button class="btn pull-right" ng-click="closeYoutube()">
+                            <span class="tab-close">x</span>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+            <div class="video">
+                <input type="text" ng-model="youtubeSearch" class="form-control" ng-enter="getVideos()" placeholder="Search Youtube" />
+
+                <div class="videos" ng-style="{'height': height<0 ? 428 : height+'px'}">
+
+                    <div ng-repeat="video in videos track by $index">
+                        <iframe width="100%" height="250" ng-src="{{trustSrc('http://www.youtube.com/embed/'+video)}}"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Text To Speach Widget -->
+        <div class="textToSpeach" ng-show="textToSpeach" ng-controller="textToSpeach" draggable>
+            <div role="tabpanel">
+                <!-- Nav tabs -->
+                <ul class="nav nav-tabs tab-icons" id="tabs" role="tablist">
+
+                    <li role="presentation" class=" tab pull-right">
+                        <button class="btn pull-right" ng-click="closeTextToSpeach()">
+                            <span class="tab-close">x</span>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+            <div class="">
+                <textarea class="inputText form-control" ng-model="textContent" placeholder="Enter some text"></textarea>
+                <button class="btn btn-primary form-control" title="Play" ng-click="play()"><span class="glyphicon glyphicon-volume-up"></span></button>
+                <iframe ng-src="{{trustSrc(audio)}}" id="playText" hidden></iframe>
+            </div>
+        </div>
+
+        <!-- Toolbar -->
+        <div>
+
+            <!-- Change Background Image -->
+            <div class="bg-change" ng-show="changeBGActive">
+                <input ng-model="url" class="bg-url form-control" placeholder="Paste image URL here" />
+                <button class="btn btn-success bg-go" ng-click="goChangeBG()">Go</button>
+            </div>
+
+            <div class="toolbar">
+                <center>
+                    <div id="sortable">
+                        <button class="button" ng-click="google()" title="Google"><img src="images/google.png" class="icons" /></button>
+                        <button class="button" ng-click="browser()" title="Browser"><img src="images/browser.png" class="icons" /></button>
+                        <button class="button" ng-click="notepad()" title="Notepad"><img src="images/notepad.png" class="icons" /></button>
+                        <button class="button" ng-click="youtube()" title="Youtube"><img src="images/youtube.png" class="icons" /></button>
+                        <button class="button" ng-click="textToSpeach()" title="Text to Speach"><img src="images/text-speach.png" class="icons" /></button>
+                        <button class="button" ng-click="changeBG()" title="Change Background"><img src="images/changeBg.png" class="icons" /></button>
+                        <button class="button" ng-click="close()" title="Power Off"><img src="images/power.png" class="icons" /></button>
+                        <button class="button pull-right date-time" title="{{time}} {{date}}"><span>{{time}}<br />{{date}}</span></button>
+                    </div>
+                </center>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

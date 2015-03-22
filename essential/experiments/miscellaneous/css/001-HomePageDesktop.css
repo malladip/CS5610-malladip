@@ -1,0 +1,10 @@
+﻿body {
+background-image:url("../../../images/backgrounds/lamborghini-desktop-440x900.jpg");
+}
+
+.left-bottom-corner{
+    position:absolute;
+    bottom:0;
+    right:0;
+    padding:15px;
+}

@@ -1,0 +1,78 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Widgets experiment</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <h2>Widgets</h2>
+
+    <iframe width="100%" height="600px" src="002-widgets.html"></iframe>
+
+    <p>In this experiment, I created a toolbar and icons for each widget.</p>
+    <p>When clicked on the icon, the widget opens. It can again be closd by clicking on the icon again or by clicking on the close button of the widget.</p>
+    <br />
+    <p>For this experiment, I created 5 angularJS directives. Click  <a href="../../fileview/Default.aspx?~/experiments/Project/js/002-myDirectives.js" target="_blank">here</a> to view </p>
+
+    <br />
+    <p>The browser has a facility of adding new tabs. You can a new tab by douuble clicking on the browser toolbar.</p>
+    <br />
+    <p>The youtube widget allows to search different videos from youtube. Enter your favorite, and click enter to get result.</p>
+    <br />
+    <p>Youcan also change the background, by clicking on the change background icon, pasting the image URL and clicking on Go.</p>
+
+    <br />
+    <p>The main complexity of this experiment is adjusting the iframe, and textarea dynamically on resizing the widget. It is handled as below:</p>
+    <pre>myApp.directive('adjustIframe', function ($timeout, $window) {
+    return {
+        restrict: 'A',
+        link: function (scope, element) {
+            scope.iframeHeight = element.prop('offsetHeight') - 76;
+            angular.element($window).bind('mouseup', function () {
+                scope.iframeHeight = element.prop('offsetHeight') - 76;
+                scope.$apply();
+            });
+        }
+    };
+});
+</pre>
+    <footer>
+        <div>
+            <h4>Source Code:</h4>
+            <p>
+                <a href="../../fileview/Default.aspx?~/experiments/Project/002-widgets.html" target="_blank">HTML</a>
+            </p>
+            <p>
+                <a href="../../fileview/Default.aspx?~/experiments/Project/js/002-browser.js" target="_blank">Browser controller</a>
+            </p>
+            <p>
+                <a href="../../fileview/Default.aspx?~/experiments/Project/js/002-google.js" target="_blank">Google controller</a>
+            </p>
+            <p>
+                <a href="../../fileview/Default.aspx?~/experiments/Project/js/002-myDirectives.js" target="_blank">My Directives</a>
+            </p>
+            <p>
+                <a href="../../fileview/Default.aspx?~/experiments/Project/js/002-notepad.js" target="_blank">Notepad controlle</a>
+            </p>
+            <p>
+                <a href="../../fileview/Default.aspx?~/experiments/Project/js/002-service.js" target="_blank">Service</a>
+            </p>
+            <p>
+                <a href="../../fileview/Default.aspx?~/experiments/Project/js/002-textToSpeach.js" target="_blank">text2speach Controller</a>
+            </p>
+            <p>
+                <a href="../../fileview/Default.aspx?~/experiments/Project/js/002-toolbar.js" target="_blank">Toolbar controller</a>
+            </p>
+            <p>
+                <a href="../../fileview/Default.aspx?~/experiments/Project/js/002-youtube.js" target="_blank">Youtube controller</a>
+            </p>
+            <h4>References:</h4>
+            <p><a href="http://stackoverflow.com/" target="_blank">Stack Overflow</a></p>
+        </div>
+    </footer>
+</body>
+</html>

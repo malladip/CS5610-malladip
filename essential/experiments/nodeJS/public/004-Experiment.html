@@ -1,0 +1,87 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>PassportJS</title>
+    <!-- Latest compiled aznd minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+</head>
+<body class="container">
+    <h1>Hello PassportJs</h1>
+    <br />
+
+    <p>This experiment is a combined file for two experiments. Here I extended my first experiment by using passport authentication.</p> 
+    <ul>
+        <li>
+            <p>The first experiment in this file is making the login secure by passportJs.</p>
+        </li>
+        <li>
+            <p>The second experiment is adding the register functionality using passportJs.</p>
+        </li>
+    </ul>
+
+    
+    <p>Click <a href="http://nodejs-malladip.rhcloud.com/PassportAuthentication" target="_blank">here</a> to see it on openshift.</p>
+
+    <p>The Login operation is as below</p>
+    <pre> PassportAuthenticationUserModel.findOne({ username: username, password: password }, function (err, user) {
+            if (user) {
+                return done(null, user);
+            } else {
+                return done(null, false, { message: 'Unable to login' });
+            }
+        });</pre>
+
+<pre>app.post("/PassportAuthentication/login", passport.authenticate('local'), function (req, res) {
+    var user = req.user;
+    res.json(user);
+});</pre>
+
+    <p>The Logout operation is as below</p>
+<pre>app.post("/PassportAuthentication/logout", function (req, res) {
+    //req.logout();
+    req.session.destroy();
+    res.send(200);
+});
+</pre>
+
+    <p>The register operation is as below:</p>
+<pre>
+    app.post("/PassportAuthentication/register", function (req, res) {
+    var new_user = new PassportAuthenticationUserModel(req.body);
+    new_user.save(function (err, user) {
+       
+       var registeredUser = { 'username': user.username, 'password': user.password };
+       // passport.login(registeredUser);
+        res.json(user);
+    });
+});
+</pre>
+    <footer>
+        <div>
+            <h2>Source Code</h2>
+            <p><a href="../../../../fileview/Default.aspx?~/experiments/nodeJS/public/004-PassportAuthentication.html" target="_blank">Container Screen</a></p>
+            <p><a href="../../../../fileview/Default.aspx?~/experiments/nodeJS/public/partials/004-home.html" target="_blank">Home Screen</a></p>
+            <p><a href="../../../../fileview/Default.aspx?~/experiments/nodeJS/public/partials/004-login.html" target="_blank">Login Screen</a></p>
+            <p><a href="../../../../fileview/Default.aspx?~/experiments/nodeJS/public/partials/004-register.html" target="_blank">Register Screen</a></p>
+            <p><a href="../../../../fileview/Default.aspx?~/experiments/nodeJS/public/partials/004-profile.html" target="_blank">Profile Screen</a></p>
+            <p><a href="../../../../fileview/Default.aspx?~/experiments/nodeJS/public/partials/004-register.html" target="_blank">Register Screen</a></p>
+            <p><a href="../../../../fileview/Default.aspx?~/experiments/nodeJS/public/js/004-container.js" target="_blank">Container Controller</a></p>
+            <p><a href="../../../../fileview/Default.aspx?~/experiments/nodeJS/public/js/004-login.js" target="_blank">Login Controller</a></p>
+            <p><a href="../../../../fileview/Default.aspx?~/experiments/nodeJS/public/js/004-Navigation.js" target="_blank">Navigation Controller</a></p>
+            <p><a href="../../../../fileview/Default.aspx?~/experiments/nodeJS/public/js/004-profile.js" target="_blank">Profile Controller</a></p>
+            <p><a href="../../../../fileview/Default.aspx?~/experiments/nodeJS/public/js/004-register.js" target="_blank">Register Controller</a></p>
+            <p><a href="../../../../fileview/Default.aspx?~/experiments/nodeJS/public/js/004-service.js" target="_blank">Service</a></p>
+            <p><a href="../../../../fileview/Default.aspx?~/experiments/nodeJS/server.js" target="_blank">Server</a></p>
+        </div>
+        <div>
+            <h2>References</h2>
+            <p><a href="https://www.youtube.com/watch?v=dXkqNWLyJ7E" target="_blank">PassportJS Class 1</a></p>
+            <p><a href="https://www.youtube.com/watch?v=8GL5WpQ0vfo" target="_blank">PassportJS Class 2</a></p>
+        </div>
+    </footer>
+</body>
+</html>

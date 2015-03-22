@@ -1,0 +1,39 @@
+﻿<h1>Hello MongoDB</h1>
+<br />
+
+<p>This experiment is my first experiment using MongoDB.</p>   
+<p>I implemented Insert, and Get operations in this expermint by implementing register and login operation.</p>
+
+<p>The Login operation is as below</p>
+   <pre> app.get("/LoginRegisterMongodb/login/:username/:password", function (req, res) {
+
+    var username = req.params.username;
+    var password = req.params.password;
+
+    UserLogin.find({ username: username }, function (err, data) {
+        if (data.length > 0 && data[0].password == password) {
+            res.json(data[0].username);
+        }
+        else {
+            res.status(500).send('Incorrect details');
+        }
+    }
+   );
+});</pre>
+
+<p>The Register operation is as below</p>
+<pre>app.post("/LoginRegisterMongodb/register/:username/:password", function (req, res) {
+    var username = req.params.username;
+    var password = req.params.password;
+    var userlogin = new UserLogin({ username: username, password: password });
+    userlogin.save();
+    res.json(username);
+});</pre>
+
+<footer>
+    <div>
+        <h2>References</h2>
+        <p><a href="https://www.youtube.com/watch?v=YH5sFprHgl0" target="_blank">MongoDB Class 1</a></p>
+        <p><a href="https://www.youtube.com/watch?v=c-etW7AX9cA" target="_blank">MongoDB Class 2</a></p>
+    </div>
+</footer>

@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Passport Authentication</title>
+
+    <link rel="stylesheet" href="css/jquery-ui.css" />
+    <script src="js/jquery.js"></script>
+    <script src="js/jquery-ui.js"></script>
+
+    <!-- Latest compiled aznd minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
+    <script src="js/angular.min.js"></script>
+    <script src="js/angular-route.js"></script>
+
+    <script src="js/004-Navigation.js"></script>
+    <script src="js/004-container.js"></script>
+    <script src="js/004-register.js"></script>
+    <script src="js/004-service.js"></script>
+    <script src="js/004-login.js"></script>
+    <script src="js/004-register.js"></script>
+    <script src="js/004-profile.js"></script>
+
+</head>
+<body ng-app="navigationApp" ng-controller="ContainerController" ng-style="background">
+    <div class="container">
+
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a ng-class="{active:isActive('/home'), activeStyle:isActive('/home')}" class="navbar-brand" href="#/home">Home</a>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li ng-show="!currentUser" ng-class="{active:isActive('/login'), activeStyle:isActive('/login')}">
+                            <a href="#/login">Login</a>
+                        </li>
+
+                        <li ng-show="!currentUser" ng-class="{active:isActive('/register'), activeStyle:isActive('/register')}">
+                            <a href="#/register">Register</a>
+                        </li>
+
+                        <li ng-show="currentUser" ng-class="{active:isActive('/profile'), activeStyle:isActive('/profile')}">
+                            <a href="#/profile">Profile</a>
+                        </li>
+
+                    </ul>
+                    <ul class="nav navbar-nav">
+                        <li ng-show="currentUser"><a href="#/login" ng-click="logout()">Logout</a></li>
+                    </ul>
+                </div><!-- /.navbar-collapse -->
+            </div><!-- /.container-fluid -->
+        </nav>
+
+        <div ng-view>
+
+        </div>
+
+    </div>
+</body>
+</html>
