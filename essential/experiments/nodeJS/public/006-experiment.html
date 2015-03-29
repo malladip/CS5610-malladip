@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Email</title>
+    <!-- Latest compiled aznd minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+</head>
+<body class="container">
+
+    <h1>Email</h1>
+
+    <p>Click <a href="http://nodejs-malladip.rhcloud.com/email" target="_blank">here</a> to see it on openshift.</p>
+    <p>In this experiment, I learnt how to send an e-mail using nodejs and NodeMailer</p>
+    <pre>var smtpTransport = nodemailer.createTransport("SMTP", {
+    service: "Gmail",
+    auth: {
+        user: "prashantwidgets@gmail.com",
+        pass: "prashantproject"
+    }
+});
+</pre>
+    <pre>var mailOptions = {
+        to: req.body.to,
+        subject: req.body.subject,
+        text: req.body.mail
+    }
+    console.log(mailOptions);
+    smtpTransport.sendMail(mailOptions, function (error, response) {
+        if (error) {
+            res.send("error in sending");
+        } else {
+            res.send("ok");
+        }
+    })
+</pre>
+
+    <footer>
+        <div>
+            <h2>Source Code</h2>
+            <p><a href="../../../fileview/Default.aspx?~/experiments/nodeJS/public/006-email.html" target="_blank">HTML</a></p>
+            <p><a href="../../../fileview/Default.aspx?~/experiments/nodeJS/public/js/006-email.js" target="_blank">Java Script</a></p>
+            <p><a href="../../../fileview/Default.aspx?~/experiments/nodeJS/public/css/006-email.css" target="_blank">CSS</a></p>
+            <p><a href="../../../fileview/Default.aspx?~/experiments/nodeJS/server.js" target="_blank">Server</a></p>
+        </div>
+        <div>
+            <h2>References</h2>
+            <p><a href="http://codeforgeek.com/2014/07/send-e-mail-node-js/" target="_blank">www.codeforgeek.com</a></p>
+        </div>
+    </footer>
+</body>
+</html>

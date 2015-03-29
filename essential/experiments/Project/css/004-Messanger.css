@@ -1,0 +1,109 @@
+﻿.messanger {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.contact-list {
+    border: solid;
+    height: 600px;
+    width: 30%;
+}
+
+.search-contact {
+    height: 59px;
+    background-color:rgb(236, 236, 227);
+}
+
+.search{
+    padding:10px;
+}
+
+.contacts {
+    height: 535px;
+    overflow: auto;
+}
+
+.contact {
+    height: 60px;
+    width: 100%;
+    border-bottom: 1px solid #A8A8A8;
+    padding-top:20px;
+}
+
+.contact-name{
+}
+
+.contact:hover{
+    background-color:rgb(214, 214, 194)
+}
+
+.messages {
+    border: solid;
+    height: 600px;
+    width: 70%;
+}
+
+.from {
+    padding-left: 20px;
+    height: 59px;
+    background-color: rgb(236, 236, 227);
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-family: Calibri;
+    font-size: large;
+}
+
+.messagesOf {
+    height: 501px;
+    overflow: auto;
+    background-image: url('../images/whats app background.jpg');
+    width: 100%;
+}
+
+.mg {
+    width: 100%;
+    overflow: auto;
+}
+
+.msg {
+    margin: 27px;
+    padding: 10px;
+    border-radius: 5px;
+    max-width: 50%;
+    word-wrap: break-word;
+    overflow: auto;
+}
+
+
+.sent-msg {
+    background-color: palegreen;
+}
+
+.rec-msg {
+    background-color: white;
+}
+
+.received-message {
+    padding-left: 50px;
+}
+
+.sent-message {
+    padding-right: 50px;
+}
+
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
+}
+

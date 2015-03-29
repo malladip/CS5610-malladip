@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+
+    <link rel="stylesheet" href="css/jquery-ui.css" />
+    <script src="js/jquery.js"></script>
+    <script src="js/jquery-ui.js"></script>
+
+    <!-- Latest compiled aznd minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
+    <script src="js/angular.min.js"></script>
+    <script src="js/angular-route.min.js"></script>
+
+    <script src="js/006-email.js"></script>
+    <script src="js/006-service.js"></script>
+
+    <link rel="stylesheet" href="css/006-email.css"/>
+</head>
+<body ng-app="emailApp" class="container">
+
+    <div ng-controller="emailCtrl" class="mail">
+        
+        <input type="email" ng-model="email" class="form-control" placeholder="someone@something.domain"/>
+        <input type="text" ng-model="subject" class="form-control" placeholder="Subject"/>
+        <textarea rows="20" class="form-control" placeholder="Message" ng-model="mail"></textarea>
+        <button class="btn" ng-click="send()">Send</button>
+
+    </div>
+
+   
+</body>
+</html>

@@ -1,0 +1,34 @@
+﻿.notepad {
+    width:700px;
+    height:600px;
+    border:solid;
+    overflow:auto;
+}
+
+
+    .notepad .note {
+        margin:5px;
+        float:left;
+        font-size: 30px;
+        border: solid;
+        border-color: black;
+        height:150px;
+        padding-top:50px;
+        padding-bottom:50px;
+        padding-left:10px;
+        padding-right:10px;
+    }
+    
+    .notepad .note:hover {
+            border: solid;
+            border-color: blue;
+        }
+
+    .notepad .note-grid{
+        width:22%;
+    }
+    .notepad .note-list{
+        width:98%;
+    }
+
+ 

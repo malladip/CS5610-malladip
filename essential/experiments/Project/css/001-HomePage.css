@@ -23,3 +23,55 @@
     right: 0;
     padding: 15px;
 }
+
+ /* *********************************************** LOGIN SCREEN ****************************************************** */
+
+#login-screen{
+    width:55%;
+}
+
+.login-container{
+    margin-top:100px;
+}
+
+.login-container .image{
+    float:left
+}
+
+.login-details{
+    float:left;
+    margin-left:30px;
+    padding-top: 40px;
+}
+
+.login{
+    width:174px;
+}
+
+.newUser{
+    padding-left:20px;
+    color:white
+}
+
+#login-screen .left-bottom-corner{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 15px;
+}
+
+#login-screen .lock-screen{
+    background-color:transparent;
+}
+
+.lock {
+    font-size: 20px;
+    color: black;
+}
+
+.white{
+    color:white
+}
+.submit{
+    background-color:blue;
+}

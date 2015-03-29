@@ -1,0 +1,23 @@
+﻿<h2>Welcome {{currentUser.username}}</h2>
+
+<button ng-click="logout()" class="btn">Logout</button>
+
+
+<div>
+
+    <label for="email">From:</label><input id="email" type="email" ng-model="currentUser.email" class="form-control" placeholder="someone@something.domain" disabled />
+    <label for="toemail">To:</label><input id="toemail" type="email" ng-model="email" class="form-control" placeholder="someone@something.domain"/>
+    <label for="subject">Subject:</label><input type="text" id="subject" ng-model="subject" class="form-control" placeholder="Subject" />
+    <textarea rows="20" class="form-control" placeholder="Message" ng-model="mail"></textarea>
+    <button class="btn" ng-click="send()">Send</button>
+
+</div>
+
+<div id="passPop" ng-show="showPop == true">
+    <p>Please enter your email password.</p>
+    <input type="password"  class="form-control" placeholder="*********" ng-model="emailPass" />
+    <button class="btn" ng-click="sendEmail()">Go</button>
+    <hr />
+    <p>We do not save passwords.</p>
+    <p> You are secure.</p>
+</div>

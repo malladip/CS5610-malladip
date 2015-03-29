@@ -1,0 +1,119 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+
+    <script src="../../javascript/jquery.js"></script>
+    <script src="../../javascript/jquery-ui.js"></script>
+    <link rel="stylesheet" href="../../css/jquery-ui.css" />
+
+
+    <!-- Latest compiled aznd minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
+    <script src="../../javascript/angular.min.js"></script>
+    <script src="../../javascript/angular-route.js"></script>
+
+    <link href="css/004-Messanger.css" rel="stylesheet" />
+    <script src="js/004-Messanger.js"></script>
+</head>
+<body ng-app="messageApp">
+
+    <div class="container messanger" ng-controller="messageCtrl">
+
+        <div class="pull-left contact-list">
+            <div class="search-contact">
+
+                <div class="input-group search">
+                    <span class="input-group-addon"><span class=" glyphicon glyphicon-search"></span></span>
+                    <input type="text" class="form-control" ng-model="search">
+                </div>
+
+            </div>
+            <div class="contacts">
+                <div class="contact text-center" ng-repeat="message in messages | filter:search:startsWith track by $index" ng-click="loadMsgs($index)">
+                    {{message.with}}
+                </div>
+            </div>
+        </div>
+
+        <div class="pull-right messages">
+            <div ng-show="messagesFrom != ''">
+                <div class="from">
+                    {{messagesFrom}}
+                </div>
+                <div class="messagesOf">
+                    <div class="mg text-center" ng-repeat="message in messagesOf track by $index">
+                        <span ng-if="message.type == 'sent'" class="pull-right msg sent-msg">
+                            {{message.msg}}
+                        </span>
+                        <span ng-if="message.type == 'received'" class="pull-left msg rec-msg">
+                            {{message.msg}}
+                        </span>
+                    </div>
+                </div>
+                <div>
+
+                </div>
+
+                <div class="input-group">
+                    <input class="form-control" ng-model="newMsg" ng-enter="send()" />
+                    <span class="input-group-addon" ng-click="send()"><img src="images/sendmsg.png" width="14" height="16" /></span>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="documentation">
+        <p>In this experiment, I created a Messanger widget view.</p>
+
+        <ul>
+            <li>
+                <p>The scroll bar look and feel is changed by below code:</p>
+                <pre>
+::-webkit-scrollbar {
+    width: 12px;
+}
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
+}
+</pre>
+            </li>
+            <li>
+                <p>The search of Users is done using AngularJS filters:</p>
+<pre>ng-repeat="message in messages | filter:search:startsWith </pre>
+                <pre>$scope.startsWith = function (actual, expected) {
+        var lowerStr = (actual + "").toLowerCase();
+        return lowerStr.indexOf(expected.toLowerCase()) === 0;
+    };
+</pre>
+            </li>
+        </ul>
+
+        <footer>
+            <h4>Source Code:</h4>
+            <p>
+                <a href="../../fileview/Default.aspx?~/experiments/Project/004-Messanger.html" target="_blank">HTML</a>
+            </p>
+            <p>
+                <a href="../../fileview/Default.aspx?~/experiments/Project/js/004-Messanger.js" target="_blank">JS</a>
+            </p>
+            <p>
+                <a href="../../fileview/Default.aspx?~/experiments/Project/css/004-Messanger.css" target="_blank">CSS</a>
+            </p>
+            <h4>References:</h4>
+            <a href="http://stackoverflow.com/" target="_blank">StackOverflow</a>
+        </footer>
+    </div>
+</body>
+</html>

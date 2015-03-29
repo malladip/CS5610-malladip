@@ -1,0 +1,15 @@
+﻿<h2>Welcome {{currentUser.username}}</h2>
+
+<button ng-click="logout()" class="btn">Logout</button>
+
+
+<table class="table table-striped">
+    <thead>
+        <tr><th>Name</th></tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="ou in otherUsers track by $index">
+            <td>{{ou}}</td>
+        </tr>
+    </tbody>
+</table>

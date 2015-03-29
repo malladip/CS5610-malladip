@@ -1,111 +1,108 @@
-﻿ul.master_navigation {
-    font-size: 100%;
-    font-weight: bold;
-    text-align: center;
-    list-style: none;
-    margin: 0.5em 0;
-    padding: 0;
+﻿body {
+    background-image: url(../images/backgrounds/wall.jpg);
+    background-repeat: no-repeat;
+    font-family: Georgia;
 }
 
-    ul.master_navigation li {
-        display: inline-block;
-        padding: 0 0.5%;
-    }
-
-a {
-    color: #08f;
-    font-weight: bold;
-    text-decoration: none;
+#container {
+    margin: 5%;
+    background-color: whitesmoke;
+    border-radius: 5px;
 }
-
-    a:visited {
-        color: #88f;
-    }
-
-    a:hover {
-        color: white;
-    }
-
-p {
-    text-align: justify;
-}
-
-
-body {
-    max-width: 100%;
-    margin: 0;
-    padding: 0;
-    background-image: url(../images/backgrounds/wooden_blue.jpg);
-}
-
-.pad {
-    padding: 10px;
-}
-
-.box {
-    margin-top: 25px;
-    background-color: skyblue;
-    border-radius: 10px;
-    opacity: 0.8;
-}
-
-.button {
-    width: 130px;
-    margin: 17px;
-    font-family: 'Comic Sans MS';
-    font-size: large;
-    color: white;
-    -webkit-transition: 0.3s;
-}
-
-    .button:hover {
-        width: 130px;
-        margin: 17px;
-        font-family: 'Comic Sans MS';
-        font-size: large;
-        color: white;
-        -webkit-transform: scale(1.5);
-    }
 
 #navigation {
-    margin-top: 20px;
+    padding: 5px;
+    background-color: white;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    font-size: 20px;
+    text-align: center;
+    border: solid;
+    border-color: black;
+}
+
+.navButton {
+    text-decoration: none;
+    padding: 5px;
+}
+
+
+.content {
+    border-left: solid;
+    border-right: solid;
+    border-bottom: solid;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    padding-top: 1px;
+    font-size: medium;
+}
+
+.heading {
+    text-align: center;
+}
+
+.profilePic {
+    float: left;
 }
 
 #my_pic {
-    float: left;
-    width: 250px;
+    width: 230px;
+    height: 290px;
     margin: 16px;
+    border-radius: 10px;
     -webkit-transition: 0.3s;
 }
 
     #my_pic:hover {
-        float: left;
-        width: 250px;
-        margin: 16px;
-        -webkit-transform: scale(1.8);
+        -webkit-transform: scale(1.2);
     }
 
-#content {
-    font-family: 'Comic Sans MS';
-    font-size: large;
-
+.content .text {
+    padding: 10px;
 }
 
-.exp,.project,.blog,.git{
-    margin-left:20px;
-    margin-right:20px;
-    float: left;
-    width: 170px;
-    height: 130px;
+a {
+    color: blue;
+    text-decoration: none;
 }
 
-.gif{
-    width: 170px;
-    height: 130px;
+.links img {
+    margin-left: 25px;
+    margin-right: 25px;
+    width: 150px;
+    height: 100px;
 }
 
-#footer {
-    font-family: 'Comic Sans MS';
-    font-size: large;
-    color: skyblue;
+.inline {
+    display: inline;
+}
+
+footer {
+    text-align: center;
+}
+
+@media screen and (min-width: 1235px) {
+
+    .links {
+        text-align: center;
+        padding-bottom: 20px;
+    }
+}
+
+@media screen and (min-width: 450px) and (max-width: 1235px) {
+
+    .links {
+        clear:both;
+        width: 100%;
+        text-align: center;
+        padding-bottom: 20px;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .links {
+        width: 100%;
+        text-align: center;
+        padding-bottom: 20px;
+    }
 }

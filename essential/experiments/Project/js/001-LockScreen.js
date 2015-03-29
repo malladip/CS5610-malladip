@@ -14,6 +14,7 @@
 
     $(document).click(function () {
         $('body').css('background-image', 'none');
+        $('body').css('background-color', 'darkblue');
         $location.url("/login");
     });
 

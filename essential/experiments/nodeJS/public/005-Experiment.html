@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Logged In users</title>
+    <!-- Latest compiled aznd minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+</head>
+<body class="container">
+
+    <h1>Logged in Users</h1>
+
+    <p>Click <a href="http://nodejs-malladip.rhcloud.com/LoggedInUsers" target="_blank">here</a> to see it on openshift.</p>
+
+
+    <p>This experiment is a part of my project.</p>
+    <p>Here I tried to make a login, register page.</p>
+    <p>When ever a user loggs in, he can see the other users who are logged in into the current app.</p>
+    <p>For testing this, login a user in one window and an another user in another system(incognitive mode or another browser works too.)</p>
+
+    <p>Here I used, passport authentication and MongoDb</p>
+    
+    <p>For storing the users who logged in, I maintained a arrar in server which is updated on every login and logout.</p>
+    <pre>app.post("/LoggedInUsers/login", passport.authenticate('LoggedInUsers'), function (req, res) {
+    var user = req.user;
+    LoggedInUsers_CurrentlyLoggedInUSers.push(user.username);
+    res.json(user);
+});
+</pre>
+
+    <pre>app.post("/LoggedInUsers/logout", function (req, res) {
+    //req.logout();
+   req.session.destroy();
+   var index = LoggedInUsers_CurrentlyLoggedInUSers.indexOf(req.user.username);
+   LoggedInUsers_CurrentlyLoggedInUSers.splice(index - 1, 1)
+   res.send(200);
+});
+</pre>
+
+    <footer>
+        <div>
+            <h2>Source Code</h2>
+            <p><a href="../../../fileview/Default.aspx?~/experiments/nodeJS/public/005-LoggedInUsers.html" target="_blank">Container Screen</a></p>
+            <p><a href="../../../fileview/Default.aspx?~/experiments/nodeJS/public/partials/005-home.html" target="_blank">Home Screen</a></p>
+            <p><a href="../../../fileview/Default.aspx?~/experiments/nodeJS/public/partials/005-profile.html" target="_blank">Profile Screen</a></p>
+            <p><a href="../../../fileview/Default.aspx?~/experiments/nodeJS/public/js/005-home.js" target="_blank">Home Controller</a></p>
+            <p><a href="../../../fileview/Default.aspx?~/experiments/nodeJS/public/js/005-Navigation.js" target="_blank">Navigation Controller</a></p>
+            <p><a href="../../../fileview/Default.aspx?~/experiments/nodeJS/public/js/005-profile.js" target="_blank">Profile Controller</a></p>
+            <p><a href="../../../fileview/Default.aspx?~/experiments/nodeJS/public/js/005-service.js" target="_blank">Service</a></p>
+            <p><a href="../../../fileview/Default.aspx?~/experiments/nodeJS/server.js" target="_blank">Server</a></p>
+        </div>
+    </footer>
+</body>
+</html>

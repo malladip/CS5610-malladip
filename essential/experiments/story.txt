@@ -16,3 +16,5 @@
 ../story/index.htm?../experiments/miscellaneous/ProjectExperimentStory.txt  Week 9(Spring Break)- Project Experiment
 ../story/index.htm?../experiments/nodeJS/nodeJSStory1.txt  Week10 - MongoDB and PassportJs Experiments
 ../story/index.htm?../experiments/Project/projectStory.txt  Week10 - Project Experiments
+../story/index.htm?../experiments/Project/projectStory1.txt  Week11 - Project Experiments
+../story/index.htm?../experiments/nodeJS/nodeJSStory2.txt  Week11 - Project Experiments

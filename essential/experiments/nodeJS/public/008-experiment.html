@@ -1,0 +1,76 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Email</title>
+    <!-- Latest compiled aznd minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+</head>
+<body class="container">
+
+    <h1>Email Application</h1>
+
+    <p>Click <a href="http://nodejs-malladip.rhcloud.com/EmailApp" target="_blank">here</a> to see it on openshift.</p>
+    <p>In this experiment, I extended the previous experiment to make a mailer app.</p>
+    <p>Once you register and login, you can send mails from this app.</p>
+    <p>For this, you need to provide a valid email ID at time of register.</p>
+    <p>On clicking on send, the app asks for a password(which is not saved) and sends the mail using below code:</p>
+
+    <pre>        
+    var from = req.body.from;
+    var to = req.body.pass;
+    var smtpTransport1 = nodemailer.createTransport("SMTP", {
+        service: "Gmail",
+        auth: {
+            user: from,
+            pass: to
+        }
+    });
+
+</pre>
+
+    <pre>var mailOptions = {
+        to: req.body.to,
+        subject: req.body.subject,
+        text: req.body.mail
+    }
+    smtpTransport1.sendMail(mailOptions, function (error, response) {
+        if (error) {
+            res.send("error in sending");
+        } else {
+            res.send("ok");
+        }
+    })
+</pre>
+
+    <p>This may not work depending on the your mail settings.</p>
+    <p>For testing purpose, use following credentials:</p>
+    <pre>
+username : a
+password : a
+email password: prashantproject
+</pre>
+
+    <footer>
+        <div>
+            <h2>Source Code</h2>
+            <p><a href="../../../fileview/Default.aspx?~/experiments/nodeJS/public/008-EmailApp.html" target="_blank">HTML</a></p>
+            <p><a href="../../../fileview/Default.aspx?~/experiments/nodeJS/public/partials/008-home.html" target="_blank">Home Page</a></p>
+            <p><a href="../../../fileview/Default.aspx?~/experiments/nodeJS/public/partials/008-profile.html" target="_blank">Profile Page</a></p>
+            <p><a href="../../../fileview/Default.aspx?~/experiments/nodeJS/public/js/008-home.js" target="_blank">Home Controller</a></p>
+            <p><a href="../../../fileview/Default.aspx?~/experiments/nodeJS/public/js/008-Navigation.js" target="_blank">Navigation</a></p>
+            <p><a href="../../../fileview/Default.aspx?~/experiments/nodeJS/public/js/008-profile.js" target="_blank">Profile Controller</a></p>
+            <p><a href="../../../fileview/Default.aspx?~/experiments/nodeJS/public/js/008-service.js" target="_blank">Service</a></p>
+            <p><a href="../../../fileview/Default.aspx?~/experiments/nodeJS/server.js" target="_blank">Server</a></p>
+
+        </div>
+        <div>
+            <h2>References</h2>
+            <p><a href="http://codeforgeek.com/2014/07/send-e-mail-node-js/" target="_blank">www.codeforgeek.com</a></p>
+        </div>
+    </footer>
+</body>
+</html>

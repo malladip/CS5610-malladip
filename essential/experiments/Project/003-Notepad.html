@@ -1,0 +1,91 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Notepad</title>
+
+    <!-- JQuery -->
+    <script src="../../javascript/jquery.js"></script>
+    <script src="../../javascript/jquery-ui.js"></script>
+    <link rel="stylesheet" href="../../css/jquery-ui.css" />
+
+    <!-- AngularJS -->
+    <script src="../../javascript/angular.min.js"></script>
+    <script src="../../javascript/angular-route.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui/0.4.0/angular-ui.min.js"></script>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
+    <script src="js/003-Notepad.js"></script>
+    <link rel="stylesheet" href="css/003-Notepad.css" />
+
+</head>
+<body ng-app="notepad" class="container">
+    <center>
+        <div class="notepad" ng-controller="notepadCtrl">
+
+            <div ng-show="currentNote == null">
+                <div>
+                    <button ng-click="addNote()" class="btn btn-success">
+                        <span class="glyphicon glyphicon-plus"></span>
+                    </button>
+                    <button ng-click="listView()" class="btn btn-success">
+                        <span class="glyphicon glyphicon-align-justify"></span>
+                    </button>
+                    <button ng-click="gridView()" class="btn btn-success">
+                        <span class="glyphicon glyphicon-th"></span>
+                    </button>
+                </div>
+                <div ui:sortable="" class="note text-center {{view}}" ng-click="openNotepad($index)" ng-repeat="note in notes track by $index">
+                    <span>{{note.title}}</span>
+                </div>
+            </div>
+
+            <div ng-show="currentNote != null">
+                <div>
+                    <button ng-click="goBack()" class="btn btn-success form-control">
+                        <span class="glyphicon glyphicon-chevron-left"></span>
+                    </button>
+                    <input class="form-control" disabled value="Title:" /> <input class="form-control" ng-model="notes[currentNote].title" />
+
+                    <button ng-click="deleteNote()" class="btn btn-success form-control">
+                        <span class="glyphicon glyphicon-trash"></span>
+                    </button>
+                </div>
+                <hr />
+                <div><textarea class="form-control" rows="20">{{notes[currentNote].note}}</textarea></div>
+            </div>
+
+        </div>
+    </center>
+    <div class="documentation">
+        <p>In this experiment, I created a notepad widget where we can store instatnt notes.</p>
+        <p>The following are the features of the notepad:</p>
+        <ul>
+            <li>Can add new note by clicking on the + sign.</li>
+            <li>Can change the view of the notepads into a list form by clicking on the second button.</li>
+            <li>Can change the view of the notepads back into a grid form by clicking on the grid ikon button.</li>
+            <li>Click on any note to see the entire note.</li>
+            <li>On clicking back button, the note gets atomatically saved.</li>
+            <li>Can delete a note by clicking on the delete ikon button</li>
+        </ul>
+
+        <footer>
+            <h4>Source Code:</h4>
+            <p>
+                <a href="../../fileview/Default.aspx?~/experiments/Project/003-Notepad.html" target="_blank">HTML</a>
+            </p>
+            <p>
+                <a href="../../fileview/Default.aspx?~/experiments/Project/js/003-Notepad.js" target="_blank">JS</a>
+            </p>
+            <p>
+                <a href="../../fileview/Default.aspx?~/experiments/Project/css/003-Notepad.css" target="_blank">CSS</a>
+            </p>
+            <h4>References:</h4>
+            <a href="http://stackoverflow.com/" target="_blank">StackOverflow</a>
+        </footer>
+    </div>
+</body>
+</html>

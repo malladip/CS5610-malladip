@@ -1,1 +1,24 @@
-﻿<p>Login</p>
+﻿<div id="login-screen" class="container">
+    <div class="login-container">
+
+        <div class="login-image image">
+            <img src="images/loginIcon.png" />
+        </div>
+
+        <div class="login-details">
+            <div>
+                <input type="text" ng-model="username" class="form-control login" placeholder="Username" />
+            </div>
+            <div class="input-group login">
+                <input type="password" ng-model="password" class="form-control " placeholder="**********">
+                <span class="input-group-addon submit">
+                    <i class="glyphicon glyphicon-arrow-right white"></i>
+                </span>
+            </div>
+            <div><a class="newUser">Are you a new user?</a></div>
+        </div>
+    </div>
+    <div class="left-bottom-corner">
+        <button class="btn lock-screen" ng-click="lockScreen()"><span class="glyphicon glyphicon-lock lock"></span></button>
+    </div>
+</div>
