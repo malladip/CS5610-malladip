@@ -91,6 +91,7 @@
     <footer>
         Copyright © Prashant Malladi, 2015. All rights reserved. |
         <a href="https://www.linkedin.com/pub/prashant-malladi/34/226/772" target="_blank">LinkedIn </a> |
+        <a href="https://github.com/malladip" target="_blank">GitHub</a> |
         <a href="https://www.facebook.com/prashanth.malladi.7?=75876878" target="_blank">Facebook </a> 
     </footer>
 

@@ -92,7 +92,7 @@ footer {
 @media screen and (min-width: 450px) and (max-width: 1235px) {
 
     .links {
-        clear:both;
+        clear: both;
         width: 100%;
         text-align: center;
         padding-bottom: 20px;
@@ -104,5 +104,15 @@ footer {
         width: 100%;
         text-align: center;
         padding-bottom: 20px;
+    }
+}
+
+
+@media screen and (max-width: 540px) {
+    body {
+        background-image: url(../images/backgrounds/wall.jpg);
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        font-family: Georgia;
     }
 }
