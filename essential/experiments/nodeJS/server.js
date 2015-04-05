@@ -29,8 +29,348 @@ mongoose.connect(process.env.OPENSHIFT_MONGODB_DB_URL || 'mongodb://localhost/pr
 
 /****************************************************************************************************************/
 
-/*****************************************008-EmailApp.html******************************************/
+/*****************************************010-ChangePassword.html******************************************/
 
+app.get("/ChangePassword", function (req, res) {
+    res.sendfile(__dirname + '/public/010-ChangePassword.html');
+});
+
+var ChangePasswordSchema = new mongoose.Schema({
+    username: String,
+    password: String,
+    email: String,
+    verified: Boolean,
+    rand: String
+}, { collection: "ChangePassword" });
+
+var ChangePasswordModel = mongoose.model("ChangePasswordModel", ChangePasswordSchema);
+
+passport.use('ChangePassword', new LocalStrategy({
+    usernameField: 'username',
+    passwordField: 'password'
+},
+    function (username, password, done) {
+        ChangePasswordModel.findOne({ username: username, password: password }, function (err, user) {
+            if (user != null) {
+                return done(null, user);
+            } else {
+                return done(null, false, { message: 'Unable to login' });
+            }
+        });
+    }));
+
+passport.serializeUser(function (user, done) {
+    done(null, user);
+});
+
+passport.deserializeUser(function (user, done) {
+    done(null, user);
+});
+
+app.post("/ChangePassword/login", passport.authenticate('ChangePassword'), function (req, res) {
+
+    var user = req.user;
+
+    res.json(user);
+});
+
+app.post("/ChangePassword/logout", function (req, res) {
+
+    //req.logout();
+    req.session.destroy();
+
+    res.send(200);
+});
+
+var mailOptions, host, link;
+
+app.post("/ChangePassword/register", function (req, res) {
+
+    console.log("server ");
+    var newUser = req.body;
+    ChangePasswordModel.findOne({ username: newUser.username }, function (err, user) {
+
+        if (err) { return next(err); }
+        if (user) {
+            res.json(null);
+            return;
+        }
+
+        var newUser = new ChangePasswordModel(req.body);
+
+        newUser.rand = Math.floor((Math.random() * 100) + 54);
+
+        newUser.save(function (err, user) {
+
+            var smtpTransport = nodemailer.createTransport("SMTP", {
+                service: "Gmail",
+                auth: {
+                    user: "prashantwidgets@gmail.com",
+                    pass: "prashantproject"
+                }
+            });
+
+
+            host = req.get('host');
+            link = "http://" + req.get('host') + "/ChangePassword/verify?id=" + newUser.rand + "+" + newUser.username;
+            mailOptions = {
+                to: newUser.email,
+                subject: "Please confirm your Email account",
+                html: "Hello,<br> Please Click on the link to verify your email.<br><a href=" + link + ">Click here to verify</a>"
+            }
+            console.log(mailOptions);
+            smtpTransport.sendMail(mailOptions, function (error, response) {
+                if (error) {
+                    console.log(error);
+                    // res.end("error");
+                } else {
+                    console.log("Message sent: " + response.message);
+                    //res.end("sent");
+                }
+            });
+
+            req.login(user, function (err) {
+                if (err) { return next(err); }
+                res.json(user);
+            });
+
+        });
+    });
+});
+
+app.get('/ChangePassword/verify', function (req, res) {
+    console.log(req.protocol + ":/" + req.get('host'));
+    if ((req.protocol + "://" + req.get('host')) == ("http://" + host)) {
+        console.log("Domain is matched. Information is from Authentic email");
+        console.log(req.query.id);
+        var resp = req.query.id.split(" ");
+        console.log(resp);
+        console.log(resp[0]);
+        console.log(resp[1]);
+
+        ChangePasswordModel.findOne({ username: resp[1] }, function (err, user) {
+            console.log(user);;
+            if (user != null) {
+
+                if (resp[0] == user.rand) {
+                    console.log("email is verified");
+                    user.verified = true;
+                    user.save(function (err, user) {
+                        if (err) {
+                            res.send("<h1>Error</h1>");
+                        } else {
+                            res.send("<h1>Email " + mailOptions.to + " has been Successfully verified</h1>");
+                        }
+                    });
+                }
+                else {
+                    console.log("email is not verified");
+                    res.send("<h1>Bad Request</h1>");
+                }
+            }
+        });
+    }
+    else {
+        res.end("<h1>Request is from unknown source");
+    }
+});
+
+app.get("/ChangePassword/loggedin", function (req, res) {
+    res.send(req.isAuthenticated() ? req.user : '0');
+});
+
+app.post("/ChangePassword/change", function (req, res) {
+    var newPassword = req.body.newPassword;
+
+    console.log("username " + req.body.username);
+    console.log("username " + req.body.oldPassword);
+    ChangePasswordModel.findOne({ username: req.body.username, password: req.body.oldPassword }, function (err, user) {
+       
+        if (user != null) {
+            console.log("got user");
+            user.password = newPassword;
+            user.save(function (err, user) {
+                if (err) {
+                    res.send("<h1>Error</h1>");
+                } else {
+                    
+                    var mailOptions = {
+                        to: user.email,
+                        subject: "Password Change",
+                        text: "Your passowrd chas been changed.\nNew Password: "+ newPassword
+                    }
+                    console.log(mailOptions);
+                    smtpTransport.sendMail(mailOptions, function (error, response) {
+                        if (error) {
+                            res.send("error in sending");
+                        } else {
+                            res.send("ok");
+                        }
+                    })
+                }
+            });
+
+        }
+        else {
+            return;
+        }
+    
+    });
+
+});
+
+
+/*****************************************009-EmailVerification.html******************************************/
+
+app.get("/EmailVerification", function (req, res) {
+    res.sendfile(__dirname + '/public/009-EmailVerification.html');
+});
+
+var EmailVerificationSchema = new mongoose.Schema({
+    username: String,
+    password: String,
+    email: String,
+    verified: Boolean,
+    rand: String
+}, { collection: "EmailVerification" });
+
+var EmailVerificationModel = mongoose.model("EmailVerificationModel", EmailVerificationSchema);
+
+passport.use('EmailVerification', new LocalStrategy({
+    usernameField: 'username',
+    passwordField: 'password'
+},
+    function (username, password, done) {
+        EmailVerificationModel.findOne({ username: username, password: password }, function (err, user) {
+            if (user != null) {
+                return done(null, user);
+            } else {
+                return done(null, false, { message: 'Unable to login' });
+            }
+        });
+    }));
+
+passport.serializeUser(function (user, done) {
+    done(null, user);
+});
+
+passport.deserializeUser(function (user, done) {
+    done(null, user);
+});
+
+app.post("/EmailVerification/login", passport.authenticate('EmailVerification'), function (req, res) {
+
+    var user = req.user;
+
+    res.json(user);
+});
+
+app.post("/EmailVerification/logout", function (req, res) {
+
+    //req.logout();
+    req.session.destroy();
+
+    res.send(200);
+});
+
+var mailOptions, host, link;
+
+app.post("/EmailVerification/register", function (req, res) {
+
+    console.log("server ");
+    var newUser = req.body;
+    EmailVerificationModel.findOne({ username: newUser.username }, function (err, user) {
+
+        if (err) { return next(err); }
+        if (user) {
+            res.json(null);
+            return;
+        }
+
+        var newUser = new EmailVerificationModel(req.body);
+
+        newUser.rand = Math.floor((Math.random() * 100) + 54);
+
+        newUser.save(function (err, user) {
+
+            var smtpTransport = nodemailer.createTransport("SMTP", {
+                service: "Gmail",
+                auth: {
+                    user: "prashantwidgets@gmail.com",
+                    pass: "prashantproject"
+                }
+            });
+
+
+            host = req.get('host');
+            link = "http://" + req.get('host') + "/EmailVerification/verify?id=" + newUser.rand + "+" + newUser.username;
+            mailOptions = {
+                to: newUser.email,
+                subject: "Please confirm your Email account",
+                html: "Hello,<br> Please Click on the link to verify your email.<br><a href=" + link + ">Click here to verify</a>"
+            }
+            console.log(mailOptions);
+            smtpTransport.sendMail(mailOptions, function (error, response) {
+                if (error) {
+                    console.log(error);
+                    // res.end("error");
+                } else {
+                    console.log("Message sent: " + response.message);
+                    //res.end("sent");
+                }
+            });
+
+            req.login(user, function (err) {
+                if (err) { return next(err); }
+                res.json(user);
+            });
+
+        });
+    });
+});
+
+app.get('/EmailVerification/verify', function (req, res) {
+    console.log(req.protocol + ":/" + req.get('host'));
+    if ((req.protocol + "://" + req.get('host')) == ("http://" + host)) {
+        console.log("Domain is matched. Information is from Authentic email");
+        console.log(req.query.id);
+        var resp = req.query.id.split(" ");
+        console.log(resp);
+        console.log(resp[0]);
+        console.log(resp[1]);
+
+        EmailVerificationModel.findOne({ username: resp[1] }, function (err, user) {
+            console.log(user);;
+            if (user != null) {
+
+                if (resp[0] == user.rand) {
+                    console.log("email is verified");
+                    user.verified = true;
+                    user.save(function (err, user) {
+                        if (err) {
+                            res.send("<h1>Error</h1>");
+                        } else {
+                            res.send("<h1>Email " + mailOptions.to + " has been Successfully verified</h1>");
+                        }
+                    });
+                }
+                else {
+                    console.log("email is not verified");
+                    res.send("<h1>Bad Request</h1>");
+                }
+            }
+        });
+    }
+    else {
+        res.end("<h1>Request is from unknown source");
+    }
+});
+
+app.get("/EmailVerification/loggedin", function (req, res) {
+    res.send(req.isAuthenticated() ? req.user : '0');
+});
+
+/*****************************************008-EmailApp.html******************************************/
 
 app.get("/EmailApp", function (req, res) {
     res.sendfile(__dirname + '/public/008-EmailApp.html');
@@ -39,7 +379,7 @@ app.get("/EmailApp", function (req, res) {
 var EmailAppUsersSchema = new mongoose.Schema({
     username: String,
     password: String,
-    email:String
+    email: String
 }, { collection: "EmailAppUser" });
 
 var EmailAppUsersModel = mongoose.model("EmailAppUsersModel", EmailAppUsersSchema);
@@ -110,13 +450,18 @@ app.get("/EmailApp/loggedin", function (req, res) {
 app.post("/EmailApp/send", function (req, res) {
 
     var from = req.body.from;
-    var to = req.body.pass;
+    var pass = req.body.pass;
+
+    console.log(from);
+    console.log(to);
+    console.log(req.body.subject);
+    console.log(req.body.mail);
 
     var smtpTransport1 = nodemailer.createTransport("SMTP", {
         service: "Gmail",
         auth: {
             user: from,
-            pass: to
+            pass: pass
         }
     });
 
@@ -126,6 +471,7 @@ app.post("/EmailApp/send", function (req, res) {
         text: req.body.mail
     }
 
+    console.log(mailOptions);
     smtpTransport1.sendMail(mailOptions, function (error, response) {
         if (error) {
             res.send("error in sending");
@@ -173,10 +519,69 @@ passport.deserializeUser(function (user, done) {
     done(null, user);
 });
 
+var PositionWidgetLocationSchema = new mongoose.Schema({
+    userid: mongoose.Schema.Types.ObjectId,
+    elemid: String,
+    position: Object
+}, { collection: "PositionWidgetLocation" });
+
+var PositionWidgetLocationModel = mongoose.model("PositionWidgetLocationModel", PositionWidgetLocationSchema);
+
+app.post("/PositionOfWidget/save", function (req, res) {
+
+    var elements = req.body;
+
+    for (e in elements) {
+
+        var element = elements[e];
+
+        console.log("elemtns " + elements);
+        console.log("element " + element);
+        console.log("e " + e);
+        console.log("id " + element.id);
+        console.log("elem id " + element.elemId);
+        console.log("elem position " + element.position);
+
+
+        PositionWidgetLocationModel.findOne({ userid: element.id, elemid: element.elemId }, function (err, elem) {
+            //if (err) { return next(err); }
+            if (elem != null) {
+
+                elem.position = element.position;
+                elem.save(function (err) {
+                    if (err) return handleError(err);
+                    console.log("saved updated");
+                });
+
+            }
+            else {
+                var el = { 'userid': element.id, 'elemid': element.elemId, 'position': element.position };
+                var newElem = new PositionWidgetLocationModel(el);
+                newElem.save(function (err) {
+                    if (err) return handleError(err);
+                    console.log("saved first");
+                });
+            }
+        });
+
+    }
+});
+
 app.post("/PositionOfWidget/login", passport.authenticate('PositionOfWidget'), function (req, res) {
 
     var user = req.user;
-    res.json(user);
+
+    if (user != null) {
+
+        PositionWidgetLocationModel.find({ userid: user.id }, function (err, elem) {
+            console.log(elem);
+
+            var userData = { 'user': user, 'positions': elem };
+            res.json(userData);
+        });
+
+    }
+
 });
 
 app.post("/PositionOfWidget/logout", function (req, res) {
@@ -211,49 +616,6 @@ app.get("/PositionOfWidget/loggedin", function (req, res) {
     res.send(req.isAuthenticated() ? req.user : '0');
 });
 
-var PositionWidgetLocationSchema = new mongoose.Schema({
-    userid: mongoose.Schema.Types.ObjectId,
-    elemid: mongoose.Schema.Types.ObjectId,
-    position: mongoose.Schema.Types.Mixed
-}, { collection: "PositionWidgetLocation" });
-
-var PositionWidgetLocationModel = mongoose.model("PositionWidgetLocationModel", PositionWidgetLocationSchema);
-
-app.post("/PositionOfWidget/save", function (req, res) {
-
-    var elements = req.body;
-
-    for(e in elements){
-
-        var element = elements[e];
-
-        console.log("id " + element.id);
-        console.log("id " + element.id);
-
-        PositionWidgetLocationModel.findOne({userid: element.id, elemid: element.elemId }, function (err, elem) {
-            if (err) { return next(err); }
-            if (elem != null)
-            {
-                
-                elem.position = element.position;
-                elem.save(function (err) {
-                    if (err) return handleError(err);
-                    console.log("saved updated");
-                });
-
-            }
-            else
-            {
-                var el = { 'userid': element.id, 'elemid': element.elemId, 'position': element.position};
-                var newElem = new PositionWidgetLocationModel(el);
-                newElem.save(function (err) {
-                    if (err) return handleError(err);
-                    console.log("saved first");
-                });
-            }
-        });
-    }
-});
 
 /*****************************************006-email.html******************************************/
 
@@ -285,7 +647,7 @@ app.post("/email/send", function (req, res) {
             res.send("ok");
         }
     })
-    
+
 });
 
 /*****************************************005-LoggedInUsers.html******************************************/
@@ -338,12 +700,12 @@ app.post("/LoggedInUsers/login", passport.authenticate('LoggedInUsers'), functio
 app.post("/LoggedInUsers/logout", function (req, res) {
 
     //req.logout();
-   req.session.destroy();
+    req.session.destroy();
 
-   var index = LoggedInUsers_CurrentlyLoggedInUSers.indexOf(req.user.username);
-   LoggedInUsers_CurrentlyLoggedInUSers.splice(index, 1);
+    var index = LoggedInUsers_CurrentlyLoggedInUSers.indexOf(req.user.username);
+    LoggedInUsers_CurrentlyLoggedInUSers.splice(index, 1);
 
-   res.send(200);
+    res.send(200);
 });
 
 app.post("/LoggedInUsers/register", function (req, res) {

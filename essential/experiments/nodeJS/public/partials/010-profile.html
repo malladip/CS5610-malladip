@@ -1,0 +1,13 @@
+﻿<div ng-init="init()">
+    <h2>Welcome {{currentUser.username}}</h2>
+
+    <button ng-click="logout()" class="btn">Logout</button>
+
+    <input type="password" placeholder="Old Password" ng-model="oldPassword"/>
+    <input type="password" placeholder="New Password" ng-model="newPassword" />
+    <input type="password" placeholder="Confirm Password" ng-model="confirm" />
+
+    <button ng-click="change()">Change Password</button>
+
+    {{msg}}
+</div>

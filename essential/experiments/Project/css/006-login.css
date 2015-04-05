@@ -1,0 +1,112 @@
+﻿#LoginScreen {
+    height:100vh;
+    background-color: #1298DB;
+}
+
+    #LoginScreen .login {
+        padding: 17%;
+    }
+
+    #LoginScreen .options {
+        color: white;
+        text-decoration: none;
+    }
+
+    #LoginScreen .heading {
+        margin-bottom: 20px;
+    }
+
+    #LoginScreen .welcome {
+        font-family: 'Dancing Script', cursive;
+        font-size: 25px;
+    }
+
+    #LoginScreen .title {
+        font-family: 'Pacifico', cursive;
+        font-size: 50px;
+    }
+
+    #LoginScreen .field {
+        margin: 0px;
+        background-color: #A3D2F4;
+        display: inline;
+    }
+
+    #LoginScreen .loginButton {
+        border: 0;
+        margin: 0;
+        padding: 0;
+        background-color: transparent;
+    }
+
+    #LoginScreen .loginButtonIMG {
+        height: 45px;
+        width: 45px;
+    }
+
+    #LoginScreen .error {
+        color: red;
+        background-color: lightblue;
+        font-size:17px;
+        font-weight:700;
+    }
+
+
+    #LoginScreen .right-bottom-corner {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        padding: 15px;
+    }
+
+
+    #LoginScreen .lockButton{
+        padding:0;
+        border:0;
+        background-color:transparent;
+    }
+
+    #LoginScreen .lockImg{
+        width:30px;
+        height:30px;
+    }
+
+@media screen and (min-width: 454px) {
+
+    #LoginScreen .field {
+        width: 280px;
+    }
+}
+
+@media screen and (max-width: 453px) {
+    #LoginScreen .field {
+        width: 197px;
+    }
+
+    #LoginScreen .welcome {
+        font-family: 'Dancing Script', cursive;
+        font-size: 15px;
+    }
+
+    #LoginScreen .title {
+        font-family: 'Pacifico', cursive;
+        font-size: 40px;
+    }
+
+    #LoginScreen .options {
+        font-size: 12px;
+    }
+
+     #LoginScreen .error {
+        color: red;
+       background-color: lightblue;
+        font-size:15px;
+        font-weight:700;
+    }
+
+}
+
+a,
+a label {
+    cursor: pointer;
+}

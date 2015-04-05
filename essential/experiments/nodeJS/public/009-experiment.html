@@ -1,0 +1,88 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Email Verification</title>
+    <!-- Latest compiled aznd minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+</head>
+<body class="container">
+
+    <h1>Email Verification</h1>
+
+    <p>Click <a href="http://nodejs-malladip.rhcloud.com/EmailVerification" target="_blank">here</a> to see it on openshift.</p>
+    <p>In this experiment, I learnt how to create an email verfication mail.</p>
+    <p>I will use this email verification in the project at time of register.</p>
+
+    <br />
+    <p>In this experiment, you first register providing your email ID. Then a email verification link will be sent to you.</p>
+    <p>Before veryifying, try to login. It dispays a message saying to verify.</p>
+    <p>Then verify the email address by clicking on the link. Now if you login, the message wont appear.</p>
+    <br />
+    <p>The below code is for creating the link for verification:</p>
+    <pre>   host = req.get('host');
+            link = "http://" + req.get('host') + "/EmailVerification/verify?id=" + newUser.rand + "+" + newUser.username;
+            mailOptions = {
+                to: newUser.email,
+                subject: "Please confirm your Email account",
+                html: "Hello,<br> Please Click on the link to verify your email.<br><a href=" + link + ">Click here to verify</a>"
+            }
+            console.log(mailOptions);
+            smtpTransport.sendMail(mailOptions, function (error, response) {
+                if (error) {
+                    console.log(error);
+                    // res.end("error");
+                } else {
+                    console.log("Message sent: " + response.message);
+                    //res.end("sent");
+                }
+            });
+</pre>
+    <p>The below code is for making the email verified on clicking the link:</p>
+    <pre>if ((req.protocol + "://" + req.get('host')) == ("http://" + host)) {
+        console.log("Domain is matched. Information is from Authentic email");
+         EmailVerificationModel.findOne({ username: resp[1] }, function (err, user) {
+            console.log(user);;
+            if (user != null) {
+                if (resp[0] == user.rand) {
+                    console.log("email is verified");
+                    user.verified = true;
+                    user.save(function (err, user) {
+                        if (err) {
+                            res.send("Error");
+                        } else {
+                            res.send("Email " + mailOptions.to + " has been Successfully verified");
+                        }
+                    });
+                }
+                else {
+                    console.log("email is not verified");
+                    res.send("Bad Request");
+                }
+            }
+        });
+</pre>
+
+    <footer>
+        <div>
+            <h2>Source Code</h2>
+            <p><a href="../../../fileview/Default.aspx?~/experiments/nodeJS/public/009-EmailVerification.html" target="_blank">HTML</a></p>
+            <p><a href="../../../fileview/Default.aspx?~/experiments/nodeJS/public/partials/009-home.html" target="_blank">Home Page</a></p>
+            <p><a href="../../../fileview/Default.aspx?~/experiments/nodeJS/public/partials/009-profile.html" target="_blank">Profile Page</a></p>
+            <p><a href="../../../fileview/Default.aspx?~/experiments/nodeJS/public/js/009-home.js" target="_blank">Home Controller</a></p>
+            <p><a href="../../../fileview/Default.aspx?~/experiments/nodeJS/public/js/009-Navigation.js" target="_blank">Navigation</a></p>
+            <p><a href="../../../fileview/Default.aspx?~/experiments/nodeJS/public/js/009-profile.js" target="_blank">Profile Controller</a></p>
+            <p><a href="../../../fileview/Default.aspx?~/experiments/nodeJS/public/js/009-service.js" target="_blank">Service</a></p>
+            <p><a href="../../../fileview/Default.aspx?~/experiments/nodeJS/server.js" target="_blank">Server</a></p>
+
+        </div>
+        <div>
+            <h2>References</h2>
+            <p><a href="http://codeforgeek.com/2014/07/node-email-verification-script/" target="_blank">www.codeforgeek.com</a></p>
+        </div>
+    </footer>
+</body>
+</html>

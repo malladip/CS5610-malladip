@@ -1,0 +1,82 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Widgets experiment</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <h2>Widgets</h2>
+
+    <iframe width="100%" height="600px" src="006-lockScreen.html"></iframe>
+
+    <p>In this experiment, I created a I tried a create a windows lock screen and login page. This is how my home page would look like in my project.
+
+    <p>In this process, I learnt the use of the css unit 'vh'</p>
+    <pre>#LockScreen {
+    background-image: url("../images/lamborghini-desktop-440x900.jpg");
+    height: 100vh;
+    font-family: Arial;
+    color: white;
+}
+</pre>
+
+    <p>The first image wcich appears on the screen is the lock screen. By clicking anywhere on the image, will redirect to the login page.</p>
+    <pre>$('#LockScreen').click(function () {
+        $location.url("/login");
+    });
+</pre>
+
+    <p>The lock screen also provides with the current time of the user. It changes dynamically and refreshes every second.</p>
+    <pre> $interval(function () {
+        dateObj = new Date();
+        $scope.time = getTime(dateObj);
+        $scope.date = getDate(dateObj);
+    }, 1000);
+</pre>
+
+    <p>In the lock screen, the lock button at the bottom left corner is used to navigate back to the lock screen.</p>
+    <pre> $scope.lock = function () {
+        $location.url("/lock");
+    }
+</pre>
+
+
+
+    <footer>
+        <div>
+            <h4>Source Code:</h4>
+            <p>
+                <a href="../../fileview/Default.aspx?~/experiments/Project/006-lockScreen.html" target="_blank">Container HTML</a>
+            </p>
+            <p>
+                <a href="../../fileview/Default.aspx?~/experiments/Project/partials/006-lock.html" target="_blank">Lock Screen</a>
+            </p>
+            <p>
+                <a href="../../fileview/Default.aspx?~/experiments/Project/partials/006-login.html" target="_blank">Login Screen</a>
+            </p>
+            <p>
+                <a href="../../fileview/Default.aspx?~/experiments/Project/js/006-LockCtrl.js" target="_blank">Lock Screen controller</a>
+            </p>
+            <p>
+                <a href="../../fileview/Default.aspx?~/experiments/Project/js/006-LoginCtrl.js" target="_blank">Login Screen controller</a>
+            </p>
+            <p>
+            <p>
+                <a href="../../fileview/Default.aspx?~/experiments/Project/js/006-Navigation.js" target="_blank">Navigation</a>
+            </p>
+            <p>
+                <a href="../../fileview/Default.aspx?~/experiments/Project/css/006-lock.css" target="_blank">Lock Screen CSS</a>
+            </p>
+            <p>
+                <a href="../../fileview/Default.aspx?~/experiments/Project/css/006-login.css" target="_blank">Login Screen CSS</a>
+            </p>
+            <h4>References:</h4>
+            <p><a href="http://stackoverflow.com/" target="_blank">Stack Overflow</a></p>
+        </div>
+    </footer>
+</body>
+</html>

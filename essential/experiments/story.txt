@@ -18,3 +18,5 @@
 ../story/index.htm?../experiments/Project/projectStory.txt  Week10 - Project Experiments
 ../story/index.htm?../experiments/Project/projectStory1.txt  Week11 - Project Experiments
 ../story/index.htm?../experiments/nodeJS/nodeJSStory2.txt  Week11 - Project Experiments
+../story/index.htm?../experiments/Project/projectStory2.txt  Week12 - Project Experiments
+../story/index.htm?../experiments/nodeJS/nodeJSStory3.txt  Week12 - Project Experiments

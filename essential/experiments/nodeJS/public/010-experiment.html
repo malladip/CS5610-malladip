@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Change Password</title>
+    <!-- Latest compiled aznd minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+</head>
+<body class="container">
+
+    <h1>Change Password</h1>
+
+    <p>Click <a href="http://nodejs-malladip.rhcloud.com/ChangePassword" target="_blank">here</a> to see it on openshift.</p>
+    <p>In this experiment, I tried to send amail when ever there is a change in the user changes his password.</p>
+    <p>I use this will use this in my project, by letting the registered users informed when ever there is a change in his password.</p>
+
+    <pre>
+        host = req.get('host');
+            link = "http://" + req.get('host') + "/ChangePassword/verify?id=" + newUser.rand + "+" + newUser.username;
+            mailOptions = {
+                to: newUser.email,
+                subject: "Please confirm your Email account",
+                html: "Hello, Please Click on the link to verify your email.&lt;a href=&quot; + link + &quot;&gt;Click here to verify&lt;/a&gt;"
+            }
+            console.log(mailOptions);
+            smtpTransport.sendMail(mailOptions, function (error, response) {
+                if (error) {
+                    console.log(error);
+                    // res.end("error");
+                } else {
+                    console.log("Message sent: " + response.message);
+                    //res.end("sent");
+                }
+            });
+
+</pre>
+
+    <br />
+    <p>I also learnt how to perform an update operation using mongoose using find and update method</p>
+    <pre>    
+         ChangePasswordModel.findOne({ username: newUser.username }, function (err, user) {
+        if (err) { return next(err); }
+        if (user) {
+            res.json(null);
+            return;
+        }
+        var newUser = new ChangePasswordModel(req.body);
+        newUser.rand = Math.floor((Math.random() * 100) + 54);
+        newUser.save()    
+</pre>
+
+
+    <footer>
+        <div>
+            <h2>Source Code</h2>
+            <p><a href="../../../fileview/Default.aspx?~/experiments/nodeJS/public/010-ChangePassword.html" target="_blank">HTML</a></p>
+            <p><a href="../../../fileview/Default.aspx?~/experiments/nodeJS/public/partials/010-home.html" target="_blank">Home Page</a></p>
+            <p><a href="../../../fileview/Default.aspx?~/experiments/nodeJS/public/partials/010-profile.html" target="_blank">Profile Page</a></p>
+            <p><a href="../../../fileview/Default.aspx?~/experiments/nodeJS/public/js/010-home.js" target="_blank">Home Controller</a></p>
+            <p><a href="../../../fileview/Default.aspx?~/experiments/nodeJS/public/js/010-Navigation.js" target="_blank">Navigation</a></p>
+            <p><a href="../../../fileview/Default.aspx?~/experiments/nodeJS/public/js/010-profile.js" target="_blank">Profile Controller</a></p>
+            <p><a href="../../../fileview/Default.aspx?~/experiments/nodeJS/public/js/010-service.js" target="_blank">Service</a></p>
+            <p><a href="../../../fileview/Default.aspx?~/experiments/nodeJS/server.js" target="_blank">Server</a></p>
+
+        </div>
+        <div>
+            <h2>References</h2>
+            <p><a href="http://stackoverflow.com/" target="_blank">www.stackoverflow.com</a></p>
+        </div>
+    </footer>
+</body>
+</html>
