@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <p>For my project, I will be using MongoDB as the back end.</p>
+    <p>So the following is the database schema which I devloped for my project:</p>
+
+    <br />
+    <p>All the usernames and passwords will be saved into the Authentication collection.</p>
+    <pre>var AuthentcationSchema = new mongoose.Schema({
+    username: String,
+    password: String
+}, { collection: "Authentication" });
+</pre>
+    <p>The ID field in the Authentication collection is used to uniquely identify each user. It is also used to get other details of users like profile info messages etc.</p>
+
+    <br />
+    <p>The user Profile will be saved </p>
+    <pre>var UserProfileSchema = new mongoose.Schema({
+    userId: mongoose.Schema.Types.ObjectId,
+    firstname: String,
+    lastname: String,
+    email: String,
+    phone: Number,
+    secq: String,
+    seca: String,
+    online: Boolean,
+    verified: Boolean,
+    verifId: String
+}, { collection: "UserProfile" });
+</pre>
+
+</body>
+</html>
