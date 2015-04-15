@@ -1,0 +1,18 @@
+﻿
+<div id="weather" draggable ng-show="showWeather == true" ng-controller="WeatherCtrl" ng-init="init()">
+
+    <div class="window-panel">
+        <button class="btn pull-right window-close tab-close" ng-click="closeWeather()">
+            <span>X</span>
+        </button>
+    </div>
+
+    <div id="weather-container" class="container">
+        <div>
+            <h2>Weather in Boston, USA</h2>
+            <weather-icon cloudiness="{{ weather.clouds }}"></weather-icon>
+            <h3>Current: {{ weather.temp.current | weatherfilter:2 }}</h3>
+            min: {{ weather.temp.min | weatherfilter }}, max: {{ weather.temp.max | weatherfilter }}
+        </div>
+    </div>
+</div>

@@ -1,0 +1,19 @@
+﻿#weather {
+    overflow: hidden;
+    width: 365px;
+    height: 253px;
+    min-width: 365px;
+    min-height: 253px;
+    border: solid;
+    border-radius: 8px;
+    position: absolute;
+    left: 100px;
+    top: 100px;
+}
+
+#weather-container {
+    width: 100%;
+    height: 218px;
+    background-color: #eee;
+    overflow-y: auto;
+}

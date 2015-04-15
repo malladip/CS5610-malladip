@@ -1,0 +1,55 @@
+﻿<div id="messenger" draggable ng-show="showMessenger == true" ng-controller="MessengerCtrl" ng-init="init()" resizable-messenger>
+
+    <div class="window-panel">
+        <button class="btn pull-right window-close tab-close" ng-click="closeMessenger()">
+            <span>X</span>
+        </button>
+    </div>
+
+    <div id="messenger-container">
+
+        <div class="pull-left contact-list">
+            <div class="search-contact">
+
+                <div class="input-group search">
+                    <span class="input-group-addon"><span class=" glyphicon glyphicon-search"></span></span>
+                    <input type="text" class="form-control" ng-model="search">
+                </div>
+
+            </div>
+            <div class="contacts">
+                <div class="contact text-center"
+                     ng-class="{'messageWithColor': user.userId == messageWith.userId}"
+                     ng-repeat="user in users  | messengerfilter:search |  orderBy: $index"
+                     ng-click="loadMsgs(user)">
+                    {{user.firstname}} {{user.lastname}}
+                    <span ng-show="user.online" class="pull-right"><img src="../images/online.png" /></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="pull-right messages">
+            <div ng-show="messageWith != null">
+                <div class="from">
+                    {{messageWith.firstname}} {{messageWith.lastname}}
+                </div>
+                <div id="messagesOf" class="messagesOf">
+
+                    <div class="mg text-center" ng-repeat="message in messagesWithUser track by $index">
+                        <span ng-if="message.from == currentUser.userId" class="pull-right msg sent-msg">
+                            {{message.message}}
+                        </span>
+                        <span ng-if="message.to == currentUser.userId" class="pull-left msg rec-msg">
+                            {{message.message}}
+                        </span>
+                    </div>
+                </div>
+                <div>{{errorMsg}}</div>
+                <div class="input-group">
+                    <input class="form-control" ng-model="newMsg" ng-enter="send()" />
+                    <span class="input-group-addon" ng-click="send()"><img src="../images/sendmsg.png" width="14" height="16" /></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

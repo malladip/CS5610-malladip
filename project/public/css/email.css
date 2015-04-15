@@ -1,0 +1,32 @@
+﻿#email {
+    overflow: hidden;
+    width: 418px;
+    height: 462px;
+    min-width: 418px;
+    min-height: 462px;
+    border: solid;
+    border-radius: 8px;
+    position: absolute;
+    left: 100px;
+    top: 100px;
+}
+
+#email-container {
+    width: 100%;
+    height: 427px;
+    background-color: #eee;
+    overflow-y: auto;
+}
+
+    #email-container .success {
+        color: green;
+    }
+
+    #email-container .error {
+        color: red;
+    }
+
+    #email-container .option-btns {
+        background-color: #39a385;
+        color: white;
+    }

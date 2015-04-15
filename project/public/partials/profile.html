@@ -1,0 +1,113 @@
+﻿<div id="profile" draggable ng-show="showProfile == true" ng-controller="ProfileCtrl" ng-init="init()" resizable-profile>
+
+    <div class="window-panel">
+        <button class="btn pull-right window-close tab-close" ng-click="closeProfile()">
+            <span>X</span>
+        </button>
+    </div>
+
+    <div id="profile-container" class="container">
+        <div class="pull-left options">
+            <ul class="nav">
+                <li ng-class="{'tab':true,'option':true, 'block-element':true ,'isActive' : activeTabIndex == 0}">
+                    <a role="tab" data-toggle="tab" class="tab-button" ng-click="openTab(0)">
+                        Background
+                    </a>
+                </li>
+                <li ng-class="{'tab':true,'option':true, 'block-element':true ,'isActive' : activeTabIndex == 1}">
+                    <a role="tab" data-toggle="tab" class="tab-button" ng-click="openTab(1)">
+                        User Info
+                    </a>
+                </li>
+                <li ng-class="{'tab':true,'option':true, 'block-element':true ,'isActive' : activeTabIndex == 2}">
+                    <a role="tab" data-toggle="tab" class="tab-button" ng-click="openTab(2)">
+                        Password
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="pull-right content">
+            <div ng-show="activeTabIndex == 0">
+                <div class="background-info-content">
+                    <p>Please paste your background image URL below:</p>
+                    <div><input type="text" class="form-control" ng-model="bgUrl" /></div>
+                    <div><button class="form-control" ng-click="changeBg()">Change My Background</button></div>
+                </div>
+            </div>
+
+            <div ng-show="activeTabIndex == 1">
+                <div class="user-info-content">
+                    <div>
+                        <div>Email ID</div>
+                        <div class="input-group search">
+                            <p class="form-control">{{user.email}}</p>
+                            <span class="input-group-addon">
+                                <span ng-class="{ 'glyphicon':user.verified, 'glyphicon-ok':user.verified, 'success':user.verified}" title="Your Email ID is verified.">
+                                </span>
+                                <span ng-class="{ 'glyphicon':!user.verified, 'glyphicon-remove':!user.verified, 'error':!user.verified}" title="Please veriy your Email ID">
+
+                                </span>
+                            </span>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div>First Name</div>
+                        <input type="text" class="form-control" ng-model="user.firstname">
+                        <div class="error">{{errorFirstname}}</div>
+                    </div>
+                    <div>
+                        <div>Last Name</div>
+                        <input type="text" class="form-control" ng-model="user.lastname">
+                        <div class="error"> {{errorLastname}}</div>
+                    </div>
+                    <div>
+                        <div>Phone Number</div>
+                        <input type="number" class="form-control" ng-pattern="/^[0-9]{10}$/" ng-model="user.phone">
+                        <div class="error">{{errorPhone}}</div>
+                    </div>
+                    <div>
+                        <div>Security Question</div>
+                        <input type="text" class="form-control" ng-model="user.secq">
+                        <div class="error">{{errorSecurityquestion}}</div>
+                    </div>
+                    <div>
+                        <div>Security Answer</div>
+                        <input type="password" class="form-control" ng-model="user.seca">
+                        <div class="error">{{errorSecurityanswer}}</div>
+                    </div>
+                    <br />
+                    <div>
+                        <button class="btn form-control" ng-click="updateInfo()">Update my Details</button>
+                    </div>
+                    <div class="success">{{userInfoSuccMsg}}</div>
+                    <div class="error">{{userInfoErrorMsg}}</div>
+                </div>
+            </div>
+
+            <div ng-show="activeTabIndex == 2">
+                <div class="password-content">
+                    <div>
+                        <div>Old Password </div>
+                        <input type="password" class="form-control" ng-model="oldPassword">
+                    </div>
+                    <div>
+                        <div>New Password</div>
+                        <input type="password" class="form-control" ng-model="newPassword">
+                    </div>
+                    <div>
+                        <div>Confirm Password</div>
+                        <input type="password" class="form-control" ng-model="confirm">
+                    </div>
+                    <br />
+                    <div>
+                        <button class="btn form-control" ng-click="changePassword()">Change My Password</button>
+                    </div>
+                    <div class="success">{{changePasswordSuccMsg}}</div>
+                    <div class="error">{{changePasswordErrorMsg}}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,45 @@
+﻿<div id="stop-watch" draggable ng-show="showStopWatch == true" ng-controller="StopWatchCtrl" ng-init="init()">
+
+    <div class="window-panel">
+        <button class="btn pull-right window-close tab-close" ng-click="closeStopWatch()">
+            <span>X</span>
+        </button>
+    </div>
+
+    <div id="stop-watch-container" class="container">
+        <center>
+            <div class="watch">
+                <span class="time">{{((hours+"").length > 1 ? ("" + hours) : ("0" + hours))}}:{{((minutes+"").length > 1 ? "" + minutes : "0" + minutes)}}:{{((seconds+"").length > 1 ? "" + seconds : "0" + seconds)}}</span>
+            </div>
+            <div class="options">
+
+                <button ng-show="mode != 'start'" ng-click="start()">
+                    <span class="glyphicon glyphicon-play"> Start</span>
+                </button>
+                <button ng-show="mode == 'start'" ng-click="pause()">
+                    <span class="glyphicon glyphicon-pause"> Pause</span>
+                </button>
+                <button ng-click="stop()">
+                    <span class="glyphicon glyphicon-stop"> Stop</span>
+                </button>
+                <button ng-click="lap()">
+                    <span class="glyphicon glyphicon-pushpin"> Lap</span>
+                </button>
+                <button ng-click="refresh()">
+                    <span class="glyphicon glyphicon-refresh"> Refresh</span>
+                </button>
+            </div>
+            <div>
+                <h3>Lap Time</h3>
+                <div class="laps">
+                    <table class="table table-striped lap-table">
+
+                        <tr ng-repeat="lap in laps track by $index">
+                            <td>{{lap}}</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </center>
+    </div>
+</div>

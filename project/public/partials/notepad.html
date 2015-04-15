@@ -1,0 +1,64 @@
+﻿<div id="notepad" draggable ng-show="showNotepad == true" ng-controller="NotepadCtrl" resizable ng-init="init()">
+
+    <div class="window-panel">
+        <button class="btn pull-right window-close tab-close" ng-click="closenotepad()">
+            <span>X</span>
+        </button>
+    </div>
+
+    <div id="notepad-container">
+        <div ng-show="currentNote == null">
+            <div class="row note-options">
+                <div class="col-xs-6">
+                    <button ng-click="listView()" class="btn form-control notepad-button">
+                        <span class="glyphicon glyphicon-align-justify"></span>
+                    </button>
+                </div>
+                <div class="col-xs-6">
+                    <button ng-click="gridView()" class="btn form-control notepad-button">
+                        <span class="glyphicon glyphicon-th"></span>
+                    </button>
+                </div>
+            </div>
+            <div class="notes">
+                <div class="note text-center {{view}}" ng-click="openNotepad($index)" ng-repeat="note in notes track by $index">
+                    <span class="note-title">{{note.title}}</span>
+                </div>
+            </div>
+            <button ng-click="addNote()" class="btn new-note-btn right-bottom-corner">
+                <img src="../images/new-note.png" width="40" />
+            </button>
+        </div>
+
+        <div ng-show="currentNote != null">
+
+            <div class="row note-options">
+                <div class="col-xs-4">
+                    <button ng-click="goBack()" class="btn form-control notepad-button" title="Go Back">
+                        <span class="glyphicon glyphicon-chevron-left"></span>
+                    </button>
+                </div>
+                <div class="col-xs-4">
+                    <button ng-click="goSave()" class="btn form-control notepad-button" title="Save">
+                        <span class="glyphicon glyphicon-floppy-disk"></span>
+                    </button>
+                </div>
+                <div class="col-xs-4">
+                    <button ng-click="deleteNote()" class="btn form-control notepad-button" title="Delete">
+                        <span class="glyphicon glyphicon-trash"></span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="notes">
+                <input class="form-control" ng-model="currentNote.title" placeholder="Title" maxlength="15" />
+
+                <hr />
+                <div><textarea class="form-control" rows="10" placeholder="Note" ng-model="currentNote.note"></textarea></div>
+                <div class="success">{{successMsg}}</div>
+                <div class="error">{{errorMsg}}</div>
+            </div>
+        </div>
+
+    </div>
+</div>

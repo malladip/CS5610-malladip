@@ -74,7 +74,7 @@
                 <a href="story/index.htm?../experiments/story.txt" target="_blank" class="exp">
                     <img src="images/random/experiments.png" />
                 </a>
-                <a class="project">
+                <a href="story/index.htm?../project/story.txt" target="_blank" class="project">
                     <img src="https://kirankumarbommana.files.wordpress.com/2014/07/projectmanagement.jpg" />
                 </a>
                 <a href="blog/" target="_blank" class="blog">

@@ -1,0 +1,13 @@
+﻿<div id="google" draggable ng-show="showGoogle == true" ng-controller="GoogleCtrl" ng-init="init()" resizable>
+
+    <div class="window-panel">
+        <button class="btn pull-right window-close tab-close" ng-click="closegoogle()">
+            <span>X</span>
+        </button>
+    </div>
+
+    <div id="google-container" class="container">
+        <div class="text-center"><img src="https://www.google.com/images/srpr/logo11w.png" width="180" /></div>
+        <input type="text" class="form-control" ng-model="googlesearch" ng-enter="gogolesearch()">
+    </div>
+</div>

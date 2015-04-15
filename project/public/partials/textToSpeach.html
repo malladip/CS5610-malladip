@@ -1,0 +1,24 @@
+﻿<div id="textToSpeach" ng-show="showTextToSpeach == true" ng-controller="TextToSpeachCtrl" ng-init="init()" draggable resize-textarea>
+
+    <div class="window-panel">
+        <button class="btn pull-right window-close tab-close" ng-click="closeTextToSpeach()">
+            <span>X</span>
+        </button>
+    </div>
+
+    <div id="text-to-speach-container" class="container">
+
+        <div class="converter">
+            <center>
+                <div class="tools">
+                    <button class="btn play" title="Play" ng-click="playText()"><span class="glyphicon glyphicon-play"> Play</span></button>
+                    <button class="btn erase" title="Clear" ng-click="eraseText()"><span class="glyphicon glyphicon-erase"> Clear</span></button>
+                </div>
+            </center>
+            <div class="inputText">
+                <textarea class="form-control" rows="10" placeholder="Enter Text Here" ng-model="text"></textarea>
+                <iframe hidden src="temp"></iframe>
+            </div>
+        </div>
+    </div>
+</div>

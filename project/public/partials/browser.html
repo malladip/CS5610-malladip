@@ -1,0 +1,31 @@
+﻿
+<div class="browser" ng-show="showBrowser" id="browser" ng-controller="BrowserCtrl" ng-init="init()" draggable resizable-browser>
+
+    <div class="window-panel">
+        <!-- Nav tabs -->
+        <ul class="nav nav-tabs">
+            <li ng-class="{'tab' : true, 'active' : $index == activeTabIndex}" ng-style="{'width': geTabWidth()+'%'}" ng-repeat="b in browserTabs track by $index" ng-click="openTab($index)">
+                <a role="tab" data-toggle="tab" class="tab-button">
+                    Tab {{$index+1}}
+                    <span class="pull-right tab-close" ng-click="closeTab($index)">x</span>
+                </a>
+            </li>
+            <li class="newTab" ng-click="addNewTab()">
+                <button class="tab-button newTabButton">
+                    <span class="glyphicon glyphicon-plus"></span>
+                </button>
+            </li>
+            <li class="pull-right">
+                <button class="btn window-close tab-close" ng-click="closebrowser()">
+                    <span>X</span>
+                </button>
+            </li>
+        </ul>
+    </div>
+
+    <div class="browser-container">
+        <input class="form-control" ng-model="url" ng-enter="url_enter()" placeholder="Enter URL (including HTTP)" />
+
+        <iframe class="url-content" src="{{loadURL}}" height="336"></iframe>
+    </div>
+</div>

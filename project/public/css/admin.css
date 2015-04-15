@@ -1,0 +1,45 @@
+﻿#adminLogin {
+}
+
+    #adminLogin .adminLoginSubmitButton {
+        background-color: #39a385;
+        color: white;
+    }
+
+    #adminLogin .error {
+        color: red;
+    }
+
+
+#adminPage {
+    height: 594px;
+}
+
+    #adminPage .authentication {
+        border: solid;
+        height: 297px;
+        overflow: auto;
+    }
+
+    #adminPage .userprofile {
+        border: solid;
+        height: 297px;
+        overflow: auto;
+    }
+
+    #adminPage .message {
+        border: solid;
+        height: 297px;
+        overflow: auto;
+    }
+
+    #adminPage .widgetData {
+        border: solid;
+        height: 297px;
+        overflow: auto;
+    }
+
+    #adminPage .logout-button {
+        background-color: #39a385;
+        color: white;
+    }

@@ -1,0 +1,45 @@
+﻿#textToSpeach {
+    overflow: hidden;
+    width: 366px;
+    height: 350px;
+    min-width: 366px;
+    min-height: 350px;
+    border: solid;
+    border-radius: 8px;
+    position: absolute;
+    left: 100px;
+    top: 100px;
+}
+
+#text-to-speach-container {
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    background-color: #eee;
+    overflow-y: auto;
+}
+
+    #text-to-speach-container .converter {
+        border: solid;
+        border-radius: 8px;
+        background-color: black;
+    }
+
+    #text-to-speach-container .tools {
+        background-color: black;
+        margin: 0;
+        color: white;
+        font-size: 15px;
+        width: 100%;
+    }
+
+    #text-to-speach-container .play, #text-to-speach-container .erase {
+        width: 40%;
+        margin: 5px;
+        background-color: #39a385;
+    }
+
+    #text-to-speach-container textarea {
+        width: 100%;
+        resize: none;
+    }

@@ -1,0 +1,129 @@
+﻿#messenger {
+    overflow: hidden;
+    width: 650px;
+    height: 460px;
+    min-width: 650px;
+    min-height: 460px;
+    border: solid;
+    border-radius: 8px;
+    position: absolute;
+    left: 100px;
+    top: 100px;
+}
+
+#messenger-container {
+    width: 100%;
+    height: 425px;
+    background-color: #eee;
+    overflow-y: auto;
+}
+
+    #messenger-container .contact-list {
+        border: solid;
+        height: 425px;
+        width: 30%;
+    }
+
+    #messenger-container .search-contact {
+        height: 59px;
+        background-color: rgb(236, 236, 227);
+    }
+
+    #messenger-container .search {
+        padding: 10px;
+    }
+
+    #messenger-container .contacts {
+        height: 360px;
+        overflow: auto;
+    }
+
+    #messenger-container .contact {
+        height: 60px;
+        width: 100%;
+        background-color: white;
+        border-bottom: 1px solid #A8A8A8;
+        padding-top: 20px;
+    }
+
+    #messenger-container .contact-name {
+    }
+
+    #messenger-container .contact:hover {
+        background-color: #d5d0d0;
+    }
+
+    #messenger-container .messages {
+        border: solid;
+        height: 425px;
+        width: 70%;
+    }
+
+    #messenger-container .from {
+        padding-left: 20px;
+        height: 59px;
+        background-color: rgb(236, 236, 227);
+        padding-top: 15px;
+        padding-bottom: 15px;
+        padding-left: 20px;
+        padding-right: 20px;
+        font-family: Calibri;
+        font-size: large;
+    }
+
+    #messenger-container .messagesOf {
+        height: 323px;
+        overflow: auto;
+        background-image: url('../images/whats app background.jpg');
+        width: 100%;
+    }
+
+    #messenger-container .mg {
+        width: 100%;
+        overflow: auto;
+    }
+
+    #messenger-container .msg {
+        margin: 10px;
+        padding: 10px;
+        border-radius: 5px;
+        max-width: 50%;
+        word-wrap: break-word;
+        overflow: auto;
+    }
+
+
+    #messenger-container .sent-msg {
+        background-color: palegreen;
+    }
+
+    #messenger-container .rec-msg {
+        background-color: white;
+    }
+
+    #messenger-container .received-message {
+        padding-left: 50px;
+    }
+
+    #messenger-container .sent-message {
+        padding-right: 50px;
+    }
+
+    #messenger-container ::-webkit-scrollbar {
+        width: 12px;
+    }
+
+    #messenger-container ::-webkit-scrollbar-track {
+        -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+        border-radius: 10px;
+    }
+
+    #messenger-container ::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+        -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
+    }
+
+
+    #messenger-container .messageWithColor {
+        background-color: #d5d0d0;
+    }

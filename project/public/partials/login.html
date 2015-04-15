@@ -1,0 +1,34 @@
+﻿<link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+
+
+<div id="LoginScreen">
+    <div class="container login">
+        <div class="row heading">
+            <span class="welcome">Welcome to </span> <span class="title">Widgets</span>
+        </div>
+        <div id="loginDetails">
+            <div class="row">
+                <input type="text" class="userField field form-control" ng-model="username" ng-enter="login()" placeholder="Username" />
+
+            </div>
+            <div class="row">
+                <input type="password" id="pass" class="passField field form-control" ng-model="password" ng-enter="login()" placeholder="Password" />
+                <button class="loginButton" ng-click="login()" title="Login"><img class="loginButtonIMG" src="../images/loginSubmit.png" /></button>
+            </div>
+            <span class="error">{{msg}}</span>
+        </div>
+        <div class="row options">
+            <a class="options" ng-click="forgotPassword()">Forgot Password</a> |
+            <a class="options" ng-click="freeUser()">Go for Free</a> |
+            <a class="options" ng-click="register()">Register</a>
+        </div>
+    </div>
+
+    <div class="admin left-bottom-corner">
+        <button class="loginButton" ng-click="adminLogin()" title="Admin Login"><img class="adminButtonIMG" src="../images/admin.png" /></button>
+    </div>
+
+    <div class="lockScreen right-bottom-corner">
+        <button class="lockButton" ng-click="lock()" title="Lock Screen"><img src="../images/lock.png" class="lockImg" /></button>
+    </div>
+</div>

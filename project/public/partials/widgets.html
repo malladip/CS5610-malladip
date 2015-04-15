@@ -1,0 +1,48 @@
+﻿<div id="widgets" ng-controller="WidgetsCtrl" class="disable-select" ng-style="background" movetaskbar>
+
+    <google></google>
+
+    <notepad></notepad>
+
+    <browser></browser>
+
+    <youtube></youtube>
+
+    <calculator></calculator>
+
+    <text-to-speach></text-to-speach>
+
+    <profile></profile>
+
+    <messenger></messenger>
+
+    <weather></weather>
+
+    <stop-watch></stop-watch>
+
+    <email></email>
+
+    <div id="taskbar" ng-controller="TaskbarCtrl" ng-init="init()" class="taskbar-bottom disable-select">
+
+        <div class="icons">
+            <button class="button" ng-click="google()" title="Google Search"><img src="images/google.png" class="icons" /></button>
+            <button class="button" ng-click="notepad()" title="Notepad"><img src="../images/notepad.png" class="icons" /></button>
+            <button class="button" ng-click="browser()" title="Browser"><img src="../images/browser.png" class="icons" /></button>
+            <button class="button" ng-click="youtube()" title="Youtube"><img src="../images/youtube.png" class="icons" /></button>
+            <button class="button" ng-click="textToSpeach()" title="Narrator"><img src="../images/TexttoSpeech.png" class="icons" /></button>
+            <button class="button" ng-click="calculator()" title="Calculator"><img src="../images/calculator.png" class="icons" /></button>
+            <button class="button" ng-click="profile()" title="Setting"><img src="../images/setting.png" class="icons" /></button>
+            <button class="button" ng-click="messenger()" title="Messenger"><img src="../images/chat.png" class="icons" /></button>
+            <button class="button" ng-click="weather()" title="Weather"><img src="../images/weather.png" class="icons" /></button>
+            <button class="button" ng-click="stopWatch()" title="Stop Watch"><img src="../images/stopwatch.png" class="icons" /></button>
+            <button class="button" ng-click="email()" title="Email"><img src="../images/email.png" class="icons" /></button>
+            <button class="button" ng-click="save()" title="Save"><img src="../images/save.png" class="icons" /></button>
+            <button class="button" ng-click="logout()" title="Exit"><img src="../images/exit.png" class="icons" /></button>
+        </div>
+        <div class="pull-right date-time date-time-right">
+            <center>
+                <button class="date-time-button" title="{{dayName}}"> {{time}}<br />{{date}}</button>
+            </center>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,26 @@
+﻿#LockScreen {
+    background-image: url("../images/lamborghini-desktop-440x900.jpg");
+    height: 100vh;
+    font-family: Arial;
+    color: white;
+}
+
+    #LockScreen #time {
+        font-size: 80px;
+    }
+
+    #LockScreen #date {
+        font-size: 60px;
+    }
+
+    #LockScreen .right-bottom-corner {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        padding: 15px;
+    }
+
+    #LockScreen .message {
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        font-size: 30px;
+    }

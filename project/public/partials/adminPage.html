@@ -1,0 +1,157 @@
+﻿<div id="adminPage" class="container" ng-init="init()">
+    <div class="row">
+        <button class="form-control btn logout-button" ng-click="logout()">Logout</button>
+    </div>
+    <div class="row">
+        <button class="form-control btn btn-danger" ng-click="clearDB()">Clear Entire Database</button>
+    </div>
+    <div class="row">
+
+        <div class="col-xs-5 authentication">
+            <div class="row">
+                <center><h2>Authorization Collection</h2></center>
+            </div>
+            <div class="row">
+                <button class="form-control btn btn-danger" ng-click="deleteAll('user')">Delete All Users</button>
+            </div>
+            <div class="row">
+                <input class="col-xs-6 form-control" type="text" placeholder="Enter UserID" ng-model="deleteUserId" />
+                <button class="col-xs-6 form-control btn btn-danger" ng-click="deleteByID('user')">Delete Users by Id</button>
+            </div>
+            <div class="row">
+                <table class="index table table-striped">
+                    <thead>
+                        <tr>
+                            <td><h3>Index</h3></td>
+                            <td><h3>ID</h3></td>
+                            <td><h3>Username</h3></td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="user in users track by $index">
+                            <td>{{$index}}</td>
+                            <td>{{user._id}}</td>
+                            <td>{{user.username}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="col-xs-7 userprofile">
+            <div class="row">
+                <center><h2>UserProfile Collection</h2></center>
+            </div>
+            <div class="row">
+                <button class="form-control btn btn-danger" ng-click="deleteAll('profile')">Delete All Users Profile</button>
+            </div>
+            <div class="row">
+                <input class="col-xs-6 form-control" type="text" placeholder="Enter UserID" ng-model="deleteProfileId" />
+                <button class="col-xs-6 form-control btn btn-danger" ng-click="deleteByID('profile')">Delete Users Profile by User Id</button>
+            </div>
+            <div class="row">
+                <table class="index table table-striped">
+                    <thead>
+                        <tr>
+                            <td><h3>Index</h3></td>
+                            <td><h3>User Id</h3></td>
+                            <td><h3>firstname</h3></td>
+                            <td><h3>lastname</h3></td>
+                            <td><h3>email</h3></td>
+                            <td><h3>phone</h3></td>
+                            <td><h3>sec q</h3></td>
+                            <td><h3>sec a</h3></td>
+                            <td><h3>online</h3></td>
+                            <td><h3>verified</h3></td>
+                            <td><h3>verify ID</h3></td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="user in userprofile track by $index">
+                            <td>{{$index}}</td>
+                            <td>{{user.userId}}</td>
+                            <td>{{user.firstname}}</td>
+                            <td>{{user.lastname}}</td>
+                            <td>{{user.email}}</td>
+                            <td>{{user.phone}}</td>
+                            <td>{{user.secq}}</td>
+                            <td>{{user.seca}}</td>
+                            <td>{{user.online}}</td>
+                            <td>{{user.verified}}</td>
+                            <td>{{user.verifId}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-5 message">
+            <div class="row">
+                <center><h2>Message Collection</h2></center>
+            </div>
+            <div class="row">
+                <button class="form-control btn btn-danger" ng-click="deleteAll('message')">Delete All Messages</button>
+            </div>
+            <div class="row">
+                <input class="col-xs-6 form-control" type="text" placeholder="Enter UserID" ng-model="deleteMessageId" />
+                <button class="col-xs-6 form-control btn btn-danger" ng-click="deleteByID('message')">Delete Messages by User Id</button>
+            </div>
+            <div class="row">
+                <table class="index table table-striped">
+                    <thead>
+                        <tr>
+                            <td><h3>Index</h3></td>
+                            <td><h3>from</h3></td>
+                            <td><h3>to</h3></td>
+                            <td><h3>msg</h3></td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="user in message track by $index">
+                            <td>{{$index}}</td>
+                            <td>{{user.from}}</td>
+                            <td>{{user.to}}</td>
+                            <td>{{user.message}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="col-xs-7 widgetData">
+            <div class="row">
+                <center><h2>WidgetData Collection</h2></center>
+            </div>
+            <div class="row">
+                <button class="form-control btn btn-danger" ng-click="deleteAll('widget')">Delete All Widget Data</button>
+            </div>
+            <div class="row">
+                <input class="col-xs-6 form-control" type="text" placeholder="Enter UserID" ng-model="deleteWidgetId" />
+                <button class="col-xs-6 form-control btn btn-danger" ng-click="deleteByID('widget')">Delete widget data by User Id</button>
+            </div>
+            <div class="row">
+                <table class="index table table-striped">
+                    <thead>
+                        <tr>
+                            <td><h3>Index</h3></td>
+                            <td><h3>userId</h3></td>
+                            <td><h3>taskbar</h3></td>
+                            <td><h3>background</h3></td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="user in widgetdata track by $index">
+                            <td>{{$index}}</td>
+                            <td>{{user.userId}}</td>
+                            <td>{{user.taskbar}}</td>
+                            <td>{{user.background}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

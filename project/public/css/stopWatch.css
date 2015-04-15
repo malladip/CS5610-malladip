@@ -1,0 +1,35 @@
+﻿#stop-watch {
+    overflow: hidden;
+    width: 350px;
+    height: 350px;
+    border: solid;
+    border-radius: 8px;
+    position: absolute;
+    left: 100px;
+    top: 100px;
+}
+
+#stop-watch-container {
+    width: 100%;
+    height: 314px;
+    background-color: #eee;
+    overflow: hidden;
+}
+
+    #stop-watch-container .laps {
+        overflow: auto;
+        height: 117px;
+    }
+
+    #stop-watch-container .time {
+        font-size: 70px;
+    }
+
+    #stop-watch-container .watch {
+        text-align: center;
+    }
+
+    #stop-watch-container button {
+        background-color: #39a385;
+        color: white;
+    }

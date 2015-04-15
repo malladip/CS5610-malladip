@@ -1,0 +1,63 @@
+﻿#youtube {
+    overflow: hidden;
+    width: 415px;
+    height: 415px;
+    min-width: 415px;
+    min-height: 415px;
+    border: solid;
+    border-radius: 8px;
+    position: absolute;
+    left: 100px;
+    top: 100px;
+    background-color: white;
+}
+
+    #youtube .window-panel {
+        height: 42px;
+        background-color: lightblue;
+    }
+
+    #youtube .tab {
+        margin: 1px;
+        width: 45%;
+        max-height: 42px;
+        background-color: #eee;
+    }
+
+    #youtube .tab-button {
+        width: 100%;
+        max-height: 42px;
+    }
+
+    #youtube .url-content {
+        width: 100%;
+    }
+
+.youtube-container {
+    clear: both;
+    width: 100%;
+    height: 100%;
+    background-color: #fbfbfb;
+}
+
+    .youtube-container .videos {
+        height: 339px;
+        overflow-y: auto;
+    }
+
+    .youtube-container .video {
+        margin: 10px;
+    }
+
+    .youtube-container .addToFavStar {
+        color: white;
+    }
+
+    .youtube-container .alreadyFavStar {
+        color: yellow;
+    }
+
+    .youtube-container .msg {
+        text-align: center;
+        color: red;
+    }

@@ -1,0 +1,35 @@
+﻿<div id="RegisterScreen">
+    <center><h2>Registration</h2></center>
+    <div ng-show="registred != 'ok'">
+        <div class="form-style-8">
+            <form>
+                <input type="text" ng-model="firstname" placeholder="First Name" />
+                <div><span class="error">{{errorFirstname}}</span></div>
+                <input type="text" ng-model="lastname" placeholder="Last Name" />
+                <div><span class="error">{{errorLastname}}</span></div>
+                <input type="text" ng-model="username" placeholder="Username" />
+                <div><span class="error">{{errorUsername}}</span></div>
+                <input type="password" ng-model="password" placeholder="Password" />
+                <div><span class="error">{{errorPassword}}</span></div>
+                <input type="password" ng-model="confirm" placeholder="Confirm Password" />
+                <div><span class="error">{{errorConfirm}}</span></div>
+                <input type="email" ng-model="email" placeholder="Email ID" />
+                <div><span class="error">{{errorEmail}}</span></div>
+                <input type="number" ng-pattern="/^[0-9]{10}$/" ng-model="phone" placeholder="Phone Number" />
+                <div><span class="error">{{errorPhone}}</span></div>
+                <input type="text" ng-model="securityquestion" placeholder="Security Question (Used to reset password)" />
+                <div><span class="error">{{errorSecurityquestion}}</span></div>
+                <input type="password" ng-model="securityanswer" placeholder="Answer" />
+                <div><span class="error">{{errorSecurityanswer}}</span></div>
+
+                <div><input type="button" value="Register" ng-click="register()" /></div>
+                <div id="registerButton"><span class="error">{{errorRandom}}</span></div>
+            </form>
+        </div>
+    </div>
+
+    <div ng-show="registred == 'ok'">
+        <div>Welcome {{firstname}}</div>
+        <div><span class="success">You successfully logged into system!!</span></div>
+    </div>
+</div>

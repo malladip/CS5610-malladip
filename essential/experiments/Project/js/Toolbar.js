@@ -25,6 +25,8 @@ myApp.directive("changeToolbar", function ($window) {
 
             var toolbar = element.find("#toolbar");
 
+            console.log(toolbar);
+
             element.bind('mousedown', function (event) {
 
                 initialX = event.clientX;

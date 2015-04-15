@@ -1,0 +1,51 @@
+﻿#widgets {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+}
+
+    #widgets.disable-select {
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+
+
+    #widgets .window-panel {
+        height: 35px;
+        background-color: lightblue;
+    }
+
+    #widgets .window-close {
+        background-color: transparent;
+    }
+
+
+    #widgets .tab-close {
+        font-weight: 500;
+    }
+
+        #widgets .tab-close:hover {
+            color: red;
+        }
+
+
+    #widgets #taskbar .button {
+        background-color: Transparent;
+        border: none;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+        #widgets #taskbar .button .icons {
+            width: 50px;
+            height: 50px;
+            -webkit-transition: 0.3s;
+        }
+
+            #widgets #taskbar .button .icons:hover {
+                -webkit-transform: scale(1.2);
+            }

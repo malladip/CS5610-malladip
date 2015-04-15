@@ -1,0 +1,87 @@
+﻿<link href='http://fonts.googleapis.com/css?family=Bitter' rel='stylesheet' type='text/css'>
+
+<div id="calculator" draggable ng-show="showCalculator == true" ng-controller="CalculatorCtrl" ng-init="init()" resizable>
+
+    <div class="window-panel">
+        <button class="btn pull-right window-close tab-close" ng-click="closeCalculator()">
+            <span>X</span>
+        </button>
+    </div>
+
+    <div id="calculator-container" class="container">
+        <div class="row output-container">
+            <p class="output form-control">{{output}}</p>
+        </div>
+        <div class="row button-container">
+            <div class="col-xs-3 col">
+                <button class="form-control numberButtons" ng-click="buttonClick('c')">C</button>
+            </div>
+            <div class="col-xs-3 col">
+                <button class="form-control numberButtons" ng-click="buttonClick('ng')">+/-</button>
+            </div>
+            <div class="col-xs-3 col">
+                <button class="form-control numberButtons" ng-click="buttonClick('%')">%</button>
+            </div>
+            <div class="col-xs-3 col">
+                <button class="form-control operationButtons" ng-click="buttonClick('/')">/</button>
+            </div>
+        </div>
+
+        <div class="row  button-container ">
+            <div class="col-xs-3 col">
+                <button class="form-control numberButtons" ng-click="buttonClick(7)">7</button>
+            </div>
+            <div class="col-xs-3 col">
+                <button class="form-control numberButtons" ng-click="buttonClick(8)">8</button>
+            </div>
+            <div class="col-xs-3 col">
+                <button class="form-control numberButtons" ng-click="buttonClick(9)">9</button>
+            </div>
+            <div class="col-xs-3 col">
+                <button class="form-control operationButtons" ng-click="buttonClick('x')">x</button>
+            </div>
+        </div>
+
+        <div class="row  button-container">
+            <div class="col-xs-3 col">
+                <button class="form-control numberButtons" ng-click="buttonClick(4)">4</button>
+            </div>
+            <div class="col-xs-3 col">
+                <button class="form-control numberButtons" ng-click="buttonClick(5)">5</button>
+            </div>
+            <div class="col-xs-3 col">
+                <button class="form-control numberButtons" ng-click="buttonClick(6)">6</button>
+            </div>
+            <div class="col-xs-3 col">
+                <button class="form-control operationButtons" ng-click="buttonClick('-')">-</button>
+            </div>
+        </div>
+
+        <div class="row  button-container">
+            <div class="col-xs-3 col">
+                <button class="form-control numberButtons" ng-click="buttonClick(1)">1</button>
+            </div>
+            <div class="col-xs-3 col">
+                <button class="form-control numberButtons" ng-click="buttonClick(2)">2</button>
+            </div>
+            <div class="col-xs-3 col">
+                <button class="form-control numberButtons" ng-click="buttonClick(3)">3</button>
+            </div>
+            <div class="col-xs-3 col">
+                <button class="form-control operationButtons" ng-click="buttonClick('+')">+</button>
+            </div>
+        </div>
+
+        <div class="row  button-container">
+            <div class="col-xs-6 col">
+                <button class="form-control numberButtons" ng-click="buttonClick(0)">0</button>
+            </div>
+            <div class="col-xs-3 col">
+                <button class="form-control numberButtons" ng-click="buttonClick('.')">.</button>
+            </div>
+            <div class="col-xs-3 col">
+                <button class="form-control operationButtons" ng-click="calculate()">=</button>
+            </div>
+        </div>
+    </div>
+</div>

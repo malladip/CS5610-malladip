@@ -1,0 +1,39 @@
+﻿<div id="email" draggable ng-show="showEmail == true" ng-controller="EmailCtrl" ng-init="init()" resizable>
+
+    <div class="window-panel">
+        <button class="btn pull-right window-close tab-close" ng-click="closeEmail()">
+            <span>X</span>
+        </button>
+    </div>
+
+    <div id="email-container" class="container">
+
+        <label for="email-from">From:</label>
+        <input id="email-from" type="email" ng-model="currentUser.email" class="form-control" disabled />
+
+        <label for="email-to">To:</label>
+        <input id="email-to" type="email" ng-model="toEmail" class="form-control" placeholder="someone@something.domain" />
+
+        <label for="email-subject">Subject:</label>
+        <input type="text" id="email-subject" ng-model="subject" class="form-control" placeholder="Enter Subject here" />
+
+        <textarea rows="7" class="form-control" placeholder="Message" ng-model="mail"></textarea>
+
+        <div ng-show="askPassword">
+            <div>Your email Password will not be saved!! You are secure!!</div>
+            <input type="password" class="form-control" ng-model="emailPassword" placeholder="Enter your email password" />
+        </div>
+        <center>
+            <div class="row">
+                <button class="btn cl-xs-3 option-btns" ng-click="send()"><span class="glyphicon glyphicon-send">Send</span></button>
+                <button class="btn cl-xs-3 option-btns" ng-click="draft()"><span class="glyphicon glyphicon-save-file">Save as Draft</span></button>
+                <button class="btn cl-xs-3 option-btns" ng-click="loadDraft()"><span class="glyphicon glyphicon-open-file">Load Draft</span></button>
+                <button class="btn cl-xs-3 option-btns" ng-click="clear()"><span class="glyphicon glyphicon-erase">Clear</span></button>
+            </div>
+        </center>
+        <div>
+            <span class="success">{{successMessage}}</span>
+            <span class="error">{{errorMessage}}</span>
+        </div>
+    </div>
+</div>

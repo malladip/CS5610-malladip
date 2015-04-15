@@ -1,0 +1,72 @@
+﻿
+<div ng-show="showYoutube" id="youtube" ng-controller="YoutubeCtrl" draggable ng-init="init()" resizable-youtube>
+
+    <div class="window-panel">
+        <!-- Nav tabs -->
+        <ul class="nav nav-tabs">
+            <li ng-class="{'tab' : true, 'active' : activeTabIndex == 0}" ng-click="openTab(0)">
+                <a role="tab" data-toggle="tab" class="tab-button">
+                    Search
+                </a>
+            </li>
+            <li ng-class="{'tab' : true, 'active' : activeTabIndex == 1}" ng-click="openTab(1)">
+                <a role="tab" data-toggle="tab" class="tab-button">
+                    Favorites
+                </a>
+            </li>
+            <li class="pull-right">
+                <button class="btn window-close tab-close" ng-click="closeyoutube()">
+                    <span>X</span>
+                </button>
+            </li>
+        </ul>
+    </div>
+
+    <div class="youtube-container">
+
+        <div class="search" ng-show="activeTabIndex == 0">
+            <div>
+                <input class="form-control" ng-model="youtubeSearch" ng-enter="searchYoutube()" placeholder="Search Youtube" />
+            </div>
+            <div class="videos">
+                <div ng-show="youvideos == ''" class="msg">
+                    <p>Please Search Videos</p>
+                </div>
+                <div ng-show="youvideos != ''">
+                    <div class="video" ng-repeat="video in youvideos track by $index">
+                        <div>
+                            <button class="btn-success form-control" ng-click="addFavorite(video)" title="Add to Favorite">
+                                <span ng-class="getFavoriteStarClass(video)"></span>
+                            </button>
+                        </div>
+                        <div><iframe width="100%" height="250" ng-src="{{trustSrc('http://www.youtube.com/embed/'+video.id)}}"></iframe></div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="favorites" ng-show="activeTabIndex == 1">
+            <div>
+                <input class="form-control" ng-model="favoriteSearch" placeholder="Search Favorite" />
+            </div>
+            <div class="videos">
+                <div ng-show="favvideos == ''" class="msg">
+                    <p>No Videos to show</p>
+                </div>
+                <div ng-show="favvideos != ''">
+
+                    <div class="video" ng-repeat="video in favvideos | youtubefilter:favoriteSearch | orderBy: $index ">
+                        <div>
+                            <button class="btn-danger form-control" ng-click="removeFavorite(video)" title="Remove Favorite">
+                                <span class="glyphicon glyphicon-remove"></span>
+                            </button>
+                        </div>
+                        <div><iframe width="100%" height="250" ng-src="{{trustSrc('http://www.youtube.com/embed/'+video.id)}}"></iframe></div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

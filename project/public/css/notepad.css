@@ -1,0 +1,91 @@
+﻿#notepad {
+    overflow: hidden;
+    width: 420px;
+    height: 420px;
+    min-width: 420px;
+    min-height: 420px;
+    border: solid;
+    border-radius: 8px;
+    position: absolute;
+    left: 100px;
+    top: 100px;
+}
+
+#notepad-container {
+    width: 100%;
+    height: 385px;
+    background-color: #eee;
+    overflow-x: hidden;
+    padding: 10px;
+}
+
+    #notepad-container .note-options {
+        position: absolute;
+        background-color: #eee;
+        top: 35px;
+        width: 100%;
+    }
+
+    #notepad-container .notes {
+        margin-top: 34px;
+    }
+
+    #notepad-container .note {
+        margin: 10px;
+        float: left;
+        font-size: 30px;
+        border: solid;
+        border-color: black;
+        height: 150px;
+        background-color: white;
+    }
+
+        #notepad-container .note:hover {
+            border: solid;
+            border-color: #39a385;
+        }
+
+    #notepad-container .note-grid {
+        width: 105px;
+        padding-top: 30px;
+    }
+
+    #notepad-container .note-list {
+        width: 95%;
+        padding-top: 50px;
+    }
+
+    #notepad-container .new-note-btn {
+        background-color: transparent;
+        -webkit-transition: 0.3s;
+    }
+
+        #notepad-container .new-note-btn:hover {
+            -webkit-transform: scale(1.2);
+        }
+
+    #notepad-container .right-bottom-corner {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        padding: 20px;
+    }
+
+
+    #notepad-container .note-title {
+        overflow-wrap: break-word;
+    }
+
+
+    #notepad-container .success {
+        color: green;
+    }
+
+    #notepad-container .error {
+        color: red;
+    }
+
+    #notepad-container .notepad-button {
+        background-color: #39a385;
+        color: white;
+    }

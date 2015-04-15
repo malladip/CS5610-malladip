@@ -1,0 +1,28 @@
+﻿<div id="adminLogin">
+    <div ng-show="!isLoggedIn">
+        <div>
+            <center><h2>Admin Login</h2></center>
+        </div>
+        <div>
+            <label for="adminUser">Username:</label>
+        </div>
+        <div>
+            <input id="adminUser" type="text" placeholder="Username" class="form-control" ng-model="adminuser" ng-enter="login()" />
+        </div>
+        <div>
+            <label for="adminPass">Password:</label>
+        </div>
+        <div>
+            <input id="adminPass" type="password" placeholder="Password" class="form-control" ng-model="adminpass" ng-enter="login()" />
+        </div>
+        <div>
+            <button class="adminLoginSubmitButton" ng-click="login()">Submit</button>
+        </div>
+        <div>
+            <span class="error">{{msg}}</span>
+        </div>
+    </div>
+    <div ng-show="isLoggedIn">
+        <center><h2>Welcome ADMIN</h2></center>
+    </div>
+</div>
