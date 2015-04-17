@@ -1,0 +1,88 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>About Data Storage</title>
+
+    <!--Bootstrap-->
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="../css/project-documentation.css" />
+</head>
+<body>
+    <div id="loginscreen" class="container">
+        <header>
+            <a href="Default.html">Project Home</a> |
+            <a href="../story/index.htm?../project/story.txt">Documentation Home</a>
+        </header>
+
+        <h2>About Data Storage in MongoDB:</h2>
+
+        <hr />
+
+        <div>
+            All the data in this project is stored in a NoSQL database MongoDB. The connectivity between the MongoDB
+            and server is done using Mongoose.
+        </div>
+        <div>The following are the collections in my project:</div>
+
+        <p>
+
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Collection</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Authentication</td>
+                        <td>
+                            This collection has 2 fields. Username and password. The ID of the user assigned here will
+                            be used as the unique identifier throught the application.
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>UserProfile</td>
+                        <td>
+                            This collection has 10 fields, which includes the user details and the unique identifier of the user(from the Authentication collection).
+
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>Message</td>
+                        <td>
+                            <div>This collection all the messages between the users. It has 3 fields (From, To, and Message).</div>
+                            <div>The from and to details are stored as the unique identifiers of the users.</div>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>WidgetData</td>
+                        <td>
+                            <div>This collection has 14 fields including the unique user ID field and an object for every widget.</div>
+                            <div>Each user has an entry in this table and stores the position and other required information of widgets.</div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </p>
+
+        <hr />
+        <footer>
+            <div><a href="widgets.html">Previous page</a>
+            <a class="pull-right" href="relevantExperiments.html">Next page</a></div>
+        </footer>
+        
+
+    </div>
+</body>
+</html>

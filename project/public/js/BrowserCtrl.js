@@ -116,6 +116,7 @@ app.controller('BrowserCtrl', function ($scope, $sce, $element, MyService) {
         $scope.activeTabIndex = 0;
         MyService.setShowBrowser();
 
+        $("#browser").offset({ top: 100, left: 100 });
         if (isLoggedIn == true) {
 
             userData.activeTab = $scope.activeTabIndex;

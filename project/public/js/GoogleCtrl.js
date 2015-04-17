@@ -32,6 +32,7 @@
     $scope.closegoogle = function () {
         $scope.googlesearch = "";
         MyService.setShowGoogle();
+        $("#google").offset({ top: 100, left: 100 });
     };
 
 });

@@ -1,0 +1,157 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>About Login Screen</title>
+
+    <!--Bootstrap-->
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="../css/project-documentation.css" />
+</head>
+<body>
+    <div id="loginscreen" class="container">
+        <header>
+            <a href="Default.html">Project Home</a> |
+            <a href="../story/index.htm?../project/story.txt">Documentation Home</a>
+        </header>
+
+        <h2>About Login Screen:</h2>
+
+        <hr />
+
+        <p>The login screen is the page where the functionality starts.</p>
+        <p>Here there are multiple options:</p>
+        <ul>
+            <li>
+                <h4>Login:</h4>
+
+                <p>
+                    A registered user can login from here. His username and password will go back to the server through the service
+                    and check the authenitcation through PassportJS. If the user is authenticated, a new session is created and the user data is returned.
+                </p>
+                <p>Here is a screen shot of the login screen:</p>
+                <img src="../images/project/login screen.png" />
+
+            </li>
+            <li>
+                <h4>Forgot Password:</h4>
+
+                <p>
+                    The user may also recover his password. He has 2 options.
+                    Either he can ask for the system to e-mail the password or you can reset the password by
+                    answering the security questions.
+                </p>
+                <p>For using either of the options, the user need to verify his Email Id after registering.</p>
+                <p>Screen shot:</p>
+                <img src="../images/project/forgot password.png" />
+
+                <h4>Recover password using email</h4>
+                <p>
+                    Recovering password through email, requires the user to enter his username and click the button.
+                    A mail will be sent giving his password back.
+                </p>
+                <p>
+                    The system will show an error when a user who did not verify his email tries to recover.
+                </p>
+                <p>Screen shot:</p>
+                <img src="../images/project/forgot password email.png" />
+
+                <h4>Recover password using security question</h4>
+                <p>
+                    The second method of recovering a forgotten password is by resetting the password after answering
+                    the security question.
+                </p>
+                <p>
+                    Here when the user enters his username and clicks the button, he gets the security question.
+                </p>
+                <p>Screen shot:</p>
+                <img src="../images/project/forgot password reset 1.png" />
+                <p>
+                    The user should answer the security question correctly to reset his password, else an
+                    error message is displayed.
+                </p>
+                <p>Screen shot:</p>
+                <img src="../images/project/forgot password reset 2.png" />
+                <p>When ever a user changes his password, a e-mail will be sent saying they the password was changed.</p>
+            </li>
+            <li>
+                <h4>Register:</h4>
+
+                <p>The user must enter all the fields to get registered.</p>
+                <p>
+                    When the user registers, a verification link will be sent to the email. On clicking on this link,
+                    the user's email will be verified.
+                </p>
+                <p>
+                    On registering, the system automatically logs him in and creates a session.
+                </p>
+                <p>
+                    The registration page looks like this:
+                </p>
+                <img src="../images/project/registration page.png" />
+            </li>
+            <li>
+                <h4>Go For Free:</h4>
+                <p>
+                    This is for a user who do not wish to register into the system, but still wishes to use the
+                    system.
+                </p>
+                <p>
+                    A free user does not have access to all the features of the system. For example, he can not use the email
+                    widget or he can not save his current position of the widgets.
+                </p>
+            </li>
+            <li>
+                <h4>Admin Login:</h4>
+                <p>
+                    The admin logs into the system by clicking on the admin login button at the bottom left corener of the
+                    login screen.
+                </p>
+                <p>
+                    He gets the login screen as shown below:
+                </p>
+                <img src="../images/project/admin login.png" />
+                <p>
+                    The username and password goes to the server to check the authentication and comes bac with success or error message.
+                </p>
+                <p>
+                    If the details are correct, he logs into the system, else an error message is displayed.
+                </p>
+            </li>
+            <li>
+                <h4>Lock Screen:</h4>
+                <p>
+                    The user can go back to the lock screen from the login screen by clicking on the icon at the
+                    bottom right corner of the screen.
+                </p>
+            </li>
+        </ul>
+
+        <hr />
+
+        <div>
+            <h4>Implementation:</h4>
+            <p>
+                All the popups in the screen are developed using the ngDialog.
+            </p>
+            <p>
+                All the data goes to the server through the service and comes back with a success or error message.
+            </p>
+            <p>
+                The passportJs and express sessions are used for handling authentication and sessions.
+            </p>
+        </div>
+        <hr />
+        <footer>
+            <div><a href="lockscreen.html">Previous page</a>
+            <a class="pull-right" href="home.html">Next page</a></div>
+        </footer>
+        
+    </div>
+</body>
+</html>

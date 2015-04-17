@@ -219,7 +219,7 @@ app.post("/register", function (req, res) {
                     /***************************Creating Widget Record For USer*******************************/
 
                     var taskbar = "bottom";
-                    var background = '';
+                    var background = "http://www.hdwallpapers.in/walls/pleasant-wide.jpg";
                     var google = { 'top': 100, 'left': 100, 'show': false };
                     var notepad = { 'top': 100, 'left': 100, 'show': false, 'view': 'note-grid', 'notes': [{ 'title': 'Hello', 'note': 'Sample Note' }] };
                     var browser = { 'top': 100, 'left': 100, 'show': false, 'tabs': [{ 'url': '' }], 'activeTab': 0 };

@@ -7,7 +7,7 @@ app.factory("MyService", function ($http, $location, $interval) {
 
     var usersInterval, messagesInterval;
 
-    var background = "";
+    var background = { 'background-image': 'url("http://www.hdwallpapers.in/walls/pleasant-wide.jpg")' };
     var taskbar = "bottom";
     var googleWidget, notepadWidget, browserWidget,
         youtubeWidget, textToSpeachWidget, calculatorWidget,
@@ -30,6 +30,20 @@ app.factory("MyService", function ($http, $location, $interval) {
         return currentUser;
     };
 
+    var hideAll = function () {
+        showGoogle = false;
+        showNotepad = false;
+        showBrowser = false;
+        showYoutube = false;
+        showTextToSpeach = false;
+        showCalculator = false;
+        showProfile = false;
+        showMessenger = false;
+        showWeather = false;
+        showStopWatch = false;
+        showEmail = false;
+    };
+
     /********************************************* ~~ User Login Logout Register ~~ *******************************/
     var login = function (user, callback) {
         $http.post("/login", user)
@@ -50,6 +64,7 @@ app.factory("MyService", function ($http, $location, $interval) {
            weatherWidget = widgets.weather;
            stopWatchWidget = widgets.stopWatch;
            emailWidget = widgets.email;
+           taskbar = widgets.taskbar;
 
            showGoogle = googleWidget.show;
            showNotepad = notepadWidget.show;
@@ -98,7 +113,7 @@ app.factory("MyService", function ($http, $location, $interval) {
                         weatherWidget = widgets.weather;
                         stopWatchWidget = widgets.stopWatch;
                         emailWidget = widgets.email;
-
+                        taskbar = widgets.taskbar;
 
                         showGoogle = googleWidget.show;
                         showNotepad = notepadWidget.show;
@@ -131,7 +146,7 @@ app.factory("MyService", function ($http, $location, $interval) {
      otherUsers = [];
      messages = [];
 
-     background = "";
+     background = { 'background-image': 'url("http://www.hdwallpapers.in/walls/pleasant-wide.jpg")' };
      taskbar = "bottom";
      showGoogle = false;
      showNotepad = false;
@@ -154,7 +169,7 @@ app.factory("MyService", function ($http, $location, $interval) {
             otherUsers = [];
             messages = [];
 
-            background = "";
+            background = { 'background-image': 'url("http://www.hdwallpapers.in/walls/pleasant-wide.jpg")' };
             taskbar = "bottom";
             showGoogle = false;
             showNotepad = false;
@@ -192,7 +207,7 @@ app.factory("MyService", function ($http, $location, $interval) {
     };
 
     var getDataOnInitialLoad = function (widget) {
-
+       
         if (widget == "taskbar") {
             return taskbar;
         } else if (widget == "google") {
@@ -782,7 +797,8 @@ app.factory("MyService", function ($http, $location, $interval) {
         setTaskbar: setTaskbar,
 
         //Save
-        save: save
+        save: save,
+        hideAll: hideAll
     }
 
 });

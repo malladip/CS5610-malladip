@@ -1,6 +1,7 @@
 ﻿#LoginScreen {
     height: 100vh;
     background-color: #1298DB;
+    background-size:100% 100%;
 }
 
     #LoginScreen .login {

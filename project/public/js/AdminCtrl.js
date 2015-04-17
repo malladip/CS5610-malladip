@@ -90,6 +90,7 @@
                 if (r == true) {
 
                     var data = { 'type': 'user', 'id': $scope.deleteUserId };
+                    $scope.deleteUserId = "";
                     AdminService.deleteByID(data);
                 }
 
@@ -102,6 +103,7 @@
                 if (r == true) {
 
                     var data = { 'type': 'profile', 'id': $scope.deleteProfileId };
+                    $scope.deleteProfileId = "";
                     AdminService.deleteByID(data);
                 }
             } else {
@@ -113,6 +115,7 @@
                 if (r == true) {
 
                     var data = { 'type': 'message', 'id': $scope.deleteMessageId };
+                    $scope.deleteMessageId = "";
                     AdminService.deleteByID(data);
                 }
             } else {
@@ -120,9 +123,10 @@
             }
         } else if (type == 'widget') {
             if ($scope.deleteWidgetId != undefined && $scope.deleteWidgetId != "") {
-                var r = confirm("Do you want to delete all widget data of user id: " + $scope.deleteMessageId + " ?");
+                var r = confirm("Do you want to delete all widget data of user id: " + $scope.deleteWidgetId + " ?");
                 if (r == true) {
                     var data = { 'type': 'widget', 'id': $scope.deleteWidgetId };
+                    $scope.deleteWidgetId = "";
                     AdminService.deleteByID(data);
                 }
             } else {

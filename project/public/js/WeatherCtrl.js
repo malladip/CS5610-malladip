@@ -26,6 +26,7 @@ app.controller("WeatherCtrl", function ($scope, MyService, $interval) {
 
     $scope.closeWeather = function () {
         MyService.setShowWeather();
+        $("#weather").offset({ top: 100, left: 100 });
     };
 
 });

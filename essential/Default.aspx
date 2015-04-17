@@ -52,7 +52,7 @@
                        I am currently doing my Masters at Northeastern University in Computer Science.
                 </p>
                 <p>
-                    This Website is being developed as a part of the course "CS5610: Web Development" 
+                    This website is developed as a part of the course "CS5610: Web Development" 
                          instructed by 
                         <a href="https://www.linkedin.com/profile/view?id=6343770&authType=NAME_SEARCH&authToken=mQ9u&locale=en_US&trk=tyah&trkInfo=clickedVertical%3Amynetwork%2Cidx%3A1-1-1%2CtarId%3A1427665120491%2Ctas%3Ajose+annun" target="_blank">Prof. Jose Annunziato</a>.
                 </p>
@@ -62,10 +62,10 @@
                    
                 </p>
                 <p>
-                    I am currently developing a 'Single Page Web Application' using MEAN Stack.
+                    I developed a Single Page Web Application called Widgets, using MEAN Stack as my project.
                 </p>
                 <p>
-                    Here are some interesting stuff that I have been working on:
+                    Here are some interesting stuff that I worked on during the semester:
                 </p>
             </div>
 
@@ -74,14 +74,14 @@
                 <a href="story/index.htm?../experiments/story.txt" target="_blank" class="exp">
                     <img src="images/random/experiments.png" />
                 </a>
-                <a href="story/index.htm?../project/story.txt" target="_blank" class="project">
-                    <img src="https://kirankumarbommana.files.wordpress.com/2014/07/projectmanagement.jpg" />
+                <a href="project/Default.html" target="_blank" class="project">
+                    <img src="images/random/project image.jpg" />
                 </a>
                 <a href="blog/" target="_blank" class="blog">
-                    <img src="http://thewebshoppe.net/wp-content/uploads/blog-text.jpg" />
+                    <img src="images/random/blog image.jpg" />
                 </a>
-                <a href="https://github.com/malladip/CS5610-malladip/tree/master/essential" target="_blank" class="git">
-                    <img src="https://education.github.com/assets/pack/logo-github-460eb947cd62925ce9b672a713c41ed1.jpg" />
+                <a href="https://github.com/malladip/CS5610-malladip" target="_blank" class="git">
+                    <img src="images/random/github image.jpg" />
                 </a>
             </div>
 

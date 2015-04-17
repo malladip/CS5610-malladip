@@ -1,0 +1,267 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>About Widgets</title>
+
+    <!--Bootstrap-->
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="../css/project-documentation.css" />
+</head>
+<body>
+    <div id="widgets" class="container">
+        <header>
+            <a href="Default.html">Project Home</a> |
+            <a href="../story/index.htm?../project/story.txt">Documentation Home</a>
+        </header>
+
+        <h2>About Widgets:</h2>
+
+        <hr />
+
+        <p>
+            <h3>1. Google Search</h3>
+
+            <div>This widget allows users to search some content using google.</div>
+            <div><img src="../images/project/google.png" /></div>
+            <div><b>Logic:</b></div>
+            <div>The widgets appends the required search text to Google url and open its in new window.</div>
+        </p>
+
+        <p>
+            <h3>2. Notepad</h3>
+
+            <div>This widget allows users to create multiple notes.</div>
+            <div>
+                <img src="../images/project/notepad.png" />
+                <img src="../images/project/notepad new note.png" />
+            </div>
+        </p>
+
+        <p>
+            <h3>3. Browser</h3>
+
+            <div>
+                This widget allows users to view diffeterent websites in the current page.
+                User may create any number of new tabs.
+            </div>
+            <div>Thes size of the tab adjusts depending on the number of tabs.</div>
+            <div>
+                <img src="../images/project/browser.png" />
+            </div>
+            <div><b>Logic:</b></div>
+            <div>I used an IFrame for displaing the web content.</div>
+            <div>The size of the tab is adjusted by dividing the total width by the number of tabs currently showing.</div>
+        </p>
+
+
+        <p>
+            <h3>4. Youtube</h3>
+
+            <div>
+                This widget allows users to search youtube videos and add them as a favorite.
+            </div>
+            <div>
+                <img src="../images/project/youtube.png" />
+                <img src="../images/project/youtube favorites.png" />
+            </div>
+            <div><b>Logic:</b></div>
+            <div>I used an IFrame for displaing the videos.</div>
+            <div>When ever the user clicks the star button above the video, the video's youtube ID will be stored in the favorites list.</div>
+            <div>This ID is used to display the videos again in the favorites tab.</div>
+        </p>
+
+        <p>
+            <h3>5. Narrator</h3>
+
+            <div>
+                Narrator reads out any text entered in the text field.
+            </div>
+            <div>
+                <img src="../images/project/narrator.png" />
+            </div>
+            <div><b>Logic:</b></div>
+            <div>This is done using the <a href="http://tts-api.com/" target="_blank"> text-to-speach API</a></div>
+        </p>
+
+        <p>
+            <h3>6. Calculator</h3>
+
+            <div>
+                Calculator widget allows you to perform masic arithematic operations.
+            </div>
+            <div>
+                <img src="../images/project/calculator.png" />
+            </div>
+            <div><b>Logic:</b></div>
+            <div>Javascript eval() function plays the major role in developing this widget.</div>
+        </p>
+
+
+        <p>
+            <h3>7. Setting</h3>
+
+            <div>
+                This widget allows users to change the background image, edit user information and change the password.
+            </div>
+            <div>
+                <div><img class="setting" src="../images/project/setting background.png" /></div>
+                <div>
+                    <img class="setting" src="../images/project/setting profile.png" />
+                </div>
+                <div>
+                    <img class="setting" src="../images/project/setting change password.png" />
+                </div>
+            </div>
+            <div><b>Logic:</b></div>
+            <div>
+                On changing the user information or the password, the system checks if the user is logged in
+                and if so takes the changes to the server and updates the details.
+            </div>
+            <div>
+                A password change will be notified to the user by an email.
+            </div>
+        </p>
+
+
+        <p>
+            <h3>8. Messenger</h3>
+
+            <div>
+                This widget allows a registered user to communicate with other registered users.
+            </div>
+            <div>
+                The messenger widget shows the current logged in  users by the online icon.
+            </div>
+            <div>
+                <img src="../images/project/mesenger.png" />
+            </div>
+            <div><b>Logic:</b></div>
+            <div>
+                Any message sent will be sent to server and added as a entry in the Message collection.
+            </div>
+            <div>
+                When a user logs in, the service asks the server each second, for the messages from and to the
+                current user. Hence gets updated after every entry is added.
+            </div>
+        </p>
+
+
+        <p>
+            <h3>9. Weather</h3>
+
+            <div>
+                This widget shows the current weather to the user. It includes the min and max temperatures.
+            </div>
+
+            <div>
+                <img src="../images/project/weather.png" />
+            </div>
+            <div><b>Logic:</b></div>
+            <div>
+                The weather data is received from the <a href="https://ssl.gstatic.com/onebox/weather/128/" target="_blank">API</a>
+            </div>
+        </p>
+
+        <p>
+            <h3>10. Stop Watch</h3>
+
+            <div>
+                This widget allows users to use a stop watch facility. It also has the lap time facility.
+            </div>
+
+            <div>
+                <img src="../images/project/stop watch.png" />
+            </div>
+            <div><b>Logic:</b></div>
+            <div>
+                This widget is devloped using AngularJS $interval service.
+            </div>
+        </p>
+
+        <p>
+            <h3>11. Email</h3>
+
+            <div>
+                Email widget allows the user to send an email from their gmail email id.
+            </div>
+            <div>This widget requires users to verify the email ID. Else they have no access.</div>
+            <div>
+                The user can save a email as a draft and get it back by clicking the load draft message.
+            </div>
+            <div>
+                <img src="../images/project/mail app.png" />
+            </div>
+            <div><b>Logic:</b></div>
+            <div>
+                This widget asks fo the password of the mail id which is not saved. It is sent to server and used only for sending an email.
+            </div>
+            <div>After sending, the password field is cleared.</div>
+            <div>This app depends on the user email settings. It may not work always.</div>
+        </p>
+
+        <p>
+            <h3>12. Save</h3>
+
+            <div>
+                When clicked on the save icon, the current position of widget is saved.
+            </div>
+            <div>
+                When the user logs back in, the position of widgets remains.
+            </div>
+
+            <div>
+                <img class="image" src="../images/project/saved message.png" />
+            </div>
+
+            <div><b>Logic:</b></div>
+            <div>All the widget positions are collected and sent to the server and savd into the WidgetData collection.</div>
+        </p>
+
+
+        <p>
+            <h3>13. Exit</h3>
+
+            <div>
+                When clicked on the the power button, if the user is loggedin he logs off and redirects to login screen,
+                else simply redirects to the login screen.
+            </div>
+
+        </p>
+
+        <p>
+            <h3>14. Hide Widgets</h3>
+            <div>
+                When clicked on the this button, all the showing widgets are minimized.
+            </div>
+        </p>
+
+        <p>
+            <h3>15. Date/Time</h3>
+            <div>
+                This time and date widget is always to the right of the task bar.
+            </div>
+            <div>
+                It hows the current date and time of the user. When mouse hovered, shows the day name as the tooltip.
+            </div>
+            <div><b>Logic:</b></div>
+            <div>
+                The javascript Date object is used for getting the current date and time of the user.
+            </div>
+        </p>
+
+        <hr />
+
+        <footer>
+            <div><a href="admin.html">Previous page</a>
+            <a class="pull-right" href="datastorage.html">Next page</a></div>
+        </footer>
+       
+    </div>
+</body>
+</html>

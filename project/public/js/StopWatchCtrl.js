@@ -102,6 +102,7 @@
         $scope.laps = [];
         $scope.mode = "stop";
         MyService.setShowStopWatch();
+        $("#stop-watch").offset({ top: 100, left: 100 });
     };
 
 });

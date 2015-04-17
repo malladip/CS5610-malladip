@@ -24,6 +24,7 @@
 
     $scope.closeEmail = function () {
         MyService.setShowEmail();
+        $("#email").offset({ top: 100, left: 100 });
     };
 
     $scope.send = function () {

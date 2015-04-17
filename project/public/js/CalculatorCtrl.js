@@ -76,6 +76,7 @@
     $scope.closeCalculator = function () {
         $scope.output = "";
         MyService.setShowCalculator();
+        $("#calculator").offset({ top: 100, left: 100 });
     };
 
 });

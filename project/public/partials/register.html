@@ -1,7 +1,9 @@
 ﻿<div id="RegisterScreen">
-    <center><h2>Registration</h2></center>
+    
     <div ng-show="registred != 'ok'">
+        <center><h2>Registration</h2></center>
         <div class="form-style-8">
+           
             <form>
                 <input type="text" ng-model="firstname" placeholder="First Name" />
                 <div><span class="error">{{errorFirstname}}</span></div>
@@ -22,7 +24,7 @@
                 <input type="password" ng-model="securityanswer" placeholder="Answer" />
                 <div><span class="error">{{errorSecurityanswer}}</span></div>
 
-                <div><input type="button" value="Register" ng-click="register()" /></div>
+                <div><input type="button" value="Register" ng-click="register()" ng-disabled="registering" /></div>
                 <div id="registerButton"><span class="error">{{errorRandom}}</span></div>
             </form>
         </div>
@@ -31,5 +33,6 @@
     <div ng-show="registred == 'ok'">
         <div>Welcome {{firstname}}</div>
         <div><span class="success">You successfully logged into system!!</span></div>
+        <div>Please verify your email to get additional functionality.</div>
     </div>
 </div>

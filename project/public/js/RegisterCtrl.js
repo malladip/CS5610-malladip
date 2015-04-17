@@ -3,6 +3,8 @@ app.controller("RegisterCtrl", function ($scope, $location, MyService) {
 
     $scope.registred = "";
 
+    $scope.registering = false;
+
     $scope.register = function () {
 
         var firstname = $scope.firstname;
@@ -78,6 +80,8 @@ app.controller("RegisterCtrl", function ($scope, $location, MyService) {
                 'securityquestion': securityquestion, 'securityanswer': securityanswer
             };
 
+            $scope.registering = true;
+
             MyService.register(newUSer, function (msg) {
                 
                 //Error
@@ -88,6 +92,8 @@ app.controller("RegisterCtrl", function ($scope, $location, MyService) {
                     errorRandom = msg;
 
                     $scope.errorRandom = errorRandom;
+
+                    $scope.registering = false;
 
                 } else { // Success
 

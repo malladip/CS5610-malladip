@@ -1,5 +1,6 @@
 ﻿#LockScreen {
     background-image: url("../images/lamborghini-desktop-440x900.jpg");
+    background-size:100% 100%;
     height: 100vh;
     font-family: Arial;
     color: white;

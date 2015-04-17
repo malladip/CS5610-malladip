@@ -37,6 +37,7 @@ app.controller("TextToSpeachCtrl", function ($scope, $sce, MyService) {
     $scope.closeTextToSpeach = function () {
         $scope.text = "";
         MyService.setShowTextToSpeach();
+        $("#textToSpeach").offset({ top: 100, left: 100 });
     };
 
 });

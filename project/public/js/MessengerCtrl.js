@@ -76,6 +76,7 @@ app.controller("MessengerCtrl", function ($scope, MyService) {
     $scope.closeMessenger = function () {
         $scope.messageWith = null;
         MyService.setShowMessenger();
+        $("#messenger").offset({ top: 100, left: 100 });
     };
 
 });

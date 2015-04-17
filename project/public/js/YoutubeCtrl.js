@@ -64,7 +64,7 @@ app.controller('YoutubeCtrl', function ($scope, $sce, $http, MyService) {
         $scope.favoriteSearch = "";
         $scope.youvideos = [];
         MyService.setShowYoutube();
-
+        $("#youtube").offset({ top: 100, left: 100 });
         if (isLoggedIn == true) {
             userData.activeTab = $scope.activeTabIndex;
             MyService.saveYoutubeChanges(userData, function (msg) { });

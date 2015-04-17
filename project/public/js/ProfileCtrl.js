@@ -66,6 +66,7 @@ app.controller("ProfileCtrl", function ($scope, MyService, ngDialog) {
         $scope.changePasswordErrorMsg = "";
 
         MyService.setShowProfile();
+        $("#profile").offset({ top: 100, left: 100 });
     };
 
     $scope.changeBg = function () {

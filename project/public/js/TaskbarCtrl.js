@@ -209,6 +209,10 @@ app.controller('TaskbarCtrl', function ($scope, $interval, MyService, $document,
         }
     };
 
+    $scope.hideAll = function () {
+        MyService.hideAll();
+    };
+
     $scope.logout = function () {
         MyService.logout();
     };

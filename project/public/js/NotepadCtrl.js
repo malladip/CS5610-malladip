@@ -43,6 +43,7 @@ app.controller('NotepadCtrl', function ($scope, MyService) {
         $scope.errorMsg = "";
         $scope.successMsg = "";
         MyService.setShowNotepad();
+        $("#notepad").offset({ top: 100, left: 100 });
     };
 
     $scope.openNotepad = function (index) {
