@@ -22,7 +22,7 @@
 
     <email></email>
 
-    <div id="taskbar" ng-controller="TaskbarCtrl" ng-init="init()" class="taskbar-bottom disable-select">
+    <div id="taskbar" ng-controller="TaskbarCtrl" ng-init="init()" class="taskbar-bottom disable-select word-wrap">
 
         <div class="icons">
             <button class="button" ng-click="google()" title="Google Search"><img src="images/google.png" class="icons" /></button>
@@ -41,7 +41,7 @@
         </div>
         <div class="pull-right date-time date-time-right">
             <center>
-                <button class="hide-button" ng-click="hideAll()" title="Hide All"><img src="../images/hide.png"/></button>
+                <button class="hide-button" ng-click="hideAll()" title="Hide All"><img src="../images/hide.png" /></button>
                 <button class="date-time-button" title="{{dayName}}"> {{time}}<br />{{date}}</button>
             </center>
         </div>
