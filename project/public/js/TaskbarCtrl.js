@@ -25,7 +25,8 @@ app.controller('TaskbarCtrl', function ($scope, $interval, MyService, $document,
                 .removeClass("taskbar-bottom")
                 .addClass("taskbar-top")
                 .removeClass("scroll-y")
-                .addClass("scroll-x");
+                .addClass("scroll-x")
+                .addClass("word-wrap");;
             dateTime.css('margin-top', 0);
             dateTime.addClass("date-time-right")
             dateTime.addClass("pull-right");
@@ -36,6 +37,7 @@ app.controller('TaskbarCtrl', function ($scope, $interval, MyService, $document,
                 .removeClass("taskbar-bottom")
                 .addClass("taskbar-right")
                 .removeClass("scroll-x")
+                .removeClass("word-wrap")
                 .addClass("scroll-y");
             dateTime
                 .removeClass("date-time-right")
@@ -50,6 +52,7 @@ app.controller('TaskbarCtrl', function ($scope, $interval, MyService, $document,
                 .removeClass("taskbar-top")
                 .addClass("taskbar-bottom")
                 .removeClass("scroll-y")
+                .addClass("word-wrap")
                 .addClass("scroll-x");
             dateTime.css('margin-top', 0);
             dateTime.addClass("date-time-right");
@@ -61,6 +64,7 @@ app.controller('TaskbarCtrl', function ($scope, $interval, MyService, $document,
                 .removeClass("taskbar-bottom")
                 .addClass("taskbar-left")
                 .removeClass("scroll-x")
+                .removeClass("word-wrap")
                 .addClass("scroll-y");
             dateTime.removeClass("date-time-right");
             // dateTime.css('margin-top', dateTime.parent().height() - (dateTime.height() + 15))

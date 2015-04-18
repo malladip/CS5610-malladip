@@ -24,16 +24,17 @@
 
         <nav>
             <div id="navigation">
-                <a href="#" class="navButton">Home</a>
-                <a href="sitestatistics/" target="_blank" class="navButton">SiteStatistics</a>
-                <a href="statistics/" target="_blank" class="navButton">Statistics</a>
-                <a href="source/" target="_blank" class="navButton">Source</a>
-                <a href="search/" target="_blank" class="navButton">Search</a>
-                <a href="searchtree/" target="_blank" class="navButton">SearchTree</a>
-                <a href="textview/" target="_blank" class="navButton">TextView</a>
-                <a href="filelist.aspx" target="_blank" class="navButton">FileList</a>
-                <a href="autofile.aspx" target="_blank" class="navButton">AutoFile</a>
-                <a href="images/autoimage.aspx" target="_blank" class="navButton">Images</a>
+                <a href="#" class="navButton">Home</a> |
+                <a href="sitestatistics/" target="_blank" class="navButton">SiteStatistics</a> |
+                <a href="statistics/" target="_blank" class="navButton">Statistics</a> |
+                <a href="source/" target="_blank" class="navButton">Source</a> |
+                <a href="search/" target="_blank" class="navButton">Search</a> |
+                <a href="searchtree/" target="_blank" class="navButton">SearchTree</a> |
+                <a href="textview/" target="_blank" class="navButton">TextView</a> |
+                <a href="filelist.aspx" target="_blank" class="navButton">FileList</a> |
+                <a href="autofile.aspx" target="_blank" class="navButton">AutoFile</a> |
+                <a href="images/autoimage.aspx" target="_blank" class="navButton">Images</a> |
+                <a href="story/index.htm?../project/story.txt" target="_blank" class="navButton">Documentation</a>
             </div>
         </nav>
         <div class="content">
@@ -71,7 +72,7 @@
 
 
             <div class="links">
-                <a href="story/index.htm?../experiments/story.txt" target="_blank" class="exp">
+                <a  href="story/index.htm?../experiments/story.txt" target="_blank" class="exp">
                     <img src="images/random/experiments.png" />
                 </a>
                 <a href="project/Default.html" target="_blank" class="project">

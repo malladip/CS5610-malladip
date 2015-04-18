@@ -26,7 +26,7 @@
     $scope.buttonClick = function (value) {
         var output = $scope.output;
 
-        if (output == "Syntax Error") {
+        if (output == "Syntax Error" || output == "Infinity" || output == "NaN") {
             output = "";
         };
 
