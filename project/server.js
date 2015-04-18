@@ -91,8 +91,8 @@ var WidgetDataModel = mongoose.model("WidgetDataModel", WidgetDataSchema);
 var smtpTransport = nodemailer.createTransport("SMTP", {
     service: "Gmail",
     auth: {
-        user: "prashantwidgets@gmail.com",
-        pass: "prashantproject"
+        user: "*****************",  //hidden content
+        pass: "*****************"  //hidden content
     }
 });
 
@@ -731,7 +731,7 @@ passport.use('AdminAuthentication', new LocalStrategy({
     passwordField: 'password'
 },
     function (username, password, done) {
-        if (username == "iamadmin" && password == "iamtheadmin") {
+        if (username == "*****************"  && password == "*****************"  ) {//hidden content
             return done(null, "ok");
         } else {
             return done(null, false, { message: 'Unable to login' });
